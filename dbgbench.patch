@@ -1,0 +1,118 @@
+From 2522aa29ea99ed5fdbf36ddcfc58739a9c6f93b3 Mon Sep 17 00:00:00 2001
+From: Dominic Steinhoefel <steinhoefel@cs.tu-darmstadt.de>
+Date: Fri, 12 Feb 2021 10:39:15 +0100
+Subject: [PATCH] Patch
+
+---
+ docker/run.sh              | 29 +++++++++++++++--------------
+ docker/scripts/docker.find |  2 +-
+ docker/scripts/docker.grep |  4 ++--
+ 3 files changed, 18 insertions(+), 17 deletions(-)
+
+diff --git a/docker/run.sh b/docker/run.sh
+index 55e9eca..28a2008 100755
+--- a/docker/run.sh
++++ b/docker/run.sh
+@@ -1,9 +1,10 @@
+ #!/bin/bash
+-if [ $# -ne 1 ]; then
+-  echo "Usage: $0 <subject>"
++if [ $# -lt 2 ]; then
++  echo "Usage: $0 <subject> <name>"
+   exit 1
+ fi
+ subject=$1
++name=$2
+ 
+ if [ -z "$(which docker)" ]; then
+   echo "Install docker from http://docs.docker.com/engine/installation/"
+@@ -13,23 +14,23 @@ if [ $(docker images | grep -c "CREATED") -eq 0 ]; then
+   echo "Run boot2docker to set up docker environment."
+   exit 1
+ fi
+-if [ $(docker images | grep -c "debugstudy ") -eq 0 ]; then
++if [ $(docker images | grep -c "debugstudy$subject ") -eq 0 ]; then
+   echo "Installing image.. This will be done only once and may take up to one hour."
+-  docker build -t debugstudy -f scripts/docker.$subject . || exit 1
++  docker build -t debugstudy$subject -f scripts/docker.$subject . || exit 1
+ fi
+ 
+ exit_code=0
+ 
+-if [ $(docker ps | grep -c "debugstudy ") -ne 0 ]; then
+-  echo "An instance of 'debugstudy' is already running ($(docker ps | grep "debugstudy " | cut -c-12))"
++if [ $(docker ps | grep -c "debugstudy$subject ") -ne 0 ]; then
++  echo "An instance of 'debugstudy' is already running ($(docker ps | grep "debugstudy$subject " | cut -c-12))"
+   echo "You can use VNCViewer from your Desktop or a different terminal window to access: "
+   echo "$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' debugstudy0):5900 (password: corebench)"
+   echo ""
+   echo "Connecting .."
+   if [ -z "$2" ]; then 
+-    docker exec -it $(docker ps | grep "debugstudy " | cut -c-12) bash
++    docker exec -it $(docker ps | grep "debugstudy$subject " | cut -c-12) bash
+   else 
+-    echo "$2" | docker exec -i $(docker ps | grep "debugstudy " | cut -c-12) bash 
++    echo "$2" | docker exec -i $(docker ps | grep "debugstudy$subject " | cut -c-12) bash 
+     exit_code=$?
+   fi
+   
+@@ -37,18 +38,18 @@ if [ $(docker ps | grep -c "debugstudy ") -ne 0 ]; then
+ fi
+ 
+ printf "Running container: "
+-docker run -dt --name debugstudy0 -v $(pwd):/shared -p 5900:5900 --dns 8.8.8.8 --dns 8.8.4.4 debugstudy | cut -c-12
++docker run -dt --name ${name} -v $(pwd):/shared --dns 8.8.8.8 --dns 8.8.4.4 debugstudy${subject} | cut -c-12
+ echo "Now use VNCViewer from your Desktop or a different terminal window to access: "
+-echo "$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' debugstudy0):5900 (password: corebench)"
++echo "$(docker inspect --format '{{ .NetworkSettings.IPAddress }}' ${name}):5900 (password: corebench)"
+ echo
+ echo Note: Once the container is removed or broken, any temporary data will be lost!
+ echo Use the '/shared'-folder for scripts and data which you would like to keep.  
+ echo
+ echo Connecting..
+-if [ -z "$2" ]; then 
+-  docker exec -it $(docker ps | grep "debugstudy " | cut -c-12) bash
++if [ -z "$3" ]; then 
++  docker exec -it $name bash
+ else 
+-  echo "$2" | docker exec -i $(docker ps | grep "debugstudy " | cut -c-12) bash 
++  echo "$3" | docker exec -i $name bash 
+   exit_code=$?
+ fi
+-exit $exit_code
+\ No newline at end of file
++exit $exit_code
+diff --git a/docker/scripts/docker.find b/docker/scripts/docker.find
+index 740d1e3..e0810ce 100644
+--- a/docker/scripts/docker.find
++++ b/docker/scripts/docker.find
+@@ -1,7 +1,7 @@
+ FROM debug/find
+ ENV SUBJECT findutils
+ RUN sudo apt-get update
+-RUN sudo apt-get install -y gdb valgrind
++#RUN sudo apt-get install -y gdb valgrind
+ ADD scripts/prepareVM.sh .
+ ADD scripts/test.find.66c536bb.patch .
+ ADD scripts/patch.find.sh .
+diff --git a/docker/scripts/docker.grep b/docker/scripts/docker.grep
+index 911223a..c003c60 100644
+--- a/docker/scripts/docker.grep
++++ b/docker/scripts/docker.grep
+@@ -1,10 +1,10 @@
+ FROM debug/grep
+ ENV SUBJECT grep
+-RUN sudo apt-get install -y gdb valgrind
++#RUN sudo apt-get install -y gdb valgrind
+ ADD scripts/prepareVM.sh .
+ ADD scripts/test.grep.54d55bba.patch .
+ ADD scripts/patch.grep.sh .
+ RUN ./prepareVM.sh $SUBJECT
+ RUN ./patch.grep.sh
+ RUN rm -rf /root/corerepo && rm /*.m4 && rm prepareVM.sh
+-WORKDIR /root/Desktop
+\ No newline at end of file
++WORKDIR /root/Desktop
+-- 
+2.17.1
+
