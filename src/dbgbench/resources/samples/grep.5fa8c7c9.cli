@@ -1,0 +1,1 @@
+printf 'abcd' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -F ''

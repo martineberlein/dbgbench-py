@@ -1,0 +1,39 @@
+pattern = "'" regex_ "'";
+regex_ = empty | first_expression regex;
+regex = empty | expression regex;
+first_expression = character_expr_no_minus | bracket_expr | special_expr | expression repetition |
+				expression "|" expression | "(" regex ")" | back_reference;
+expression = character_expr | bracket_expr | special_expr | expression repetition |
+				expression "|" expression | "(" regex ")" | back_reference;
+character_expr = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "\"" | "!" |"#" | "$" | "%" | "&" | "\\x27" | "\\(" | "\\)" | "\\*" | "\\+" | "," | "-" | "." | "/" | ":" | ";" | "<" | "=" | ">" | "@" | "\\\\" | "]" | "^" | "_" | "`" | "{" | "\\|" | "}" | "~" | " " | "\\t" | "\\n" | "\\r";
+character_expr_no_minus = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "\"" | "!" |"#" | "$" | "%" | "&" | "\\x27" | "\\(" | "\\)" | "\\*" | "\\+" | "," | "." | "/" | ":" | ";" | "<" | "=" | ">" | "@" | "\\\\" | "]" | "^" | "_" | "`" | "{" | "\\|" | "}" | "~" | " " | "\\t" | "\\n" | "\\r";
+bracket_expr = "[" bracket_char_ "]"
+                | "[" bracket_char "-" bracket_char "]"
+                | "[" "^" bracket_char_  "]"
+		        | "[" "^" bracket_char "-" bracket_char "]";
+special_expr = "\\<" | "\\>" | "\\b" | "\\B" | "\\w" | "\\W";
+repetition = "?" | "*" | "+" | "{" int_ "}" | "{" int_ ",}" | "{," int_ "}" | "{" int_ "," int_ "}";
+back_reference = "\\" digit ;
+bracket_char_ = bracket_char | bracket_char bracket_char_;
+bracket_char = utf_characters | alnum | cntrl | digit | graph | print | "\"" | "!" | "#" | "\\$" | "%" | "&" | "\\x27" | "(" | ")" | "*" | "+" | "," | "." | "/" | ":" | ";" | "<" | "=" | ">" | "?" | "@" | "[" | "\\\\" | "]" | "^" | "_" | "`" | "{" | "|" | "}" | "~" | space;
+digit = nonzerodigit | "0" ;
+utf_characters = "á" | "ç" | "É" | "é";
+character = alnum
+        | "\"" | "!" |"#" | "$" | "%" | "&" | "\\x27"
+        | "\\(" | "\\)" | "\\*" | "+" | "," | "-" | "." | "/"
+        | ":" | ";" | "<" | "=" | ">" | "?" | "@" | "["
+        | "\\\\" | "]" | "^" | "_" | "`" | "{" | "\\|" | "}" | "~"
+        | " " | "\\t" | "\\n" | "\\r" | "\\x0b" | "\\x0c"
+        | utf_characters;
+alpha = "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+alnum = alpha | digit ;
+cntrl = "\\x0" upper_xdigit | "\\x1" upper_xdigit |  "\\x7F";
+graph = "\\x2" special_digit_1 | "\\x3" upper_xdigit | "\\x4" upper_xdigit | "\\x5" upper_xdigit | "\\x6" upper_xdigit | "\\x7" special_digit_2;
+space = " " | "\\t" | "\\r" | "\\n" | "\\v" | "\\f";
+int_ = nonzerodigit digits  | "-" digit digits | digit | "-" digit;
+digits = digit digits | digit;
+nonzerodigit =  "1" | "2" | "3" | "4" | "5" | "6" | "7"  | "8"  | "9";
+upper_xdigit = "A" | "B" | "C" | "D" | "E" | "F" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+special_digit_1 = "A" | "B" | "C" | "D" | "E" | "F" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+special_digit_2 =  "A" | "B" | "C" | "D" | "E" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+print = "\\x2" upper_xdigit | "\\x3" upper_xdigit | "\\x4" upper_xdigit | "\\x5" upper_xdigit | "\\x6" upper_xdigit |  "\\x7" special_digit_2;

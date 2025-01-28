@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep -E -q '(^| )*( |$)'

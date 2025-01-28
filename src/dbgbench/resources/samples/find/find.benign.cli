@@ -1,0 +1,1 @@
+mkcd dir1; al_popd; timeout 0.5s find -type f

@@ -1,0 +1,1 @@
+printf 'f' | LC_ALL=ru_RU.KOI8-R timeout 0.5s grep '[a-z]'

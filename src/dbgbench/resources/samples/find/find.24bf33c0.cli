@@ -1,0 +1,1 @@
+al_ln -s foo dir1; al_ln -s dir1 foo; timeout 0.5s find -L dir1/bar

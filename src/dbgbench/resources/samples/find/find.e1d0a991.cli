@@ -1,0 +1,1 @@
+mkcd dir1; al_touch foo; al_popd; timeout 0.5s find -L dir1 -name 'foo' -execdir ls {} \;

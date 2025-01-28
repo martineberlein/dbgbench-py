@@ -1,0 +1,1 @@
+printf 'a' | timeout 0.5s grep '--include=*.e' '--exclude=foo.e' 'abc *'

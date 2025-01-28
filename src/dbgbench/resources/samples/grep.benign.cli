@@ -1,0 +1,1 @@
+printf 'haha\n' | LC_ALL=tr_TR.utf8 timeout 0.5s grep -i 'ha'

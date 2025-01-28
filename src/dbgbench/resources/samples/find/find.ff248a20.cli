@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s . link; al_popd; timeout 0.5s find dir1 -follow

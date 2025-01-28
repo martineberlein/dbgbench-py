@@ -1,0 +1,1 @@
+mkcd dir1; mkcd dir2; al_popd; al_popd; mkcd dir2; mkcd dir2; al_popd; al_popd; mkcd dir3; mkcd dir2; al_popd; al_popd; timeout 0.5s find . -name 'dir2' -execdir pwd \;

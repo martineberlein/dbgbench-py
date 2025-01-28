@@ -1,0 +1,1 @@
+printf 'foo foo bar' | timeout 0.5s grep -w '\(foo\) \1'

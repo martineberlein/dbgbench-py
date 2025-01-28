@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s ../directory2 link; al_popd; mkcd directory2; al_popd; timeout 0.5s find -H dir1 -type l
