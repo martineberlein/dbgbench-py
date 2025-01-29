@@ -18,7 +18,6 @@ RESOURCE_DIR = Path(__file__).parent.parent / "resources"
 def dbgbench_dir():
     """returns the path to the dbgbench directory"""
     dbgdir = Path(__file__).parent / ".." / ".." / ".." / ".." / "dbgbench.github.io"
-    print(dbgdir)
     if not dbgdir.exists():
         raise AssertionError("You need to check out dbgbench to the correct location if you want to run dbgbench subjects.")
     return dbgdir
@@ -198,9 +197,8 @@ class DBGBenchContainer(docker.Container):
             print(name, self.__subject)
             # install stuff in the image
             self.copy_into_orig([
-                RESOURCE_DIR / "machine_setup_new.sh"], self.container_root_dir("root"))
-            print(RESOURCE_DIR / "machine_setup_new.sh")
-            execute.run(["docker", "exec", name, "bash", (self.container_root_dir("root") / "machine_setup_new.sh").resolve()], None, check=True)
+                RESOURCE_DIR / "machine_setup.sh"], self.container_root_dir("root"))
+            execute.run(["docker", "exec", name, "bash", (self.container_root_dir("root") / "machine_setup.sh").resolve()], None, check=True)
             # stop the container
             execute.run(['docker', 'kill', name], None, check=True)
             self.__running = False
