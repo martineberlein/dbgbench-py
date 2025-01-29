@@ -18,3 +18,4 @@ if __name__ == "__main__":
         samples_dir = Path("../resources/samples/").resolve()
         data: pd.DataFrame = bug.execute_samples(samples_dir)
         print(data[["file", "oracle"]])
+        print(data[["file", "output"]])
