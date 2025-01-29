@@ -1,18 +1,32 @@
 from pathlib import Path
 
-from .common import DbgbenchBug
-from .oracles import GrepWrapper
+from dbgbench.framework.base import BaseDbgbenchBug
+from dbgbench.framework.oracles import GrepWrapper
 
-class GrepBug(DbgbenchBug):
 
-    def __init__(self, bugnr, oracle):
-        super(GrepBug, self).__init__(bugnr, GrepWrapper(oracle))
+class GrepBug(BaseDbgbenchBug):
+    """
+    Concrete bug class specialized for grep.
+    """
 
-    def _container_setup(self):
-        # get the script files in place
+    def __init__(self, bug_id, oracle):
+        super().__init__(bug_id, GrepWrapper(oracle))
+
+    def _setup_container_files(self):
+        """
+        Copy specialized runner for grep into the container.
+        """
+        script_path = Path(__file__).parent.parent / "resources" / "sample_runner_grep.py"
         self.container().copy_into(
-            [Path(__file__).parent.parent / "resources" /"sample_runner_grep.py"],
-            Path("/root/Desktop/alhazen_scripts"), username="root")
+            [script_path],
+            Path("/root/Desktop/alhazen_scripts"),
+            username="root"
+        )
 
-    def _sample_runner(self):
+    @staticmethod
+    def _sample_runner_path() -> str:
+        """
+        Return the path of the specialized runner script for grep.
+        """
         return "/root/Desktop/alhazen_scripts/sample_runner_grep.py"
+

@@ -48,33 +48,11 @@ def synchronous_check_output(cmd, kwargs):
     return subprocess.check_output(cmd, **kwargs)
 
 
-def setup(procs):
-    global pool
-#    multiprocessing.set_start_method("forkserver")
-#    pool = multiprocessing.Pool(processes=procs)
-
-
 def run(cmd, logfile, **kwargs):
     cmd = make_cmd(cmd)
-    global pool
-    if pool is not None:
-        return pool.apply(synchronous_run, (cmd, logfile, kwargs))
-    else:
-        return synchronous_run(cmd, logfile, kwargs)
+    return synchronous_run(cmd, logfile, kwargs)
 
 
 def check_output(cmd, **kwargs):
     cmd = make_cmd(cmd)
-    global pool
-    if pool is not None:
-        return pool.apply(synchronous_check_output, (cmd, kwargs))
-    else:
-        return synchronous_check_output(cmd, kwargs)
-
-
-def shutdown():
-    global pool
-    if pool is not None:
-        pool.terminate()
-        pool.join()
-        pool = None
+    return synchronous_check_output(cmd, kwargs)
