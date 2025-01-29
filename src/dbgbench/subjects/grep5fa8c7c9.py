@@ -6,20 +6,12 @@ import pandas
 
 from dbgbench.framework import grep, oracles
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(name)s:%(levelname)s: %(message)s",
-)
 
 def create_bug():
-    return grep.GrepBug("grep.3c3bdace", oracles.SegvOracle())
+    return grep.GrepBug("grep.5fa8c7c9", oracles.HangOracle())
 
 
 if __name__ == "__main__":
     with create_bug() as bug:
         data: pandas.DataFrame = bug.execute_samples(Path("../resources/samples/").resolve())
         print(data[["file", "oracle", "output", "oracle"]])
-        # for row in data.iterrows():
-        #     print(row)
-        #     print(bug.apply_oracle_single(row))
-
