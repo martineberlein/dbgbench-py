@@ -1,17 +1,20 @@
-# docker
 import logging
 from pathlib import Path
 
-import pandas
+import pandas as pd
 
-from dbgbench.framework import grep, oracles
+from dbgbench.framework.grep import GrepBug
+from dbgbench.framework.oracles import HangOracle
 
 
 def create_bug():
-    return grep.GrepBug("grep.5fa8c7c9", oracles.HangOracle())
+    return GrepBug("grep.5fa8c7c9", HangOracle())
 
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+
     with create_bug() as bug:
-        data: pandas.DataFrame = bug.execute_samples(Path("../resources/samples/").resolve())
-        print(data[["file", "oracle", "output", "oracle"]])
+        samples_dir = Path("../resources/samples/").resolve()
+        data: pd.DataFrame = bug.execute_samples(samples_dir)
+        print(data[["file", "oracle"]])

@@ -1,4 +1,3 @@
-# docker
 import logging
 from pathlib import Path
 
@@ -18,8 +17,4 @@ def create_bug():
 if __name__ == "__main__":
     with create_bug() as bug:
         data: pandas.DataFrame = bug.execute_samples(Path("../resources/samples/").resolve())
-        print(data[["file", "oracle", "output", "oracle"]])
-        # for row in data.iterrows():
-        #     print(row)
-        #     print(bug.apply_oracle_single(row))
-
+        print(data[["file", "oracle"]])

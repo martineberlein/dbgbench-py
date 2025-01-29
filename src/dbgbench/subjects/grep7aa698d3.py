@@ -14,4 +14,4 @@ def create_bug():
 if __name__ == "__main__":
     with create_bug() as bug:
         data: pandas.DataFrame = bug.execute_samples(Path("../resources/samples/").resolve())
-        print(data[["file", "oracle", "output", "oracle"]])
+        print(data[["file", "oracle"]])
