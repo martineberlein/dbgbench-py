@@ -12,12 +12,12 @@ def dbgbench_dir() -> Path:
     Return the path to the dbgbench directory.
     Raises an AssertionError if it does not exist.
     """
-    dbgdir = (Path(__file__).parent / ".." / ".." / ".." / ".." / "dbgbench.github.io").resolve()
-    if not dbgdir.exists():
+    dbgbench = (Path(__file__).parent / ".." / ".." / ".." / ".." / "dbgbench.github.io").resolve()
+    if not dbgbench.exists():
         raise AssertionError(
             "You need to check out dbgbench to the correct location if you want to run dbgbench subjects."
         )
-    return dbgdir
+    return dbgbench
 
 RESOURCE_DIR = (Path(__file__).parent.parent / "resources").resolve()
 
