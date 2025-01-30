@@ -1,52 +1,23 @@
 import unittest
 
-from fandango.language.parse import parse, Grammar
+from fandango.language.parse import Grammar
 from fandango.language.tree import DerivationTree
 
+from fandangoLearner.interface.fandango import parse
+
 from dbgbench.framework.oraclesresult import OracleResult
+from dbgbench.resources import get_grep_grammar_path, get_grep_samples
+from dbgbench.framework.util import escape_non_ascii_utf8
 from dbgbench.subjects import *
-from dbgbench.resources import get_grep_grammar, get_grep_samples_dir
 
 
 class GrepBugsTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        grammar_path = get_grep_grammar()
-        with grammar_path.open() as f:
-            cls.grammar, cls.constraints = parse(f)
+        grammar_path = get_grep_grammar_path()
+        cls.grammar, cls.constraints = parse(grammar_path)
 
-        cls.sample_dir = get_grep_samples_dir()
-
-    @staticmethod
-    def escape_non_ascii_utf8(s):
-        escaped = []
-        for ch in s:
-            if ord(ch) < 128:
-                escaped.append(ch)
-            else:
-                for b in ch.encode("utf-8"):
-                    escaped.append("\\x{:02X}".format(b))
-        return "".join(escaped)
-
-    @staticmethod
-    def unescape_hex_utf8(s):
-        # Parse the string and reconstruct bytes from both plain ASCII
-        # and \xHH sequences, then decode once as UTF-8.
-        i = 0
-        out_bytes = []
-        while i < len(s):
-            # Look for a pattern like \xAB
-            if (s[i] == '\\'
-                    and i + 3 < len(s)
-                    and s[i + 1] == 'x'
-                    and all(c in '0123456789ABCDEFabcdef' for c in s[i + 2:i + 4])):
-                hex_part = s[i + 2:i + 4]
-                out_bytes.append(int(hex_part, 16))
-                i += 4
-            else:
-                out_bytes.append(ord(s[i]))
-                i += 1
-        return bytes(out_bytes).decode('utf-8', errors='replace')
+        cls.samples = get_grep_samples()
 
     def test_grammar_is_grammar_instance(self):
         self.assertIsInstance(self.grammar, Grammar)
@@ -56,15 +27,12 @@ class GrepBugsTest(unittest.TestCase):
         self.assertTrue(all(isinstance(t, DerivationTree) for t in trees))
 
     def test_parsing_initial_samples(self):
-        sample_dir = get_grep_samples_dir()
-        for sample_file in sample_dir.iterdir():
-            if sample_file.is_file():
-                with self.subTest(sample_file=sample_file):
-                    with sample_file.open(encoding="utf-8") as f:
-                        inp = self.escape_non_ascii_utf8(f.read())
-                        parsed = self.grammar.parse(inp)
-                    self.assertIsInstance(
-                        parsed, DerivationTree, f"Failed for {sample_file}"
+        for sample in self.samples:
+            with self.subTest(sample=sample):
+                escaped = escape_non_ascii_utf8(sample)
+                parsed = self.grammar.parse(escaped)
+                self.assertIsInstance(
+                    parsed, DerivationTree, f"Failed for {sample}"
                     )
 
     def test_oracle(self):
@@ -74,7 +42,7 @@ class GrepBugsTest(unittest.TestCase):
         }
 
         bug = Grep3c3bdace()
-        results = bug.execute_samples_with_oracle(list(test_inputs.keys()))
+        results = bug.execute_samples(list(test_inputs.keys()))
         self.assertEqual(len(results), 2)
         for inp, oracle in results:
             self.assertEqual(test_inputs[inp], oracle)
@@ -83,7 +51,7 @@ class GrepBugsTest(unittest.TestCase):
         trees = [str(self.grammar.fuzz(max_nodes=100)) for _ in range(100)]
 
         bug = Grep3c3bdace()
-        results = bug.execute_samples_with_oracle(trees)
+        results = bug.execute_samples(trees)
         for inp, oracle in results:
             print(oracle, inp)
 
@@ -98,8 +66,11 @@ class GrepBugsTest(unittest.TestCase):
         for bug_type in bugs:
             bug = bug_type()
             with self.subTest(bug=bug):
-                result = bug.execute_samples(self.sample_dir)
+                result = bug.execute_samples(self.samples)
                 self.assertEqual(len(result), 11)
+                self.assertFalse(all(oracle == OracleResult.NO_BUG for _, oracle in result))
+                self.assertTrue(any(oracle == OracleResult.BUG for _, oracle in result))
+                self.assertTrue(all(isinstance(inp, str) for inp, _ in result))
 
 
 
