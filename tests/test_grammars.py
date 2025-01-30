@@ -1,22 +1,21 @@
 import unittest
-import random
 
-from pathlib import Path
 from fandango.language.parse import parse, Grammar
 from fandango.language.tree import DerivationTree
 
 from dbgbench.framework.oraclesresult import OracleResult
-from dbgbench.subjects.grep3c3bdace import create_bug
+from dbgbench.subjects import *
+from dbgbench.resources import get_grep_grammar, get_grep_samples_dir
 
 
 class GrepBugsTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        random.seed(1)
-
-        grammar_path = Path("./resources/grep.fan").resolve()
+        grammar_path = get_grep_grammar()
         with grammar_path.open() as f:
             cls.grammar, cls.constraints = parse(f)
+
+        cls.sample_dir = get_grep_samples_dir()
 
     @staticmethod
     def escape_non_ascii_utf8(s):
@@ -57,7 +56,7 @@ class GrepBugsTest(unittest.TestCase):
         self.assertTrue(all(isinstance(t, DerivationTree) for t in trees))
 
     def test_parsing_initial_samples(self):
-        sample_dir = Path("../dbgbench/resources/samples")
+        sample_dir = get_grep_samples_dir()
         for sample_file in sample_dir.iterdir():
             if sample_file.is_file():
                 with self.subTest(sample_file=sample_file):
@@ -74,18 +73,34 @@ class GrepBugsTest(unittest.TestCase):
             "printf 'X' | timeout 0.5s grep -E -q '(^| )*( |$)'": OracleResult.BUG,
         }
 
-        with create_bug() as bug:
-            results = bug.execute_samples_with_oracle(test_inputs.keys())
-            for inp, oracle in results:
-                self.assertEqual(test_inputs[inp], oracle)
+        bug = Grep3c3bdace()
+        results = bug.execute_samples_with_oracle(list(test_inputs.keys()))
+        self.assertEqual(len(results), 2)
+        for inp, oracle in results:
+            self.assertEqual(test_inputs[inp], oracle)
 
     def test_grammar_fuzzer_oracle(self):
         trees = [str(self.grammar.fuzz(max_nodes=100)) for _ in range(100)]
 
-        with create_bug() as bug:
-            results = bug.execute_samples_with_oracle(trees)
-            for inp, oracle in results:
-                print(oracle, inp)
+        bug = Grep3c3bdace()
+        results = bug.execute_samples_with_oracle(trees)
+        for inp, oracle in results:
+            print(oracle, inp)
+
+    def test_grep_bugs(self):
+        bugs = [
+            Grep3c3bdace,
+            Grep5fa8c7c9,
+            Grep7aa698d3,
+            Grep3220317a,
+            Grepc96b0f2c
+        ]
+        for bug_type in bugs:
+            bug = bug_type()
+            with self.subTest(bug=bug):
+                result = bug.execute_samples(self.sample_dir)
+                self.assertEqual(len(result), 11)
+
 
 
 if __name__ == "__main__":
