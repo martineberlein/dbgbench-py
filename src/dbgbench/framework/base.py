@@ -1,3 +1,6 @@
+from typing import Any
+
+import tempfile
 import logging
 import pandas as pd
 import subprocess
@@ -8,6 +11,7 @@ from pathlib import Path
 
 from dbgbench.framework.bug_class import Bug
 from dbgbench.framework.docker import DBGBenchContainer
+from dbgbench.framework.oraclesresult import OracleResult
 
 
 class BaseDbgbenchBug(Bug, ABC):
@@ -90,6 +94,35 @@ class BaseDbgbenchBug(Bug, ABC):
             return self._execute_samples_in_container()
         return self._empty_result_df()
 
+
+    def execute_samples_with_oracle(self, test_inputs: list[str]):
+        self._ensure_container_started()
+        logging.info("Executing samples with oracle.")
+
+        mapping = dict()
+        # Create temporary directory for sample files
+        with tempfile.TemporaryDirectory() as tmp_dir:
+            samples_dir = Path(tmp_dir, "samples")
+            samples_dir.mkdir(exist_ok=True)
+
+            # Write each test string to a separate file
+            for idx, content in enumerate(test_inputs):
+                sample_file = samples_dir / Path(f"sample_{idx}.cli")
+                sample_file.write_text(content, encoding="utf-8")
+                mapping[sample_file.name] = content
+
+            # Now call the existing execute_samples method on the temp directory
+            data = self.execute_samples(samples_dir)
+
+            result = []
+            for _, row in data.iterrows():
+                inp_str = mapping[row["file"]]
+                oracle = row["oracle"] if [row["input"]] else OracleResult.UNDEF
+                result.append((inp_str, oracle))
+            # result = [(mapping[row["file"]], row["oracle"]) for _, row in data.iterrows()]
+        return result
+
+
     # def execute_sample_list(self, sample_files: list[Path]) -> pd.DataFrame:
     #     """
     #     Alternative method if we have a list of sample files rather than one directory.
@@ -111,7 +144,7 @@ class BaseDbgbenchBug(Bug, ABC):
                                                     self._sample_runner_path(),
                                                     self.subject(),
                                                     (self.container().container_root_dir(
-                                                        "root") / "alhazen_samples/samples/").resolve(), "rm"])
+                                                        "root") / "alhazen_samples/samples").resolve(), "rm"])
             prefix = "# csv #- "
             text = output.decode()
             lines = [line[len(prefix):] for line in text.split('\n') if line.startswith(prefix)]
