@@ -1,17 +1,7 @@
-import logging
-from pathlib import Path
-
-import pandas as pd
-
 from dbgbench.framework.grep import GrepBug
 from dbgbench.framework.oracles import SegvOracle
-from dbgbench.resources import get_grep_samples_dir
+from dbgbench.resources import get_grep_samples
 
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(name)s:%(levelname)s: %(message)s",
-)
 
 class Grep3c3bdace(GrepBug):
     def __init__(self):
@@ -19,8 +9,11 @@ class Grep3c3bdace(GrepBug):
 
 
 if __name__ == "__main__":
-    sample_dir = get_grep_samples_dir()
+    samples = get_grep_samples()
 
-    bug = Grep3c3bdace()
-    data: pd.DataFrame = bug.execute_samples(sample_dir)
-    print(data[["file", "oracle"]])
+
+    with Grep3c3bdace() as bug:
+        result = bug.execute_samples(samples)
+
+    for inp, oracle in result:
+        print(inp.ljust(80), oracle)
