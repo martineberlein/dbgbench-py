@@ -86,11 +86,17 @@ class BaseDbgbenchBug(Bug, ABC):
         self._ensure_container_started()
         return self._container
 
-    def execute_samples(self, sample_dir):
+    def execute_samples(self, sample_dir: Path):
         self._ensure_container_started()
         logging.info("Executing samples in {}".format(sample_dir))
+
+        files = []
+        for file in sample_dir.iterdir():
+            if file.is_file():
+                files.append(file)
+
         if 0 != len(list(sample_dir.iterdir())):
-            self.container().copy_into([sample_dir], self.container().container_root_dir("root") / "alhazen_samples")
+            self.container().copy_into(files, self.container().container_root_dir("root") / "alhazen_samples")
             return self._execute_samples_in_container()
         return self._empty_result_df()
 
@@ -102,7 +108,7 @@ class BaseDbgbenchBug(Bug, ABC):
         mapping = dict()
         # Create temporary directory for sample files
         with tempfile.TemporaryDirectory() as tmp_dir:
-            samples_dir = Path(tmp_dir, "samples")
+            samples_dir = Path(tmp_dir)
             samples_dir.mkdir(exist_ok=True)
 
             # Write each test string to a separate file
@@ -119,9 +125,8 @@ class BaseDbgbenchBug(Bug, ABC):
                 inp_str = mapping[row["file"]]
                 oracle = row["oracle"] if [row["input"]] else OracleResult.UNDEF
                 result.append((inp_str, oracle))
-            # result = [(mapping[row["file"]], row["oracle"]) for _, row in data.iterrows()]
-        return result
 
+        return result
 
     # def execute_sample_list(self, sample_files: list[Path]) -> pd.DataFrame:
     #     """
@@ -144,7 +149,7 @@ class BaseDbgbenchBug(Bug, ABC):
                                                     self._sample_runner_path(),
                                                     self.subject(),
                                                     (self.container().container_root_dir(
-                                                        "root") / "alhazen_samples/samples").resolve(), "rm"])
+                                                        "root") / "alhazen_samples").resolve(), "rm"])
             prefix = "# csv #- "
             text = output.decode()
             lines = [line[len(prefix):] for line in text.split('\n') if line.startswith(prefix)]
