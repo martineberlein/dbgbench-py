@@ -86,7 +86,7 @@ class BaseDbgbenchBug(Bug, ABC):
         self._ensure_container_started()
         return self._container
 
-    def execute_samples(self, sample_dir: Path):
+    def execute_samples_dir(self, sample_dir: Path):
         self._ensure_container_started()
         logging.info("Executing samples in {}".format(sample_dir))
 
@@ -101,7 +101,7 @@ class BaseDbgbenchBug(Bug, ABC):
         return self._empty_result_df()
 
 
-    def execute_samples_with_oracle(self, test_inputs: list[str]):
+    def execute_samples(self, test_inputs: list[str]):
         self._ensure_container_started()
         logging.info("Executing samples with oracle.")
 
@@ -118,7 +118,7 @@ class BaseDbgbenchBug(Bug, ABC):
                 mapping[sample_file.name] = content
 
             # Now call the existing execute_samples method on the temp directory
-            data = self.execute_samples(samples_dir)
+            data = self.execute_samples_dir(samples_dir)
 
             result = []
             for _, row in data.iterrows():
