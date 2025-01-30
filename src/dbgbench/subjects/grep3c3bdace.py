@@ -1,20 +1,26 @@
 import logging
 from pathlib import Path
 
-import pandas
+import pandas as pd
 
-from dbgbench.framework import grep, oracles
+from dbgbench.framework.grep import GrepBug
+from dbgbench.framework.oracles import SegvOracle
+from dbgbench.resources import get_grep_samples_dir
+
 
 logging.basicConfig(
     level=logging.INFO,
     format="%(name)s:%(levelname)s: %(message)s",
 )
 
-def create_bug():
-    return grep.GrepBug("grep.3c3bdace", oracles.SegvOracle())
+class Grep3c3bdace(GrepBug):
+    def __init__(self):
+        super().__init__("grep.3c3bdace", SegvOracle())
 
 
 if __name__ == "__main__":
-    with create_bug() as bug:
-        data: pandas.DataFrame = bug.execute_samples(Path("../resources/samples/").resolve())
-        print(data[["file", "oracle"]])
+    sample_dir = get_grep_samples_dir()
+
+    bug = Grep3c3bdace()
+    data: pd.DataFrame = bug.execute_samples(sample_dir)
+    print(data[["file", "oracle"]])

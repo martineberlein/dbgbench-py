@@ -1,17 +1,18 @@
-# docker
-import logging
-from pathlib import Path
+import pandas as pd
 
-import pandas
-
-from dbgbench.framework import grep, oracles
+from dbgbench.framework.grep import GrepBug
+from dbgbench.framework.oracles import SegvOracle
+from dbgbench.resources import get_grep_samples_dir
 
 
-def create_bug():
-    return grep.GrepBug("grep.3220317a", oracles.SegvOracle())
+class Grep3220317a(GrepBug):
+    def __init__(self):
+        super().__init__("grep.3220317a", SegvOracle())
 
 
 if __name__ == "__main__":
-    with create_bug() as bug:
-        data: pandas.DataFrame = bug.execute_samples(Path("../resources/samples/").resolve())
-        print(data[["file", "oracle"]])
+    sample_dir = get_grep_samples_dir()
+
+    bug = Grep3220317a()
+    data: pd.DataFrame = bug.execute_samples(sample_dir)
+    print(data[["file", "oracle"]])
