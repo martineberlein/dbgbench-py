@@ -163,11 +163,14 @@
 
 <input_> ::= "'" <first_inputchar> <inputstring> "'";
 <inputstring> ::= <inputchar>*;
-<first_inputchar> ::= <unicode_no_minus>
+<first_inputchar> ::= <character_expr_no_minus>
                     | "\\t" | "\\n" | "\\r" | "\""
                     | "\\x" <hexdigit> <hexdigit>
-                    | "\\" <digit> <digit> <digit>;
-<inputchar> ::= "-" | <first_inputchar> | <unicode>;
+                    | <unicode_char>
+                    # | "\\" <digit> <digit> <digit>;
+<inputchar> ::= "-" | <first_inputchar> | <character_expr>;
+
+<unicode_char> ::= "\\x" <hexdigit> <hexdigit> "\\x" <hexdigit> <hexdigit>;
 
 <unicode> ::= <any_character_except_backslash_quote_crlf>;
 
@@ -334,7 +337,7 @@
 
 <digit> ::= <nonzerodigit> | "0";
 
-<utf_characters> ::= "á" | "ç" | "É" | "é";
+<utf_characters> ::= "á" | "ç" | "É" | "é" | <unicode_char>;
 
 <character> ::= <alnum>
               | "\"" | "!" | "#" | "$" | "%" | "&" | "\\x27"
