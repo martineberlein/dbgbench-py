@@ -41,8 +41,9 @@ class GrepBugsTest(unittest.TestCase):
             "printf 'X' | timeout 0.5s grep -E -q '(^| )*( |$)'": OracleResult.BUG,
         }
 
-        bug = Grep3c3bdace()
-        results = bug.execute_samples(list(test_inputs.keys()))
+        with Grep3c3bdace() as bug:
+            results = bug.execute_samples(list(test_inputs.keys()))
+
         self.assertEqual(len(results), 2)
         for inp, oracle in results:
             self.assertEqual(test_inputs[inp], oracle)
@@ -50,8 +51,8 @@ class GrepBugsTest(unittest.TestCase):
     def test_grammar_fuzzer_oracle(self):
         trees = [str(self.grammar.fuzz(max_nodes=100)) for _ in range(100)]
 
-        bug = Grep3c3bdace()
-        results = bug.execute_samples(trees)
+        with Grep3c3bdace() as bug:
+            results = bug.execute_samples(trees)
         for inp, oracle in results:
             print(oracle, inp)
 
@@ -64,14 +65,13 @@ class GrepBugsTest(unittest.TestCase):
             Grepc96b0f2c
         ]
         for bug_type in bugs:
-            bug = bug_type()
-            with self.subTest(bug=bug):
-                result = bug.execute_samples(self.samples)
+            with self.subTest(bug_type=bug_type):
+                with bug_type() as bug:
+                    result = bug.execute_samples(self.samples)
                 self.assertEqual(len(result), 11)
                 self.assertFalse(all(oracle == OracleResult.NO_BUG for _, oracle in result))
                 self.assertTrue(any(oracle == OracleResult.BUG for _, oracle in result))
                 self.assertTrue(all(isinstance(inp, str) for inp, _ in result))
-
 
 
 if __name__ == "__main__":
