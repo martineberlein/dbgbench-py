@@ -67,7 +67,7 @@ class GrepWrapper(Oracle):
 
     def apply_oracle(self, bug, row):
         if "Grep terminated" not in row["output"]:
-            return OracleResult.UNDEF
+            return OracleResult.UNDEFINED
         return self.__delegate.apply_oracle(bug, row)
 
 
@@ -81,8 +81,8 @@ class OutputSubstringOracle(Oracle):
 
     def apply_oracle(self, bug, row):
         if self.__substr in to_bytes(row["output"]):
-            return OracleResult.BUG
-        return OracleResult.NO_BUG
+            return OracleResult.FAILING
+        return OracleResult.PASSING
 
 
 class SegvOracle(Oracle):
@@ -94,8 +94,8 @@ class SegvOracle(Oracle):
 
     def apply_oracle(self, bug, row):
         if row["return code"] == 139 or row["return code"] == 134:
-            return OracleResult.BUG
-        return OracleResult.NO_BUG
+            return OracleResult.FAILING
+        return OracleResult.PASSING
 
 
 class AssertionOracle(Oracle):
@@ -107,8 +107,8 @@ class AssertionOracle(Oracle):
 
     def apply_oracle(self, bug, row):
         if row["return code"] == 134:
-            return OracleResult.BUG
-        return OracleResult.NO_BUG
+            return OracleResult.FAILING
+        return OracleResult.PASSING
 
 
 class HangOracle(Oracle):
@@ -120,8 +120,8 @@ class HangOracle(Oracle):
 
     def apply_oracle(self, bug, row):
         if row["return code"] == 124:
-            return OracleResult.BUG
-        return OracleResult.NO_BUG
+            return OracleResult.FAILING
+        return OracleResult.PASSING
 
 
 def to_bytes(inp):
@@ -159,29 +159,29 @@ class NoNewTextOracle(Oracle):
 
     def apply_oracle(self, bug, row):
         if row["output"] is None:
-            #  return OracleResult.UNDEF
-            return OracleResult.NO_BUG
+            #  return OracleResult.UNDEFINED
+            return OracleResult.PASSING
         if contains_one_of_option(row["line"], supress_output_options):
-            #  return OracleResult.UNDEF
-            return OracleResult.NO_BUG
+            #  return OracleResult.UNDEFINED
+            return OracleResult.PASSING
         if row["return code"] not in [0, 1]:
-            #  return OracleResult.UNDEF
-            return OracleResult.NO_BUG
+            #  return OracleResult.UNDEFINED
+            return OracleResult.PASSING
         if contains_option_with_arg(row["line"], "\'--label="):
-            return OracleResult.NO_BUG
+            return OracleResult.PASSING
 
         inp = to_bytes(row["input"])
         if inp is None:
-            #  return OracleResult.UNDEF
-            return OracleResult.NO_BUG
+            #  return OracleResult.UNDEFINED
+            return OracleResult.PASSING
 
         output = clear_grep(row["line"], to_bytes(row["output"]))
         if b'grep: Invalid back reference\n' in output:
-            return OracleResult.NO_BUG
+            return OracleResult.PASSING
         for c in output[:-1]:  # grep always adds a trailing newline, which we don't want to compare
             if c not in inp:
-                return OracleResult.BUG
-        return OracleResult.NO_BUG
+                return OracleResult.FAILING
+        return OracleResult.PASSING
 
 
 class LineOracle(Oracle):
@@ -189,33 +189,33 @@ class LineOracle(Oracle):
     def apply_oracle(self, bug, row):
         """grep always generates entire lines of output."""
         if row["output"] is None:
-            #  return OracleResult.UNDEF
-            return OracleResult.NO_BUG
+            #  return OracleResult.UNDEFINED
+            return OracleResult.PASSING
         if contains_one_of_option(row["line"], ['-L', '-l', '-o', '--only-matching']):
-            #  return OracleResult.UNDEF
-            return OracleResult.NO_BUG
+            #  return OracleResult.UNDEFINED
+            return OracleResult.PASSING
         if contains_one_of_option(row["line"], supress_output_options):
-            #  return OracleResult.UNDEF
-            return OracleResult.NO_BUG
+            #  return OracleResult.UNDEFINED
+            return OracleResult.PASSING
         if row["return code"] not in [0, 1]:
-            #  return OracleResult.UNDEF
-            return OracleResult.NO_BUG
+            #  return OracleResult.UNDEFINED
+            return OracleResult.PASSING
         if contains_option_with_arg(row["line"], "\'--label="):
-            return OracleResult.NO_BUG
+            return OracleResult.PASSING
 
         inp = to_bytes(row["input"])
         if inp is None:
-            #  return OracleResult.UNDEF
-            return OracleResult.NO_BUG
+            #  return OracleResult.UNDEFINED
+            return OracleResult.PASSING
         inp = inp.splitlines()
 
         output = clear_grep(row["line"], to_bytes(row["output"]))
         if b'grep: Invalid back reference\n' in output:
-            return OracleResult.NO_BUG
+            return OracleResult.PASSING
         for outline in output[:-1].splitlines():  # grep always adds a new line or separator in the end
             if outline not in inp:
-                return OracleResult.BUG
-        return OracleResult.NO_BUG
+                return OracleResult.FAILING
+        return OracleResult.PASSING
 
 
 class NoNewLineOracle(Oracle):
@@ -230,7 +230,7 @@ class NoNewLineOracle(Oracle):
         output = row["output"]
         output = to_bytes(output).replace(b"\nGrep terminated\n", b"")
         if output.startswith(b'grep:'):
-            return OracleResult.NO_BUG
+            return OracleResult.PASSING
         if 0 != len(output) and output[-1] != end:
-            return OracleResult.BUG
-        return OracleResult.NO_BUG
+            return OracleResult.FAILING
+        return OracleResult.PASSING

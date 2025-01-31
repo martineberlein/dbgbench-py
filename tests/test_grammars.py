@@ -37,8 +37,8 @@ class GrepBugsTest(unittest.TestCase):
 
     def test_oracle(self):
         test_inputs = {
-            "printf 'haha\\n' | LC_ALL=tr_TR.utf8 timeout 0.5s grep -i 'ha'": OracleResult.NO_BUG,
-            "printf 'X' | timeout 0.5s grep -E -q '(^| )*( |$)'": OracleResult.BUG,
+            "printf 'haha\\n' | LC_ALL=tr_TR.utf8 timeout 0.5s grep -i 'ha'": OracleResult.PASSING,
+            "printf 'X' | timeout 0.5s grep -E -q '(^| )*( |$)'": OracleResult.FAILING,
         }
 
         with Grep3c3bdace() as bug:
@@ -69,8 +69,8 @@ class GrepBugsTest(unittest.TestCase):
                 with bug_type() as bug:
                     result = bug.execute_samples(self.samples)
                 self.assertEqual(len(result), 11)
-                self.assertFalse(all(oracle == OracleResult.NO_BUG for _, oracle in result))
-                self.assertTrue(any(oracle == OracleResult.BUG for _, oracle in result))
+                self.assertFalse(all(oracle == OracleResult.PASSING for _, oracle in result))
+                self.assertTrue(any(oracle == OracleResult.FAILING for _, oracle in result))
                 self.assertTrue(all(isinstance(inp, str) for inp, _ in result))
 
 

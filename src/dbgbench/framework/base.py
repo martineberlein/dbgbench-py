@@ -1,5 +1,3 @@
-from typing import Any
-
 import tempfile
 import logging
 import pandas as pd
@@ -123,10 +121,14 @@ class BaseDbgbenchBug(Bug, ABC):
             result = []
             for _, row in data.iterrows():
                 inp_str = mapping[row["file"]]
-                oracle = row["oracle"] if [row["input"]] else OracleResult.UNDEF
+                oracle = row["oracle"] if [row["input"]] else OracleResult.UNDEFINED
                 result.append((inp_str, oracle))
 
         return result
+
+    def execute_sample(self, test_input: str) -> OracleResult:
+        _, oracle = self.execute_samples([test_input])[0]
+        return oracle
 
     # def execute_sample_list(self, sample_files: list[Path]) -> pd.DataFrame:
     #     """

@@ -2,12 +2,6 @@ from abc import ABC, abstractmethod
 from pathlib import Path
 from typing import Generator
 from pandas import DataFrame
-from typing import Union
-import importlib
-import sys
-from typing import Any
-
-# from . import oracles
 
 
 class Bug(ABC):
