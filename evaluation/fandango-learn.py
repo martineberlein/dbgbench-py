@@ -1,4 +1,5 @@
-from os.path import samestat
+import random
+from typing import Collection
 
 from dbgbench.framework.oraclesresult import OracleResult
 from dbgbench.resources import get_grep_grammar_path, get_grep_samples
@@ -13,32 +14,38 @@ from fandangoLearner.resources.patterns import Pattern
 from fandangoLearner.refinement.mutation import MutationFuzzer
 
 
-def generate_more_failing(bug_type_, grammar_, samples_):
+def generate_more_failing(bug_type_, grammar_, samples_: Collection[FandangoInput]) -> tuple[list[FandangoInput], list[FandangoInput]]:
 
     def bug_oracle(inp):
         with bug_type_() as bug:
             res = bug.execute_sample(str(inp))
         return res
 
-    samples_ = [
-        FandangoInput.from_str(grammar_, escape_non_ascii_utf8(inp), bug_oracle(inp)) for inp in samples_
-    ]
-
     seeds = [inp for inp in samples_ if inp.oracle == OracleResult.FAILING]
 
     mutation_fuzzer = MutationFuzzer(grammar_, seed_inputs=seeds, oracle=bug_oracle)
 
-    for inp in list(mutation_fuzzer.run()):
-        print(inp)
+    positive_inputs = []
+    negative_inputs = []
 
+    while len(positive_inputs) < 5:
+        try:
+            inp = next(mutation_fuzzer.run(yield_negatives=True))
+            if inp.oracle == OracleResult.FAILING:
+                positive_inputs.append(inp)
+            else:
+                negative_inputs.append(inp)
+        except StopIteration:
+            break
+
+    return positive_inputs, negative_inputs
 
 if __name__ == "__main__":
+    random.seed(1)
     bug_type = Grepc96b0f2c
 
     grep_grammar = get_grep_grammar_path()
     grammar, _ = parse(grep_grammar)
-
-    generate_more_failing(bug_type, grammar, get_grep_samples())
 
     samples = get_grep_samples()
     with bug_type() as bug:
@@ -46,38 +53,26 @@ if __name__ == "__main__":
 
     test_inputs = []
     for inp, oracle in result:
-        oracle_bool = True if oracle == OracleResult.BUG else False
+        oracle_bool = True if oracle == OracleResult.FAILING else False
         test_inputs.append((escape_non_ascii_utf8(inp), oracle_bool))
 
     initial_inputs = {
         FandangoInput.from_str(grammar, inp, oracle) for inp, oracle in test_inputs
     }
 
-    additional_inputs = []
-    for _ in range(100):
-        additional_inputs.append(str(grammar.fuzz(max_nodes=100)))
-
-    with bug_type() as bug:
-        result = bug.execute_samples(additional_inputs)
-
-    test_inputs = []
-    for inp, oracle in result:
-        oracle_bool = True if oracle == OracleResult.BUG else False
-        test_inputs.append((inp, oracle_bool))
-
-    add_initial_inputs = {
-        FandangoInput.from_str(grammar, inp, oracle) for inp, oracle in test_inputs
-    }
-    initial_inputs.update(add_initial_inputs)
-
+    pos_inputs, neg_inputs = generate_more_failing(bug_type, grammar, initial_inputs)
+    print(f"Positive inputs: {len(pos_inputs)}")
+    print(f"Negative inputs: {len(neg_inputs)}")
+    initial_inputs.update(pos_inputs)
+    initial_inputs.update(neg_inputs)
 
     patterns = [
         Pattern(
             string_pattern="exists <elem> in <NON_TERMINAL>: is_inside(<elem>, <start>);",
         ),
-        # Pattern(
-        #     string_pattern="str(<NON_TERMINAL>) == <STRING>;",
-        # )
+        Pattern(
+            string_pattern="str(<NON_TERMINAL>) == <STRING>;",
+        )
     ]
 
     learner = FandangoLearner(grammar, patterns=patterns, logger_level=LoggerLevel.INFO)
