@@ -11,7 +11,6 @@ class Grep3c3bdace(GrepBug):
 if __name__ == "__main__":
     samples = get_grep_samples()
 
-
     with Grep3c3bdace() as bug:
         result = bug.execute_samples(samples)
 

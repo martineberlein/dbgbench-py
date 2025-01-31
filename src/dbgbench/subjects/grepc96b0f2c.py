@@ -1,8 +1,6 @@
-import pandas as pd
-
 from dbgbench.framework.grep import GrepBug
 from dbgbench.framework.oracles import NoNewTextOracle
-from dbgbench.resources import get_grep_samples_dir
+from dbgbench.resources import get_grep_samples
 
 
 class Grepc96b0f2c(GrepBug):
@@ -11,8 +9,10 @@ class Grepc96b0f2c(GrepBug):
 
 
 if __name__ == "__main__":
-    sample_dir = get_grep_samples_dir()
+    samples = get_grep_samples()
 
-    bug = Grepc96b0f2c()
-    data: pd.DataFrame = bug.execute_samples(sample_dir)
-    print(data[["file", "oracle"]])
+    with Grepc96b0f2c() as bug:
+        result = bug.execute_samples(samples)
+
+    for inp, oracle in result:
+        print(inp.ljust(80), oracle)

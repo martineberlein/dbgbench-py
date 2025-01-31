@@ -1,11 +1,6 @@
-import logging
-from pathlib import Path
-
-import pandas as pd
-
 from dbgbench.framework.grep import GrepBug
 from dbgbench.framework.oracles import HangOracle
-from dbgbench.resources import get_grep_samples_dir
+from dbgbench.resources import get_grep_samples
 
 
 class Grep5fa8c7c9(GrepBug):
@@ -14,10 +9,10 @@ class Grep5fa8c7c9(GrepBug):
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
+    samples = get_grep_samples()
 
-    sample_dir = get_grep_samples_dir()
+    with Grep5fa8c7c9() as bug:
+        result = bug.execute_samples(samples)
 
-    bug = Grep5fa8c7c9()
-    data: pd.DataFrame = bug.execute_samples(sample_dir)
-    print(data[["file", "oracle"]])
+    for inp, oracle in result:
+        print(inp.ljust(80), oracle)
