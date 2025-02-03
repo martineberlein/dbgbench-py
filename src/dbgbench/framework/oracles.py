@@ -171,9 +171,8 @@ class NoNewTextOracle(Oracle):
             return OracleResult.PASSING
 
         inp = to_bytes(row["input"])
-        if inp is None:
-            #  return OracleResult.UNDEFINED
-            return OracleResult.PASSING
+        if inp is b'':
+            return OracleResult.UNDEFINED
 
         output = clear_grep(row["line"], to_bytes(row["output"]))
         if b'grep: Invalid back reference\n' in output:
