@@ -10,9 +10,10 @@ from pathlib import Path
 from dbgbench.framework.bug_class import Bug
 from dbgbench.framework.docker import DBGBenchContainer
 from dbgbench.framework.oraclesresult import OracleResult
+from dbgbench.framework.util import escape_non_ascii_utf8, unescape_hex_utf8
 
 
-class BaseDbgbenchBug(Bug, ABC):
+class DbgbenchBug(Bug, ABC):
     """
     Base class for a dbgbench bug/subject running inside a Docker container.
     """
@@ -21,26 +22,32 @@ class BaseDbgbenchBug(Bug, ABC):
         super().__init__()
         self._bug_id = bug_id
         self._oracle = oracle
+
         self._container = None
 
     def subject(self) -> str:
         return self._bug_id
 
     def __enter__(self):
-        # Optional: start container at context entry
         self._ensure_container_started()
         return self
 
-    def __exit__(self, exc_type, exc_val, exc_tb):
-        self.tear_down()
-
+    @abstractmethod
     def grammar_file(self) -> Path:
         """:return the path to the grammar to be used."""
         raise NotImplementedError()
 
-    def sample_files(self):
-        """A generator methods which yields the sample files to work with for this bug."""
+    def sample_inputs(self, get_all=False) -> list[str]:
+        """A function which returns the sample inputs (as strings) to work with for this bug."""
+        return [escape_non_ascii_utf8(file.read_text()) for file in self.sample_files(get_all=get_all)]
+
+    @abstractmethod
+    def sample_files(self, get_all=False) -> list[Path]:
+        """A function which returns the sample files to work with for this bug."""
         raise NotImplementedError()
+
+    def suffix(self) -> str:
+        return ".cli"
 
     @abstractmethod
     def _setup_container_files(self):
@@ -112,7 +119,7 @@ class BaseDbgbenchBug(Bug, ABC):
             # Write each test string to a separate file
             for idx, content in enumerate(test_inputs):
                 sample_file = samples_dir / Path(f"sample_{idx}.cli")
-                sample_file.write_text(content, encoding="utf-8")
+                sample_file.write_text(unescape_hex_utf8(content), encoding="utf-8")
                 mapping[sample_file.name] = content
 
             # Now call the existing execute_samples method on the temp directory

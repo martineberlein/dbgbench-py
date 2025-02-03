@@ -8,7 +8,7 @@ def get_grep_grammar_path():
 def get_grep_samples_dir():
     return pkg_resources.files("dbgbench.resources.samples") / "grep"
 
-def get_grep_samples():
+def get_grep_samples() -> list[str]:
     sample_dir = get_grep_samples_dir()
     return [file.read_text() for file in sample_dir.iterdir() if file.is_file()]
 
