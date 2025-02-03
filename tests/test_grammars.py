@@ -73,6 +73,32 @@ class GrepBugsTest(unittest.TestCase):
                 self.assertTrue(any(oracle == OracleResult.FAILING for _, oracle in result))
                 self.assertTrue(all(isinstance(inp, str) for inp, _ in result))
 
+    def test_get_samples_files(self):
+        bugs = [
+            #Grep3c3bdace,
+            # Grep5fa8c7c9,
+            # Grep7aa698d3,
+            # Grep3220317a,
+            Grepc96b0f2c
+        ]
+        for bug_type in bugs:
+            with self.subTest(bug_type=bug_type):
+                with bug_type() as bug:
+                    sample_inputs = bug.sample_inputs()
+                    print(sample_inputs)
+                    result = bug.execute_samples(sample_inputs)
+                    print(result)
+                    self.assertEqual(len(result),2)
+                    self.assertTrue(any([oracle.is_failing() for _, oracle in result]))
+                    self.assertTrue(any([not oracle.is_failing() for _, oracle in result]))
+
+    def test_c9_special_inputs(self):
+        inps = ["""printf '\\x50\\x00\\n\\n\\nb' | GREP_COLOR='00;02;2;0;02;00;00;2;00;0' timeout 0.5s grep -i -n ''""",
+                """printf 'a\\n\\na' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n '^$'"""]
+        with Grepc96b0f2c() as bug:
+            result = bug.execute_samples(inps)
+            print(result)
+            #self.assertEqual(result, OracleResult.UNDEFINED)
 
 if __name__ == "__main__":
     unittest.main()

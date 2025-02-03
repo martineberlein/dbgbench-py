@@ -12,7 +12,7 @@ if __name__ == "__main__":
     samples = get_grep_samples()
 
     with Grep3220317a() as bug:
-        result = bug.execute_samples(samples)
+        result = bug.execute_samples(bug.sample_inputs())
 
     for inp, oracle in result:
         print(inp.ljust(80), oracle)
