@@ -16,7 +16,7 @@ echo "Applying patch to dbgbench..."
 cd dbgbench.github.io || exit 1
 
 # Ensure the patch file exists
-PATCH_FILE="../debuggingbench/dbgbench.patch"
+PATCH_FILE="../dbgbench-py/dbgbench.patch"
 if [ ! -f "$PATCH_FILE" ]; then
     echo "Patch file not found: $PATCH_FILE"
     ls -l "$(dirname "$PATCH_FILE")"

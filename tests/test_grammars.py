@@ -3,7 +3,7 @@ import unittest
 from fandango.language.parse import Grammar
 from fandango.language.tree import DerivationTree
 
-from fandangoLearner.interface.fandango import parse
+from fdlearn.interface.fandango import parse
 
 from dbgbench.framework.oraclesresult import OracleResult
 from dbgbench.resources import get_grep_grammar_path, get_grep_samples

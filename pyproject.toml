@@ -10,7 +10,7 @@ authors = [
 ]
 readme = "README.md"
 license = { file = "COPYING" }
-requires-python = ">=3.12"
+requires-python = ">=3.10"
 classifiers = [
     "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
@@ -21,8 +21,11 @@ classifiers = [
 ]
 dependencies = [
     "pandas",
-    "numpy"
-]
+    "numpy",
+    #"fandango-learn @ ", TODO: adding when public
+    "debugging-benchmark @ git+https://github.com/martineberlein/debugging-benchmark",
+    "fandango @ git+https://github.com/fandango-fuzzer/fandango",
+    ]
 
 [project.optional-dependencies]
 test = [
