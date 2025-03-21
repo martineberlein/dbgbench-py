@@ -18,10 +18,11 @@ def generate_more_failing(bug_type_, grammar_, samples_: Collection[FandangoInpu
 
     def bug_oracle(inp):
         with bug_type_() as bug:
-            res = bug.execute_sample(str(inp))
+            res = bug.execute_sample(str(inp.tree))
+            print(inp, res)
         return res
 
-    seeds = [inp for inp in samples_ if inp.oracle == OracleResult.FAILING]
+    seeds = [inp for inp in samples_ if inp.oracle.is_failing()]
 
     mutation_fuzzer = MutationFuzzer(grammar_, seed_inputs=seeds, oracle=bug_oracle)
 
@@ -42,7 +43,7 @@ def generate_more_failing(bug_type_, grammar_, samples_: Collection[FandangoInpu
 
 if __name__ == "__main__":
     random.seed(1)
-    bug_type = Grepc96b0f2c
+    bug_type = Grep3c3bdace
 
     grep_grammar = get_grep_grammar_path()
     grammar, _ = parse(grep_grammar)
@@ -59,6 +60,8 @@ if __name__ == "__main__":
     initial_inputs = {
         FandangoInput.from_str(grammar, inp, oracle) for inp, oracle in test_inputs
     }
+    for inp in initial_inputs:
+        print(inp, inp.oracle)
 
     pos_inputs, neg_inputs = generate_more_failing(bug_type, grammar, initial_inputs)
     print(f"Positive inputs: {len(pos_inputs)}")

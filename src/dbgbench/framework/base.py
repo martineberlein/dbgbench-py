@@ -119,7 +119,8 @@ class DbgbenchBug(Bug, ABC):
             # Write each test string to a separate file
             for idx, content in enumerate(test_inputs):
                 sample_file = samples_dir / Path(f"sample_{idx}.cli")
-                sample_file.write_text(unescape_hex_utf8(content), encoding="utf-8")
+                # sample_file.write_text(unescape_hex_utf8(content), encoding="utf-8")
+                sample_file.write_text(content, encoding="utf-8")
                 mapping[sample_file.name] = content
 
             # Now call the existing execute_samples method on the temp directory

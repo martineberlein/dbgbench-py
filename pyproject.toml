@@ -24,7 +24,7 @@ dependencies = [
     "numpy",
     #"fandango-learn @ ", TODO: adding when public
     "debugging-benchmark @ git+https://github.com/martineberlein/debugging-benchmark",
-    "fandango @ git+https://github.com/fandango-fuzzer/fandango",
+    # "fandango @ git+https://github.com/fandango-fuzzer/fandango",
     ]
 
 [project.optional-dependencies]
