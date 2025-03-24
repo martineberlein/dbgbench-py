@@ -71,6 +71,20 @@ class GrepWrapper(Oracle):
         return self.__delegate.apply_oracle(bug, row)
 
 
+class FindWrapper(Oracle):
+
+    def __init__(self, delegate: Oracle):
+        self.__delegate = delegate
+    
+    def generate_oracle_data(self, bug, cli):
+        return self.__delegate.generate_oracle_data(bug, cli)
+
+    def apply_oracle(self, bug, row):
+        #TODO: needs testing if this is really part of output
+        if "Find terminated" not in row["output"]:
+            return OracleResult.UNDEFINED
+        return self.__delegate.apply_oracle(bug, row)
+
 class OutputSubstringOracle(Oracle):
 
     def __init__(self, substr):

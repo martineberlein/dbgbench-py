@@ -82,6 +82,8 @@
 <uname> ::= <digits>;
 <reference> ::= <pathname>;
 
+<ws> ::= " ";
+
 <pattern> ::= "'" <regex_> "'";
 <regex_> ::= <empty> | <first_expression> <regex>;
 <regex> ::= <empty> | <expression> <regex>;
@@ -144,7 +146,7 @@
                  | <space>;
 
 <digit> ::= <nonzerodigit> | "0";
-<utf_characters> ::= "á" | "ç" | "É" | "é" | <unicode_char>;
+<utf_characters> ::= "á" | "ç" | "É" | "é";
 
 <character> ::= <alnum>
               | "\"" | "!" | "#" | "$" | "%" | "&" | "\\x27"
@@ -180,38 +182,3 @@
 
 <print> ::= "\\x2" <upper_xdigit> | "\\x3" <upper_xdigit> | "\\x4" <upper_xdigit>
          | "\\x5" <upper_xdigit> | "\\x6" <upper_xdigit> | "\\x7" <special_digit_2>;
-
-where len(str(<patterns>)) >= 4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
