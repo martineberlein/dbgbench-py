@@ -185,7 +185,7 @@ class NoNewTextOracle(Oracle):
             return OracleResult.PASSING
 
         inp = to_bytes(row["input"])
-        if inp is b'':
+        if inp == b'':
             return OracleResult.UNDEFINED
 
         output = clear_grep(row["line"], to_bytes(row["output"]))
