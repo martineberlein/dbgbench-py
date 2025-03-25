@@ -44,3 +44,6 @@ class OracleTest(unittest.TestCase):
             results = bug.execute_samples(trees)
         for inp, oracle in results:
             print(oracle, inp)
+
+if __name__ == "__main__":
+    unittest.main()

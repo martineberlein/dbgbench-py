@@ -48,11 +48,11 @@ class GrammarTest(unittest.TestCase):
     def test_parsing_find_initial_samples(self):
         for sample in self.find_samples:
             with self.subTest(sample=sample):
-                #escaped = escape_non_ascii_utf8(sample)
-                parsed = self.find_grammar.parse(sample)
-                #self.assertIsInstance(
-                #    parsed, DerivationTree, f"Failed for {sample}"
-                #    )
+                escaped = escape_non_ascii_utf8(sample)
+                parsed = self.find_grammar.parse(escaped)
+                self.assertIsInstance(
+                    parsed, DerivationTree, f"Failed for {sample}"
+                    )
                 
 
 if __name__ == "__main__":
