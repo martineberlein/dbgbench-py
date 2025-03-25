@@ -106,7 +106,7 @@ class DbgbenchBug(Bug, ABC):
         return self._empty_result_df()
 
 
-    def execute_samples(self, test_inputs: list[str]):
+    def execute_samples(self, test_inputs: list[str]) -> list[tuple[str, OracleResult]]:
         self._ensure_container_started()
         logging.info("Executing samples with oracle.")
 
@@ -129,7 +129,8 @@ class DbgbenchBug(Bug, ABC):
             result = []
             for _, row in data.iterrows():
                 inp_str = mapping[row["file"]]
-                oracle = row["oracle"] if [row["input"]] else OracleResult.UNDEFINED
+                oracle = row["oracle"]
+    
                 result.append((inp_str, oracle))
 
         return result
