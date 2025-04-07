@@ -10,6 +10,7 @@ from pathlib import Path
 from dbgbench.framework.bug_class import Bug
 from dbgbench.framework.docker import DBGBenchContainer
 from dbgbench.framework.oraclesresult import OracleResult
+from dbgbench.framework.oracles import Oracle
 from dbgbench.framework.util import escape_non_ascii_utf8, unescape_hex_utf8
 
 
@@ -18,7 +19,7 @@ class DbgbenchBug(Bug, ABC):
     Base class for a dbgbench bug/subject running inside a Docker container.
     """
 
-    def __init__(self, bug_id, oracle):
+    def __init__(self, bug_id: str, oracle: Oracle):
         super().__init__()
         self._bug_id = bug_id
         self._oracle = oracle

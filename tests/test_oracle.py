@@ -43,7 +43,7 @@ class OracleTest(unittest.TestCase):
         with Grep3c3bdace() as bug:
             results = bug.execute_samples(trees)
         for inp, oracle in results:
-            print(oracle, inp)
+            print(oracle, inp, "\n")
 
 if __name__ == "__main__":
     unittest.main()

@@ -36,7 +36,7 @@ class BugsTest(unittest.TestCase):
                     bug : FindBug
                     sample_inputs = bug.sample_inputs()
                     result = bug.execute_samples(sample_inputs)
-                    print(result)
+                    print(result, "\n")
                     self.assertEqual(len(result),2)
                     self.assertTrue(any([oracle.is_failing() for _, oracle in result]))
                     self.assertTrue(any([not oracle.is_failing() for _, oracle in result]))
@@ -55,11 +55,28 @@ class BugsTest(unittest.TestCase):
                     bug : GrepBug
                     sample_inputs = bug.sample_inputs()
                     result = bug.execute_samples(sample_inputs)
-                    print(result)
+                    print(bug._bug_id, result, "\n")
                     self.assertEqual(len(result),2)
                     self.assertTrue(any([oracle == OracleResult.FAILING for _, oracle in result]))
                     self.assertTrue(any([oracle == OracleResult.PASSING for _, oracle in result]))
 
+    def test_find_bugs(self):
+        bugs = [
+            Find07b941b1,
+            Find091557f6,
+            Finddbcb10e9,
+            Findff248a20
+        ]
+        for bug_type in bugs:
+            with self.subTest(bug_type=bug_type):
+                with bug_type() as bug:
+                    bug: FindBug
+                    result = bug.execute_samples(self.find_samples)
+                print(result, "\n")
+                self.assertEqual(len(result), 11)
+                self.assertFalse(all(oracle == OracleResult.PASSING for _, oracle in result))
+                self.assertTrue(any(oracle == OracleResult.FAILING for _, oracle in result))
+                self.assertTrue(all(isinstance(inp, str) for inp, _ in result))
 
     def test_grep_bugs(self):
         bugs = [
@@ -74,6 +91,7 @@ class BugsTest(unittest.TestCase):
                 with bug_type() as bug:
                     bug: GrepBug
                     result = bug.execute_samples(self.grep_samples)
+                
                 self.assertEqual(len(result), 11)
                 self.assertFalse(all(oracle == OracleResult.PASSING for _, oracle in result))
                 self.assertTrue(any(oracle == OracleResult.FAILING for _, oracle in result))

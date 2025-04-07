@@ -80,8 +80,8 @@ class FindWrapper(Oracle):
         return self.__delegate.generate_oracle_data(bug, cli)
 
     def apply_oracle(self, bug, row):
-        #TODO: needs testing if this is really part of output
-        if "Find terminated" not in row["output"]:
+        #TODO: ist das undefined oder failing?
+        if "" == row["output"]:
             return OracleResult.UNDEFINED
         return self.__delegate.apply_oracle(bug, row)
 
