@@ -40,7 +40,7 @@ class DbgbenchBug(Bug, ABC):
 
     def sample_inputs(self, get_all=False) -> list[str]:
         """A function which returns the sample inputs (as strings) to work with for this bug."""
-        return [escape_non_ascii_utf8(file.read_text()) for file in self.sample_files(get_all=get_all)]
+        return [(file.read_text()) for file in self.sample_files(get_all=get_all)]
 
     @abstractmethod
     def sample_files(self, get_all=False) -> list[Path]:
