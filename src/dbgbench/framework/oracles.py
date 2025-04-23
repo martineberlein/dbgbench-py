@@ -98,6 +98,16 @@ class OutputSubstringOracle(Oracle):
             return OracleResult.FAILING
         return OracleResult.PASSING
 
+class NullPointerException(Oracle):
+    """Genson Subject produces a java.lang.NullPointerException"""
+    
+    def generate_oracle_data(self, bug, cli):
+        return super().generate_oracle_data(bug, cli)
+    
+    def apply_oracle(self, bug, row):
+        if row == "java.lang.NullPointerException":
+            return OracleResult.FAILING
+        return OracleResult.PASSING
 
 class SegvOracle(Oracle):
     """The rc_oracle considers a run bug-indicating if

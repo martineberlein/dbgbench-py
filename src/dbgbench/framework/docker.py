@@ -134,7 +134,7 @@ class Container(AbstractContainer):
         else:
             logging.info(f"Using existing Docker image '{self._image_name}' with ID {existing.strip()}")
 
-    def start(self, username: str = "root") -> None:
+    def start(self) -> None:
         """
         Create the image (if necessary) and then run a container from it.
         Optionally copy default scripts into the container.
@@ -148,27 +148,18 @@ class Container(AbstractContainer):
         proc.check_returncode()
         self._running = True
 
-        # Optionally copy default Python scripts into /root/Desktop/alhazen_scripts (or home/username)
-        with tempfile.TemporaryDirectory() as tmpdir:
-            scripts_dir = Path(tmpdir, "alhazen")
-            scripts_dir.mkdir(parents=True, exist_ok=True)
-
-            # Example: copying some "framework" scripts
-            needed_files = ["helpers.py", "oracles.py", "external_exec.py"]
-            for fname in needed_files:
-                data = pkgutil.get_data("dbgbench.framework", fname)
-                if data is None:
-                    continue
-                (scripts_dir / fname).write_bytes(data)
-
-            self.copy_into(
-                [scripts_dir],
-                self.container_root_dir(username) / "alhazen_scripts",
-                username=username
-            )
-
         logging.info(f"Container '{self._container_name}' is running.")
 
+    def check_output(self, cmd: list[str], cwd=None):
+        if not self._running:
+            raise AssertionError("Machine is stopped already.")
+        full_cmd = ["docker", "exec"]
+        if cwd is not None:
+            full_cmd = full_cmd + ["-w", cwd]
+        full_cmd = full_cmd + [self.name] + cmd
+        return execute.check_output(full_cmd)
+    
+    
     def stop(self) -> None:
         """
         Kill and remove the running container.
@@ -269,11 +260,46 @@ class DBGBenchContainer(Container):
                 None, check=True
             )
 
-    def check_output(self, cmd, cwd=None):
-        if not self._running:
-            raise AssertionError("Machine is stopped already.")
-        full_cmd = ["docker", "exec"]
-        if cwd is not None:
-            full_cmd = full_cmd + ["-w", cwd]
-        full_cmd = full_cmd + [self.name] + cmd
-        return execute.check_output(full_cmd)
+    #def check_output(self, cmd, cwd=None):
+    #    if not self._running:
+    #        raise AssertionError("Machine is stopped already.")
+    #    full_cmd = ["docker", "exec"]
+    #    if cwd is not None:
+    #        full_cmd = full_cmd + ["-w", cwd]
+    #    full_cmd = full_cmd + [self.name] + cmd
+    #    return execute.check_output(full_cmd)
+
+    def start(self, username: str = "root") -> None:
+        """
+        Create the image (if necessary) and then run a container from it.
+        Optionally copy default scripts into the container.
+        """
+        self.create_image()
+        logging.info(f"Starting container '{self._container_name}' from image '{self._image_name}'...")
+        proc = execute.run(
+            ["docker", "run", "-dt", "--name", self._container_name, self._image_name],
+            None
+        )
+        proc.check_returncode()
+        self._running = True
+
+        # Optionally copy default Python scripts into /root/Desktop/alhazen_scripts (or home/username)
+        with tempfile.TemporaryDirectory() as tmpdir:
+            scripts_dir = Path(tmpdir, "alhazen")
+            scripts_dir.mkdir(parents=True, exist_ok=True)
+
+            # Example: copying some "framework" scripts
+            needed_files = ["helpers.py", "oracles.py", "external_exec.py"]
+            for fname in needed_files:
+                data = pkgutil.get_data("dbgbench.framework", fname)
+                if data is None:
+                    continue
+                (scripts_dir / fname).write_bytes(data)
+
+            self.copy_into(
+                [scripts_dir],
+                self.container_root_dir(username) / "alhazen_scripts",
+                username=username
+            )
+
+        logging.info(f"Container '{self._container_name}' is running.")

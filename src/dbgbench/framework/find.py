@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from dbgbench.framework.base import DbgbenchBug
+from dbgbench.framework.dbgbench_bug import DbgbenchBug
 from dbgbench.framework.oracles import FindWrapper
 from dbgbench.resources import get_find_grammar_path, get_find_samples_dir
 

@@ -11,7 +11,6 @@ from dbgbench.framework.bug_class import Bug
 from dbgbench.framework.docker import DBGBenchContainer
 from dbgbench.framework.oraclesresult import OracleResult
 from dbgbench.framework.oracles import Oracle
-from dbgbench.framework.util import escape_non_ascii_utf8, unescape_hex_utf8
 
 
 class DbgbenchBug(Bug, ABC):
@@ -109,7 +108,7 @@ class DbgbenchBug(Bug, ABC):
 
     def execute_samples(self, test_inputs: list[str]) -> list[tuple[str, OracleResult]]:
         self._ensure_container_started()
-        logging.info("Executing samples with oracle.")
+        logging.info("Executing DbgbenchBug samples with oracle.")
 
         mapping = dict()
         # Create temporary directory for sample files

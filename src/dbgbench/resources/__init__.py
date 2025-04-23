@@ -1,6 +1,5 @@
 import importlib.resources as pkg_resources
 
-
 def get_grep_grammar_path():
     return pkg_resources.files("dbgbench.resources.fandango") / "grep.fan"
 
@@ -23,3 +22,19 @@ def get_find_samples() -> list[str]:
 
 def get_islearn_pattern_file_path():
     return pkg_resources.files("dbgbench.resources") / "patterns_islearn.toml"
+
+def get_genson_grammar_path():
+    return pkg_resources.files("dbgbench.resources.fandango") / "genson.fan"
+
+def get_genson_samples_dir():
+    return pkg_resources.files("dbgbench.resources.samples") / "genson"
+
+def get_genson_samples() -> list[str]:
+    sample_dir = get_genson_samples_dir()
+    return [file.read_text() for file in sample_dir.iterdir() if file.is_file()]
+
+def get_genson_dockerfile():
+    return pkg_resources.files("dbgbench.resources.dockerfiles") / "genson"
+
+def get_genson_subject_jar():
+    return pkg_resources.files("dbgbench.resources.java_jars.genson") / "genson_subject.jar"
