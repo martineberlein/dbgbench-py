@@ -38,3 +38,16 @@ def get_genson_dockerfile():
 
 def get_genson_subject_jar():
     return pkg_resources.files("dbgbench.resources.java_jars.genson") / "genson_subject.jar"
+
+def get_alpine_dockerfile():
+    return pkg_resources.files("dbgbench.resources.dockerfiles") / "alpine_python"
+
+def get_ubuntu_dockerfile():
+    return pkg_resources.files("dbgbench.resources.dockerfiles") / "ubuntu_python"
+
+def get_calculator_samples_dir():
+    return pkg_resources.files("dbgbench.resources.samples.calculator")
+
+def get_calculator_samples() -> list[str]:
+    sample_dir = get_calculator_samples_dir()
+    return [file.read_text() for file in sample_dir.iterdir() if file.is_file()]

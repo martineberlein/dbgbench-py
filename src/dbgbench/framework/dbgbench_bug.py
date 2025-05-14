@@ -100,9 +100,11 @@ class DbgbenchBug(Bug, ABC):
             if file.is_file():
                 files.append(file)
 
+        container_samples_dir = self.container().container_root_dir("root") / "alhazen_samples"
         if 0 != len(list(sample_dir.iterdir())):
-            self.container().copy_into(files, self.container().container_root_dir("root") / "alhazen_samples")
+            self.container().copy_into(files, container_samples_dir)
             return self._execute_samples_in_container()
+
         return self._empty_result_df()
 
 
@@ -136,7 +138,7 @@ class DbgbenchBug(Bug, ABC):
         return result
 
     def execute_sample(self, test_input: str) -> OracleResult:
-        _, oracle = self.execute_samples([test_input])[0]
+        _, oracle = self.execute_samples([str(test_input)])[0]
         return oracle
 
     # def execute_sample_list(self, sample_files: list[Path]) -> pd.DataFrame:
@@ -160,7 +162,12 @@ class DbgbenchBug(Bug, ABC):
                                                     self._sample_runner_path(),
                                                     self.subject(),
                                                     (self.container().container_root_dir(
-                                                        "root") / "alhazen_samples").resolve(), "rm"])
+                                                        "root") / "alhazen_samples").resolve()])
+            
+
+            self.container().remove_files_from_container(self.container().container_root_dir(
+                                                        "root") / "alhazen_samples")
+            
             prefix = "# csv #- "
             text = output.decode()
             lines = [line[len(prefix):] for line in text.split('\n') if line.startswith(prefix)]

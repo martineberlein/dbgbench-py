@@ -13,6 +13,6 @@ if __name__ == "__main__":
 
     with Find07b941b1() as bug:
         result = bug.execute_samples(samples)
-
+        
     for inp, oracle in result:
         print(inp.ljust(80), oracle)

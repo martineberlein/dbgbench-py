@@ -3,8 +3,9 @@ import logging
 import pkgutil
 import tempfile
 from pathlib import Path
+import uuid
 
-from . import external_exec as execute
+from dbgbench.framework import external_exec as execute
 
 
 def dbgbench_dir() -> Path:
@@ -107,6 +108,36 @@ class AbstractContainer(ABC):
             None, check=False
         )
 
+        # Make executable (alle rechte für alle)
+        execute.run(
+            [
+                "docker", "exec", "-u", "root", self._container_name, "chmod", "-R",
+                "777", str(dst_path)
+            ],
+            None, check=False
+        )
+    
+    def copy_to_host(self, container_path: Path, dst_path: Path, username: str = "root") -> None:
+        """
+        Copy files or directories from the host into the container. Adjust ownership after copy.
+        """
+        if not self._running:
+            raise RuntimeError("Cannot copy files. Container is not running.")
+
+        
+        execute.run(
+            [
+                    "docker", "cp", 
+                    f"{self._container_name}:{str(container_path)}",
+                    dst_path.resolve()
+            ],
+            None, check=True
+        )
+
+    def remove_files_from_container(self, container_dir: Path):
+        cmd = ["bash", "-c", f"rm {container_dir}/* 2>/dev/null"]
+        self.run_in_container(cmd)
+
 
 class Container(AbstractContainer):
     """
@@ -159,6 +190,8 @@ class Container(AbstractContainer):
         full_cmd = full_cmd + [self.name] + cmd
         return execute.check_output(full_cmd)
     
+    def is_running(self)-> bool:
+        return self._running
     
     def stop(self) -> None:
         """
@@ -180,6 +213,71 @@ class Container(AbstractContainer):
             return Path("/root/Desktop/")
         return Path(f"/home/{username}/")
 
+#TODO: anders nennen da auch für nicht producer nutzbar 
+# -> einfach ein Container der mit zusätzlichen install script aufgestezt wird
+class ProducerContainer(Container):
+    """
+    Disclaimer:
+    If your container builds out of the box from a dockerfile use the container class instead.
+    
+    Required:
+    The install script MUST be named install.sh
+    """
+    def __init__(self, basedir: Path, container_name: str, producer_name: str, install_script_path: Path):
+        """
+        :param basedir: Path that contains a dockerfile for building the image.
+        :param container_name: The name of the running container instance.
+        :param producer_name: The name of the producer which is using this container f.e. EvoGFuzz
+        :param install_script_path: The script which gets executed in the container for an additional setup
+        """
+        
+        super().__init__(basedir, container_name)
+        self._image_name = f"{producer_name.lower()}_producer"
+        self._install_script_path = install_script_path
+
+    def create_image(self):
+        """
+        1. creates container from original dockerfile
+        2. executes install script inside container
+        3. commits container as new image for future uses
+        """
+        
+        existing = execute.check_output(['docker', 'images', '-q', self._image_name])
+        if not existing:
+            logging.info(f"[ProducerContainer] Creating the image '{self._image_name}' ...")
+
+            #Building from original dockerfile
+            logging.info(f"Building Docker image '{self._image_name}' from {self._basedir}...")
+            temp_image_name = f"{self._image_name}_{uuid.uuid4()}"
+            execute.run(["docker", "build", "-t", temp_image_name, "."],
+                        None, cwd=str(self._basedir))
+            
+            #Create Container from original image
+            proc = execute.run(
+            ["docker", "run", "-dt", "--name", self._container_name, temp_image_name],
+            None
+            )
+            proc.check_returncode()
+            self._running = True
+            
+            #Copy and execute the install.sh script
+            self.copy_into(local_paths=[self._install_script_path], dst_path="/root/Desktop/scripts")
+            self.run_in_container(["bash", "/root/Desktop/scripts/install.sh"])
+
+
+            # Stop container and commit into a new image
+            execute.run(["docker", "kill", self._container_name], None, check=True)
+            self._running = False
+            execute.run(['docker', 'commit', self._container_name, self._image_name], None, check=True)
+            # Remove ephemeral container
+            execute.run(['docker', 'rm', self._container_name], None, check=True)
+            # Remove temp image
+            execute.run(["docker", "image", "rm", temp_image_name], None, check=True)
+        else:
+            logging.info(f"[ProducerContainer] Image '{self._image_name}' already exists (ID: {existing.strip()}).")
+
+
+
 
 class DBGBenchContainer(Container):
     """
@@ -200,6 +298,7 @@ class DBGBenchContainer(Container):
         self._subject = subject
 
     def create_image(self) -> None:
+
         """
         Override: DBGBench may have a different procedure to create (or re-create)
         the Docker image.

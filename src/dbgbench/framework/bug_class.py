@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Generator
+from typing import Generator, List
 from pandas import DataFrame
 
 
@@ -31,7 +31,7 @@ class Bug(ABC):
         sample = next(g)
         return sample.suffix
 
-    def execute_samples(self, sample_dir) -> DataFrame:
+    def execute_samples(self, samples: List[str]) -> DataFrame:
         """helper method to execute all samples in a given directory."""
         raise NotImplementedError("Overwrite in subclass.")
 
