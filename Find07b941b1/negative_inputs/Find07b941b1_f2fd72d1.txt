@@ -1,0 +1,1 @@
+al_ln -s dir2/./bar dir2; al_ln -s dir1/./bar dir2; TZ=Europe/Zagreb timeout 0.5s find -print

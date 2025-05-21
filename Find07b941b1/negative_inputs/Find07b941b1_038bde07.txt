@@ -1,0 +1,1 @@
+TZ=Europe/Berlin timeout 0.5s find ./foo dir3 -follow

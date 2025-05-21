@@ -1,0 +1,1 @@
+al_touch bar; al_touch bar; al_touch link; NLSPATH=.. timeout 0.5s find

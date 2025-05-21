@@ -1,0 +1,1 @@
+al_touch bar; al_ln -s foo dir1; al_touch foo; al_ln -s dir2 dir3; al_touch link; timeout 0.5s find -L -type f

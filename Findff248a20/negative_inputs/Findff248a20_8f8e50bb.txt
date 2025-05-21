@@ -1,0 +1,1 @@
+al_ln -s . bar; timeout 0.5s find .. !  \( -fprint0 dir1/. -o -d -or -daystart \) 

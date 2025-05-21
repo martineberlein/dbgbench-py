@@ -1,0 +1,1 @@
+timeout 0.5s find ! -fls link -mindepth 20 -o -mindepth 20

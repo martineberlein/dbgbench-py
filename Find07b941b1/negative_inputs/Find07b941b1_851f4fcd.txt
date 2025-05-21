@@ -1,0 +1,1 @@
+mkcd dir3; mkcd dir3; al_popd; al_touch bar; al_touch link; al_popd; al_touch bar; al_touch link; timeout 0.5s find ./../../directory2/.././link bar bar -follow

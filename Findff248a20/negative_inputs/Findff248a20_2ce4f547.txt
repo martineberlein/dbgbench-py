@@ -1,0 +1,1 @@
+al_ln -s dir3/. link; al_ln -s ../.. bar; timeout 0.5s find -H

@@ -1,0 +1,1 @@
+al_ln -s ./. dir2; al_ln -s ./. dir2;  LC_MESSAGES=et_EE.UTF-8 LANG=en_US.ISO8859-1 timeout 0.5s find

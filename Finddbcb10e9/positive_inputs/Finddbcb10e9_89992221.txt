@@ -1,0 +1,1 @@
+NLSPATH=dir3 timeout 0.5s find -P -mtime 0

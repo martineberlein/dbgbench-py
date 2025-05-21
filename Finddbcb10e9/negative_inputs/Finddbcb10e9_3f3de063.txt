@@ -1,0 +1,1 @@
+timeout 0.5s find ! ! !  \( -mindepth 600 -o -ignore_readdir_race -or -mindepth 0 \) 

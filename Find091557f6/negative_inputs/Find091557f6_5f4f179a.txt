@@ -1,0 +1,1 @@
+al_touch foo; NLSPATH=. timeout 0.5s find -H

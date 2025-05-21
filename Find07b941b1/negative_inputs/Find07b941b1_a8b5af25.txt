@@ -1,0 +1,1 @@
+NLSPATH=./../.././directory2 timeout 0.5s find -noleaf

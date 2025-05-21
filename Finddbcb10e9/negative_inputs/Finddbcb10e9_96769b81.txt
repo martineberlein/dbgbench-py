@@ -1,0 +1,1 @@
+mkcd dir3; al_popd; al_ln -s dir1/.. foo; al_ln -s foo link; timeout 0.5s find foo -print0

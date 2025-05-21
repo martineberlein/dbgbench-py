@@ -1,0 +1,1 @@
+mkcd directory2; al_ln -s ./directory2/.. link; mkcd dir3; al_ln -s ./../dir2 dir1; al_popd; al_ln -s directory2/../link dir2; al_popd; mkcd dir3; al_popd; timeout 0.5s find -mtime 2

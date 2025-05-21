@@ -1,0 +1,1 @@
+LC_ALL=pt_BR LC_COLLATE=zh_CN.GB18030 LANG=en_US.ISO8859-15 timeout 0.5s find -H -follow -or -amin -3 ,  \( -daystart -a  \( -daystart \)  \) 

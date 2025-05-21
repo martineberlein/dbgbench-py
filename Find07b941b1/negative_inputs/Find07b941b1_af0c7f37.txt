@@ -1,0 +1,1 @@
+TZ=US/Central timeout 0.5s find -nowarn -o -not -not -size -4

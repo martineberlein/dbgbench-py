@@ -1,0 +1,1 @@
+al_ln -s ./../dir2/./../foo link; timeout 0.5s find . ../../.././foo ./..

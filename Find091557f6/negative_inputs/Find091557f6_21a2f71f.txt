@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s bar foo; al_ln -s bar foo; al_popd; TZ=Europe/Dublin timeout 0.5s find -ctime 00 -or  \( -false \) 

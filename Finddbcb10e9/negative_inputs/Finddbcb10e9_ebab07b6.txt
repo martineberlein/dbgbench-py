@@ -1,0 +1,1 @@
+TZ=US/Samoa timeout 0.5s find . -xdev -and -daystart

@@ -1,0 +1,1 @@
+timeout 0.5s find -L foo foo dir2/directory2/.. ! -prune -o ! -print0

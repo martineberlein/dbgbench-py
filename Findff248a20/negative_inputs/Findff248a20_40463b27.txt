@@ -1,0 +1,1 @@
+al_ln -s . dir3; TZ=US/Mountain timeout 0.5s find -P -not  \( -not -warn -a -follow \) 

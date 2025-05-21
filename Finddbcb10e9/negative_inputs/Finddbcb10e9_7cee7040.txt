@@ -1,0 +1,1 @@
+mkcd dir3; al_touch link; al_popd; al_touch link; NLSPATH=dir3/. timeout 0.5s find -H -daystart

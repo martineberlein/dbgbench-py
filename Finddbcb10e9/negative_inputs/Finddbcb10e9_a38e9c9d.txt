@@ -1,0 +1,1 @@
+LC_ALL=es_ES.ISO8859-1 LC_COLLATE=bg_BG.CP1251 LANG=sk_SK.ISO8859-2 timeout 0.5s find -P dir2

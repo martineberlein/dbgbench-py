@@ -1,0 +1,1 @@
+timeout 0.5s find -P dir3/dir3/foo dir1 ./dir3/bar

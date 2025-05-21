@@ -1,0 +1,1 @@
+timeout 0.5s find -follow -a -follow -or -not -follow -atime -17 -a -follow -a -not -follow -follow -a -follow -or -regex '.*'

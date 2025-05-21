@@ -1,0 +1,1 @@
+al_touch bar; LC_ALL=af_ZA.ISO8859-1 LC_COLLATE=sv_SE.UTF-8 LANG=af_ZA.ISO8859-1 timeout 0.5s find -L -daystart

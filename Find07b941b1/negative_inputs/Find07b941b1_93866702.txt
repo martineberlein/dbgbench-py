@@ -1,0 +1,1 @@
+al_ln -s ./../link foo; LC_ALL=nl_NL.ISO8859-1 LC_COLLATE=is_IS LANG=ro_RO timeout 0.5s find link

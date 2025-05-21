@@ -1,0 +1,1 @@
+TZ=Europe/Athens timeout 0.5s find -L foo

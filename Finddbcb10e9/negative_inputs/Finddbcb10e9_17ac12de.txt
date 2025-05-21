@@ -1,0 +1,1 @@
+TZ=Europe/Bratislava timeout 0.5s find -H dir2 -fprintf . ' ' , -print

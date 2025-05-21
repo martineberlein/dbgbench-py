@@ -1,0 +1,1 @@
+mkcd directory2; al_touch link; al_popd; LC_ALL=be_BY.ISO8859-5 LC_COLLATE=kk_KZ.PT154 LANG=fr_CA.ISO8859-1 timeout 0.5s find -mtime 2

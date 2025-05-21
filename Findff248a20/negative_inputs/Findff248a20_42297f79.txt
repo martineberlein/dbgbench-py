@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s . link; al_popd;  LC_MESSAGES=sr_YU.UTF-8 LANG=en_CA.UTF-8 timeout 0.5s find -H ./.. dir1/./bar -daystart

@@ -1,0 +1,1 @@
+ LC_CTYPE=fr_BE.UTF-8 LANG=cs_CZ timeout 0.5s find ../bar link dir1

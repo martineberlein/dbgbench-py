@@ -1,0 +1,1 @@
+ LC_COLLATE=sr_YU.ISO8859-2 LANG=nl_BE.ISO8859-1 timeout 0.5s find -mtime 2

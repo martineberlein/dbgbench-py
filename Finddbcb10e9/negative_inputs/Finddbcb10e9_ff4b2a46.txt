@@ -1,0 +1,1 @@
+ LC_MESSAGES=no_NO LANG=no_NO timeout 0.5s find ../..

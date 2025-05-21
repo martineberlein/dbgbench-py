@@ -1,0 +1,1 @@
+ LC_MESSAGES=ro_RO.ISO8859-2 LANG=af_ZA.ISO8859-15 timeout 0.5s find ./dir3/../foo . -ls

@@ -1,0 +1,1 @@
+al_ln -s directory2/bar link; al_touch bar; timeout 0.5s find -not -prune

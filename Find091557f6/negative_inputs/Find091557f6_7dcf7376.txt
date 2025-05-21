@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s foo foo; al_ln -s foo bar; al_popd; POSIXLY_CORRECT=1 timeout 0.5s find -P . ./directory2 -newer ../directory2/.. -o -daystart

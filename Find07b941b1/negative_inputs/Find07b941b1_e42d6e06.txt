@@ -1,0 +1,1 @@
+TZ=Europe/Saratov timeout 0.5s find -P bar -noleaf

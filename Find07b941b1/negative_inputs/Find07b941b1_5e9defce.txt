@@ -1,0 +1,1 @@
+al_ln -s bar dir3; POSIXLY_CORRECT=1 timeout 0.5s find -L ./foo -prune

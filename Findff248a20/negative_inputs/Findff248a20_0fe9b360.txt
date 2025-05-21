@@ -1,0 +1,1 @@
+mkcd dir3; al_touch link; al_popd; al_touch link; al_touch bar; timeout 0.5s find . -follow

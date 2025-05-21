@@ -1,0 +1,1 @@
+ LC_MESSAGES=pt_PT LANG=fr_CA.UTF-8 timeout 0.5s find  \(  \( -fls link \)  \) 

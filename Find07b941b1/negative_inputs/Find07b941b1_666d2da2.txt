@@ -1,0 +1,1 @@
+timeout 0.5s find -P dir1/./.././dir3/../bar

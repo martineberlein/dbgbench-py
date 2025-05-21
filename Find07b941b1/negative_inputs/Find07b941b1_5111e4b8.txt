@@ -1,0 +1,1 @@
+mkcd dir3; al_popd; al_ln -s dir2/link dir2; al_ln -s .. bar; timeout 0.5s find . dir1/dir1/bar .. -false

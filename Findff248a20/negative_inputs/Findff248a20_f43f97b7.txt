@@ -1,0 +1,1 @@
+LC_ALL=sr_YU.ISO8859-2 LC_CTYPE=sr_YU.ISO8859-2 LANG=sr_YU.ISO8859-5 timeout 0.5s find -L

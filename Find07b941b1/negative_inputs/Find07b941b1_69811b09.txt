@@ -1,0 +1,1 @@
+TZ=Europe/Rome timeout 0.5s find link -not -cnewer ../foo -a -daystart

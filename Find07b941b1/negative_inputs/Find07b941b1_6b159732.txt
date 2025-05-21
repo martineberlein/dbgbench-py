@@ -1,0 +1,1 @@
+timeout 0.5s find -P link . foo -mindepth 0 -or  \( -daystart -a -links -0100 -or  \( -not  \( -anewer . \)  \)  \) 

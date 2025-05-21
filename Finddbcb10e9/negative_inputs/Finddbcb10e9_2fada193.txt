@@ -1,0 +1,1 @@
+TZ=Europe/Tallinn timeout 0.5s find -L -fprintf dir3/foo '\\(' -follow

@@ -1,0 +1,1 @@
+TZ=Europe/Luxembourg timeout 0.5s find -H  \(  \(  \( -regex '.*' \)  \)  \) 

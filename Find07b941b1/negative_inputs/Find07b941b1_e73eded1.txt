@@ -1,0 +1,1 @@
+LC_ALL=en_AU.US-ASCII LC_COLLATE=ca_ES.UTF-8 LANG=C timeout 0.5s find . .

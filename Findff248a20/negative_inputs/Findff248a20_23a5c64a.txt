@@ -1,0 +1,1 @@
+al_touch foo; timeout 0.5s find dir2/./dir1/.. bar dir1/.. bar -follow

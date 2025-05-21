@@ -1,0 +1,1 @@
+al_touch foo; al_ln -s link directory2; timeout 0.5s find link -follow

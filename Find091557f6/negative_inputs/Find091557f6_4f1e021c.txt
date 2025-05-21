@@ -1,0 +1,1 @@
+al_touch bar; TZ=Africa/Brazzaville timeout 0.5s find

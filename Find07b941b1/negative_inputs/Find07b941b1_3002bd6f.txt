@@ -1,0 +1,1 @@
+al_ln -s . dir3; LC_ALL=kk_KZ.PT154 LC_CTYPE=zh_CN LANG=zh_CN.GB2312 timeout 0.5s find -H

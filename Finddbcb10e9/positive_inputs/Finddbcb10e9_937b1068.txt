@@ -1,0 +1,1 @@
+al_ln -s foo directory2; timeout 0.5s find -mtime 2

@@ -1,0 +1,1 @@
+timeout 0.5s find -H ./link dir1/link . dir3/link ../.

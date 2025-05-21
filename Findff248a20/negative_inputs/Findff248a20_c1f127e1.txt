@@ -1,0 +1,1 @@
+mkcd dir2; al_popd; timeout 0.5s find ./directory2/dir2 link link bar link -follow

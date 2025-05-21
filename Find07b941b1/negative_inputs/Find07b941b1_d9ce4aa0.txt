@@ -1,0 +1,1 @@
+timeout 0.5s find -iregex '' -ipath '' , -iregex '' -iregex '' -iwholename '[\x7F]{-0200,-7}' -iwholename '' , -iregex '' -iname '' -iwholename 'o' -iwholename ''

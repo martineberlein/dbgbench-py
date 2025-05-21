@@ -1,0 +1,1 @@
+ LC_COLLATE=zh_CN.UTF-8 LANG=zh_TW.UTF-8 timeout 0.5s find foo link . -mtime 2

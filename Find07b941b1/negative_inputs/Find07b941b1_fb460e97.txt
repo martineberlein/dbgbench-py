@@ -1,0 +1,1 @@
+timeout 0.5s find -iwholename '\0|\b|.|\8|O+|qK'

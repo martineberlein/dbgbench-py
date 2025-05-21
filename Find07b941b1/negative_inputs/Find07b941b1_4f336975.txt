@@ -1,0 +1,1 @@
+LC_ALL=uk_UA.UTF-8 LC_CTYPE=fr_CH.ISO8859-1 LANG=en_NZ.US-ASCII timeout 0.5s find -P

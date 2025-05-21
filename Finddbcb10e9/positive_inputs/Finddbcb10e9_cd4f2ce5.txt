@@ -1,0 +1,1 @@
+timeout 0.5s find -P -mtime 2 -a -mtime 2  \( -daystart ,  \( -daystart , -not -noignore_readdir_race -a ! -noignore_readdir_race -fprintf bar ' ' \)  \) 

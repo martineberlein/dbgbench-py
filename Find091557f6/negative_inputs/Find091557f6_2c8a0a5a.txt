@@ -1,0 +1,1 @@
+al_ln -s link directory2; LC_ALL=de_CH.ISO8859-1 LC_COLLATE=ru_RU.CP1251 LANG=tr_TR.UTF-8 timeout 0.5s find -P link

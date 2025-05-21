@@ -1,0 +1,1 @@
+mkcd dir2; al_touch foo; mkcd dir1; al_popd; al_touch foo; al_ln -s dir1/foo dir3; al_touch bar; al_popd; timeout 0.5s find bar

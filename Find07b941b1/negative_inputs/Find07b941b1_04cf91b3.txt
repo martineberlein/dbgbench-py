@@ -1,0 +1,1 @@
+al_touch foo; TZ=Europe/Samara timeout 0.5s find -ilname '' -lname '[{-0]'

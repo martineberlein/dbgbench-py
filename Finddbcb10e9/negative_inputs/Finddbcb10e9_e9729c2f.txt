@@ -1,0 +1,1 @@
+timeout 0.5s find -iname '(\0\w)' -wholename '()|[]-!]|\W|\1`'

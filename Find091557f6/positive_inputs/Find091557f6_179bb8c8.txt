@@ -1,0 +1,1 @@
+mkcd dir1; al_touch foo; al_ln -s foo foo; al_popd; al_ln -s foo foo; timeout 0.5s find -L -type c

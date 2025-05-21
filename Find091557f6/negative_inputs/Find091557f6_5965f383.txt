@@ -1,0 +1,1 @@
+al_ln -s directory2/.. bar; timeout 0.5s find -L -type f

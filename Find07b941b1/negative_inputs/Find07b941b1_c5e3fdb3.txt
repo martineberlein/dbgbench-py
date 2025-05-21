@@ -1,0 +1,1 @@
+ LC_MESSAGES=tr_TR.UTF-8 LANG=tr_TR.UTF-8 timeout 0.5s find

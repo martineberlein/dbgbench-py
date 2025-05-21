@@ -1,0 +1,1 @@
+timeout 0.5s find -regex '\<{-000,-00}\B|\0{-000,}*E'

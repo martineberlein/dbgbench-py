@@ -1,0 +1,1 @@
+mkcd directory2; al_popd; LC_ALL=en_IE.UTF-8 LC_COLLATE=af_ZA.UTF-8 LANG=kk_KZ.UTF-8 timeout 0.5s find -regex '.*'

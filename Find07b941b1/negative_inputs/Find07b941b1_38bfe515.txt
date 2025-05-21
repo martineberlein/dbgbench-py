@@ -1,0 +1,1 @@
+NLSPATH=.././dir2/././dir1 timeout 0.5s find -daystart

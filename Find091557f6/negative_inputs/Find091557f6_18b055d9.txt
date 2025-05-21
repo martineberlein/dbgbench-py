@@ -1,0 +1,1 @@
+mkcd dir3; al_popd; al_touch foo; al_touch foo; LC_ALL=ro_RO LC_COLLATE=sr_YU.ISO8859-2 LANG=is_IS.ISO8859-15 timeout 0.5s find -L bar

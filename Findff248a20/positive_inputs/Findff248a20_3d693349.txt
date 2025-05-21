@@ -1,0 +1,1 @@
+mkcd dir3; mkcd dir2; al_ln -s . link; al_ln -s . directory2; al_popd; al_ln -s .. directory2; al_popd; timeout 0.5s find .. -follow

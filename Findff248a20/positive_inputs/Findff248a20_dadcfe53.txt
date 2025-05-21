@@ -1,0 +1,1 @@
+al_ln -s . link; al_touch link; NLSPATH=dir3 timeout 0.5s find -L link -daystart

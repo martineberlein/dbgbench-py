@@ -1,0 +1,1 @@
+al_touch link; TZ=Europe/Tallinn timeout 0.5s find -L

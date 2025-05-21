@@ -1,0 +1,1 @@
+al_touch link; mkcd dir1; al_ln -s . link; al_popd; timeout 0.5s find foo -noignore_readdir_race -or -execdir pwd \; , -follow -execdir pwd {} + -o ! -fprint dir1

@@ -1,0 +1,1 @@
+POSIXLY_CORRECT=1 timeout 0.5s find -H ./../dir3/directory2/link ./.././link foo

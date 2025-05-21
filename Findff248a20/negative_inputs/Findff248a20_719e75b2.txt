@@ -1,0 +1,1 @@
+LC_ALL=en_US.ISO8859-15 LC_CTYPE=sk_SK.UTF-8 LANG=de_CH timeout 0.5s find ! -daystart

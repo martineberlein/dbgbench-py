@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s . foo; al_ln -s bar foo; al_popd; timeout 0.5s find .././link -depth -a  \( ! -not  \( -not ! -ls -a -maxdepth 0 -or -ls \)  \) 

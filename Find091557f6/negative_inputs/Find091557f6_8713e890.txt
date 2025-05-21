@@ -1,0 +1,1 @@
+mkcd dir3; al_touch foo; mkcd dir1; al_touch foo; al_touch foo; al_popd; al_touch bar; al_popd; al_ln -s bar foo; al_ln -s .. dir1; TZ=Africa/Maputo timeout 0.5s find ../directory2/../bar bar -follow

@@ -1,0 +1,1 @@
+timeout 0.5s find dir1 -ctime +606 -o -not -not -cnewer ..

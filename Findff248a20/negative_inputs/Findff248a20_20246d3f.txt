@@ -1,0 +1,1 @@
+al_touch foo; al_ln -s . directory2; timeout 0.5s find ./dir1/../. -follow

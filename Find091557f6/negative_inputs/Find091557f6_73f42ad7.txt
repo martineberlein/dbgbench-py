@@ -1,0 +1,1 @@
+mkcd dir3; al_ln -s ./../.. bar; al_ln -s ./dir3/foo dir1; al_popd; timeout 0.5s find dir3  \( ! !  \( -cmin -0304 \)  \) 

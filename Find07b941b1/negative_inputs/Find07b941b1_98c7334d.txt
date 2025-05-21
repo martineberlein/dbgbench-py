@@ -1,0 +1,1 @@
+al_ln -s .. foo; al_ln -s .. foo; mkcd dir3; al_popd; timeout 0.5s find .././..

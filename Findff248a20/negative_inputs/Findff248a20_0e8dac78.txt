@@ -1,0 +1,1 @@
+mkcd dir3; al_ln -s . link; al_popd; timeout 0.5s find . -ignore_readdir_race -and -not  \( ! -not  \( -fprintf ../foo '\_' \)  \) 

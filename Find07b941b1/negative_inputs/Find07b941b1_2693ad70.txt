@@ -1,0 +1,1 @@
+timeout 0.5s find -iname '([:-#])|([ç-\x73])' -iname '\b|([ç-\x73])'

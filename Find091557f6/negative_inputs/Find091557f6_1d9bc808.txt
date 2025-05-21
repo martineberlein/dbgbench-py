@@ -1,0 +1,1 @@
+al_ln -s .././foo link; al_ln -s ../. dir1; timeout 0.5s find -L -newer bar -and -fls .. -or  \( -xdev \) 

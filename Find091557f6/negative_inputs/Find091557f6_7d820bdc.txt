@@ -1,0 +1,1 @@
+al_ln -s link foo; timeout 0.5s find -L -type b

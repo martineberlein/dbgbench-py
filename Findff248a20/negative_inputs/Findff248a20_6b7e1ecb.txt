@@ -1,0 +1,1 @@
+mkcd dir2; al_popd; al_ln -s link foo; TZ=Europe/Guernsey timeout 0.5s find  \( -follow , ! -false ,  \( -quit -a -mount \)  \) 

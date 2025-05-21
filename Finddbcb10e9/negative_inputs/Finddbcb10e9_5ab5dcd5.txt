@@ -1,0 +1,1 @@
+TZ=Europe/Dublin timeout 0.5s find -P . ./././foo foo

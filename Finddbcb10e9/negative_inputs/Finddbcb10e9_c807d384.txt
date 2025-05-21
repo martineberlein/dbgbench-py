@@ -1,0 +1,1 @@
+LC_ALL=sr_YU LC_MESSAGES=cs_CZ.UTF-8 LANG=de_AT timeout 0.5s find  \(  \( -mindepth 2 \)  \) 

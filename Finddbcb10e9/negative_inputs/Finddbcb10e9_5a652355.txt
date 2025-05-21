@@ -1,0 +1,1 @@
+al_ln -s ../././dir2/./dir2 bar; LC_ALL=en_IE.UTF-8 LC_CTYPE=af_ZA.UTF-8 LANG=ja_JP.eucJP timeout 0.5s find -anewer .

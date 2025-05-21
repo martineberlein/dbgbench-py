@@ -1,0 +1,1 @@
+mkcd directory2; al_popd; mkcd directory2; al_popd; timeout 0.5s find dir1 -noleaf -or  \(  \( -follow , -noignore_readdir_race -a -follow \)  \) 

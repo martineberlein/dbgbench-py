@@ -1,0 +1,1 @@
+ LC_CTYPE=it_CH.ISO8859-15 LANG=ko_KR.UTF-8 timeout 0.5s find

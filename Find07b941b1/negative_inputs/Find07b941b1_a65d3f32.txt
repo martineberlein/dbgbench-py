@@ -1,0 +1,1 @@
+al_touch link; al_touch foo; al_touch foo; al_touch bar; timeout 0.5s find -not !  \( -warn , ! -not -mindepth 0 -and -noleaf -and -not -fprintf .. ' ' -a -print \) 

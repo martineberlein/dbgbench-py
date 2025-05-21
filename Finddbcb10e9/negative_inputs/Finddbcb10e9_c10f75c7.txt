@@ -1,0 +1,1 @@
+al_touch foo; mkcd dir2; al_popd; al_touch bar; al_touch foo; timeout 0.5s find

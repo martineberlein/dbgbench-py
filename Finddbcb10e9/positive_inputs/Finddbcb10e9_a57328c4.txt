@@ -1,0 +1,1 @@
+ LC_MESSAGES=sr_YU.ISO8859-5 LANG=sr_YU.ISO8859-5 timeout 0.5s find -L .. -mtime 2

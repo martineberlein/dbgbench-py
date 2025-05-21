@@ -1,0 +1,1 @@
+mkcd directory2; al_touch bar; mkcd dir2; al_touch foo; al_popd; al_touch bar; al_ln -s ./foo dir3; al_popd; al_touch foo;  LC_CTYPE=en_GB LANG=be_BY.CP1131 timeout 0.5s find -H -follow

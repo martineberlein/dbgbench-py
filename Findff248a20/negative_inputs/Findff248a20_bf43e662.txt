@@ -1,0 +1,1 @@
+mkcd directory2; al_touch foo; al_touch link; al_ln -s dir3/directory2 link; al_popd; timeout 0.5s find -P dir1  \( !  \( -nowarn \)  \) 

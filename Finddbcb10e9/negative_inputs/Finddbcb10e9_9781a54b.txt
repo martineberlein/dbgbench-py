@@ -1,0 +1,1 @@
+al_ln -s directory2/link foo;  LC_CTYPE=fr_FR LANG=pt_PT.ISO8859-15 timeout 0.5s find .

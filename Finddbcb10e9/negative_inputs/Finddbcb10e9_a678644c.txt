@@ -1,0 +1,1 @@
+al_ln -s bar dir1; al_touch foo; al_touch bar; al_touch link; POSIXLY_CORRECT=1 timeout 0.5s find -P link .

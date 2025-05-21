@@ -1,0 +1,1 @@
+LC_ALL=am_ET.UTF-8 LC_COLLATE=de_CH.ISO8859-15 LANG=et_EE.ISO8859-15 timeout 0.5s find -P . . -follow

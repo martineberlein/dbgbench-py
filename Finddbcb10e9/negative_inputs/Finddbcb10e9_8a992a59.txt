@@ -1,0 +1,1 @@
+timeout 0.5s find -P . link ./dir3 .. .. foo -anewer dir1/./foo -and -daystart

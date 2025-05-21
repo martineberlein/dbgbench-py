@@ -1,0 +1,1 @@
+al_touch bar; al_touch bar; al_ln -s directory2 link; al_touch foo; timeout 0.5s find dir1 -warn

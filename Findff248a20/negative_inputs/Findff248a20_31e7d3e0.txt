@@ -1,0 +1,1 @@
+al_touch link; al_touch link;  LC_MESSAGES=hr_HR.ISO8859-2 LANG=fr_FR.UTF-8 timeout 0.5s find -L dir1 -print

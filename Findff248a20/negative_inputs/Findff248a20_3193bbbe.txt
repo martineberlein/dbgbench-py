@@ -1,0 +1,1 @@
+ LC_CTYPE=en_CA.US-ASCII LANG=en_CA.US-ASCII timeout 0.5s find -L bar -anewer . -or  \(  \(  \( -not -prune \)  \)  \) 

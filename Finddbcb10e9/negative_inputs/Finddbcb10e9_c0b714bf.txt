@@ -1,0 +1,1 @@
+al_touch link; al_ln -s dir2/./../.. foo; timeout 0.5s find .././. . ../. -daystart

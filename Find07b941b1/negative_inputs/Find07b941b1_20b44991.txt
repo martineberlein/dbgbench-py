@@ -1,0 +1,1 @@
+al_touch link; al_ln -s dir3/foo dir1; al_touch link; al_ln -s dir1/././directory2/foo dir1;  LC_COLLATE=be_BY.CP1251 LANG=ko_KR timeout 0.5s find

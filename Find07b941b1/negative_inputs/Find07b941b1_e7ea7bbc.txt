@@ -1,0 +1,1 @@
+mkcd dir2; al_popd; al_ln -s dir2 bar; timeout 0.5s find -daystart

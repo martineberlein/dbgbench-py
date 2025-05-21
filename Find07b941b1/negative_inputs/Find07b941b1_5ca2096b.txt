@@ -1,0 +1,1 @@
+ LC_MESSAGES=ko_KR.UTF-8 LANG=fi_FI.ISO8859-1 timeout 0.5s find ./..

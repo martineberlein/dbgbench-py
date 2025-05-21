@@ -1,0 +1,1 @@
+mkcd dir3; mkcd dir3; al_popd; al_popd; al_touch bar; al_ln -s foo bar; al_touch link; al_touch bar; timeout 0.5s find -H -regex '.*'

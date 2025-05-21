@@ -1,0 +1,1 @@
+ LC_CTYPE=af_ZA LANG=et_EE timeout 0.5s find link

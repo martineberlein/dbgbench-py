@@ -1,0 +1,1 @@
+mkcd dir1; mkcd dir1; mkcd dir1; al_popd; al_ln -s foo link; al_popd; al_popd; mkcd dir1; al_popd; timeout 0.5s find -L -uid 30606002

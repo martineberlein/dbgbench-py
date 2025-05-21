@@ -1,0 +1,1 @@
+mkcd dir3; al_popd; timeout 0.5s find directory2/foo dir2 -cmin 08

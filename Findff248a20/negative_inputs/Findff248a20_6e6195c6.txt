@@ -1,0 +1,1 @@
+TZ=US/Aleutian timeout 0.5s find -P bar dir2/../link ..

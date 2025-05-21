@@ -1,0 +1,1 @@
+mkcd dir1; mkcd dir1; al_popd; al_popd; timeout 0.5s find -execdir pwd {} + -or -regex '.*' -or -fprint0 bar

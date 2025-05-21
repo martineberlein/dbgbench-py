@@ -1,0 +1,1 @@
+mkcd dir1; al_touch link; al_popd;  LC_MESSAGES=en_NZ.ISO8859-15 LANG=ru_RU.CP1251 timeout 0.5s find ./directory2/. dir2/../directory2/.. -type f

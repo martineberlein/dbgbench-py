@@ -1,0 +1,1 @@
+timeout 0.5s find dir1 -mmin -6 -or  \( -noignore_readdir_race \) 

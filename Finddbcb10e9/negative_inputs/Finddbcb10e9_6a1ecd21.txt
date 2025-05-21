@@ -1,0 +1,1 @@
+LC_ALL=ja_JP.SJIS LC_CTYPE=fi_FI LANG=nl_BE timeout 0.5s find

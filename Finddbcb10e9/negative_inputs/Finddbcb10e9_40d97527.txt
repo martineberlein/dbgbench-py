@@ -1,0 +1,1 @@
+al_touch bar; LC_ALL=bg_BG.CP1251 LC_CTYPE=af_ZA.ISO8859-1 LANG=ro_RO.ISO8859-2 timeout 0.5s find -H .. -follow

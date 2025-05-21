@@ -1,0 +1,1 @@
+timeout 0.5s find ! -amin 1 -a ! -amin 1 -a -noleaf

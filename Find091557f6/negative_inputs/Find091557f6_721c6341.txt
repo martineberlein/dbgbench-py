@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s bar foo; mkcd dir1; al_ln -s bar foo; al_ln -s foo link; al_popd; mkcd dir1; al_ln -s foo dir2; al_ln -s foo bar; al_popd; al_popd; timeout 0.5s find -H . .. -not -not -not -ignore_readdir_race -a  \( -not -daystart -or -ignore_readdir_race -and -quit \) 

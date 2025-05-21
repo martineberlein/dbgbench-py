@@ -1,0 +1,1 @@
+timeout 0.5s find -path '\7\0\w' -iwholename 'E|[^é-`]'

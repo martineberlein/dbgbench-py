@@ -1,0 +1,1 @@
+mkcd dir3; al_popd; mkcd dir2; al_popd; al_touch bar; mkcd directory2; al_popd; timeout 0.5s find  \( ! -nowarn -or -mindepth 0 -or  \( -execdir ls {} + -o -print \)  \) 

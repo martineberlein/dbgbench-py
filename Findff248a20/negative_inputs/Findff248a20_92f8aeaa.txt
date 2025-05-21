@@ -1,0 +1,1 @@
+al_touch bar; mkcd dir3; al_popd; NLSPATH=../. timeout 0.5s find -H -ls -o -newer foo

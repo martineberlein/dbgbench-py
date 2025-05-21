@@ -1,0 +1,1 @@
+al_ln -s ../bar dir1; timeout 0.5s find dir1 -fprint0 bar

@@ -1,0 +1,1 @@
+mkcd dir3; al_ln -s foo foo; al_touch foo; al_touch foo; al_popd; al_touch link; timeout 0.5s find . -ls

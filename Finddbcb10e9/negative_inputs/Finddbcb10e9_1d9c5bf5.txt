@@ -1,0 +1,1 @@
+TZ=Europe/Stockholm timeout 0.5s find ../dir3 -fprint dir2/.

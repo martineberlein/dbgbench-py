@@ -1,0 +1,1 @@
+al_touch link; al_touch foo; timeout 0.5s find  \( -maxdepth 5 -printf '%_\, ' \) 

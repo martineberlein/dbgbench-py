@@ -1,0 +1,1 @@
+LC_ALL=de_DE LC_MESSAGES=fr_BE.UTF-8 LANG=hu_HU timeout 0.5s find -iregex ''

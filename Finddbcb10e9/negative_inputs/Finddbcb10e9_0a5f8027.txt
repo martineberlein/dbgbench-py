@@ -1,0 +1,1 @@
+al_ln -s directory2/dir3/.. dir1; al_ln -s . link; TZ=America/Detroit timeout 0.5s find -L dir1 ! -execdir pwd \; -or -daystart

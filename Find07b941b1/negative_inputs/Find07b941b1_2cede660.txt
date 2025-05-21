@@ -1,0 +1,1 @@
+timeout 0.5s find -depth -or  \( -warn -or -xdev -or -not -atime -0 -or -d -follow \) 

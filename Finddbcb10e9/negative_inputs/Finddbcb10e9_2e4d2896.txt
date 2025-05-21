@@ -1,0 +1,1 @@
+NLSPATH=../.. timeout 0.5s find ../bar

@@ -1,0 +1,1 @@
+mkcd directory2; al_popd; al_touch bar; mkcd directory2; al_popd; al_touch bar; NLSPATH=directory2 timeout 0.5s find -not -newer dir3 -a  \(  \(  \( -not -follow \)  \)  \) 

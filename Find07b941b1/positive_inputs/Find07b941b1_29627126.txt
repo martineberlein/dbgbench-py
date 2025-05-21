@@ -1,0 +1,1 @@
+al_touch bar; POSIXLY_CORRECT=1 timeout 0.5s find bar -regex '.*'

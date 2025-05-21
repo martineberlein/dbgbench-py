@@ -1,0 +1,1 @@
+mkcd dir1; mkcd dir2; al_ln -s foo dir1; al_popd; al_popd; mkcd dir2; al_ln -s . link; mkcd dir1; mkcd dir1; al_ln -s . link; al_popd; al_popd; al_popd; timeout 0.5s find -H -not  \( -type c -or -cnewer . -o -print \) 

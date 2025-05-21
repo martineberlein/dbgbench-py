@@ -1,0 +1,1 @@
+mkcd dir3; mkcd directory2; al_popd; al_popd; al_touch foo; al_ln -s link dir2; TZ=Europe/Brussels timeout 0.5s find -not -follow -a -printf '  ' -o -prune

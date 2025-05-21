@@ -1,0 +1,1 @@
+LC_ALL=eu_ES.ISO8859-1 LC_MESSAGES=it_IT.ISO8859-1 LANG=zh_CN.eucCN timeout 0.5s find -P ../.. -print0

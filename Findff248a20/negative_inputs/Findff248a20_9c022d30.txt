@@ -1,0 +1,1 @@
+al_touch foo;  LC_COLLATE=sr_YU.UTF-8 LANG=zh_CN.eucCN timeout 0.5s find -warn -o -follow

@@ -1,0 +1,1 @@
+mkcd dir3; al_popd; al_touch bar; TZ=Europe/Tiraspol timeout 0.5s find -P . bar

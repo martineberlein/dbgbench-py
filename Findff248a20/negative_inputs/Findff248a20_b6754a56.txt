@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s . link; al_popd; al_ln -s dir2 bar; LC_ALL=he_IL LC_CTYPE=en_AU LANG=nl_NL.ISO8859-1 timeout 0.5s find .

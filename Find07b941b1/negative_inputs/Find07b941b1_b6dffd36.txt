@@ -1,0 +1,1 @@
+TZ=Europe/London timeout 0.5s find -P ../bar -prune

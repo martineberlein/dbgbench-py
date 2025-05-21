@@ -1,0 +1,1 @@
+mkcd directory2; al_popd; al_ln -s dir1/. bar; al_touch bar; timeout 0.5s find

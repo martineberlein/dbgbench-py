@@ -1,0 +1,1 @@
+al_ln -s ./directory2 foo; timeout 0.5s find dir1 -follow

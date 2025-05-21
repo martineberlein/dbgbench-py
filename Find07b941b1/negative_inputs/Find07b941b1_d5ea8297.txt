@@ -1,0 +1,1 @@
+al_touch link; al_touch link;  LC_COLLATE=be_BY.CP1131 LANG=it_IT.ISO8859-1 timeout 0.5s find -L -daystart

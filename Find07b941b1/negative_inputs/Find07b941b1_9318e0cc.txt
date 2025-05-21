@@ -1,0 +1,1 @@
+LC_ALL=de_AT.ISO8859-1 LC_MESSAGES=ja_JP.SJIS LANG=de_CH timeout 0.5s find -mindepth 9 -daystart

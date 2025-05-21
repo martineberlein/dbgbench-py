@@ -1,0 +1,1 @@
+timeout 0.5s find ! -not -amin 0 , -not -amin 0 , -quit

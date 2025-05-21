@@ -1,0 +1,1 @@
+LC_ALL=fr_CH.ISO8859-15 LC_CTYPE=fr_CH.ISO8859-15 LANG=ko_KR.eucKR timeout 0.5s find -follow -a  \( -regex '.*' \) 

@@ -1,0 +1,1 @@
+mkcd dir1; mkcd dir3; al_popd; al_popd; timeout 0.5s find . -follow

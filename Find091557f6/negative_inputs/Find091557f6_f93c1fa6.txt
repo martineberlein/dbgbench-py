@@ -1,0 +1,1 @@
+mkcd dir1; al_popd; timeout 0.5s find -L -mtime 0 -o -warn -or -noignore_readdir_race

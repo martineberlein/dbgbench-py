@@ -1,0 +1,1 @@
+mkcd dir3; al_popd; al_touch foo; al_touch foo; al_touch foo; al_touch foo; timeout 0.5s find -lname '\5|\0'

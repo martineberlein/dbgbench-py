@@ -1,0 +1,1 @@
+TZ=Africa/Nairobi timeout 0.5s find ..

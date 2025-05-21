@@ -1,0 +1,1 @@
+timeout 0.5s find -amin +00 -o -regex '\n*'

@@ -1,0 +1,1 @@
+NLSPATH=dir3/directory2 timeout 0.5s find ../.. -print0 -a -print0 -a  \( -printf '\\n' -and  \( -ctime 00 \)  \) 

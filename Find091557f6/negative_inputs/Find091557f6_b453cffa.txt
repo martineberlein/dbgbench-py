@@ -1,0 +1,1 @@
+al_ln -s bar bar; al_ln -s dir3/bar bar; timeout 0.5s find -H dir3 -quit -or ! ! -print -o -quit

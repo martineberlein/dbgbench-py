@@ -1,0 +1,1 @@
+al_ln -s ./. dir3; al_touch bar; al_ln -s foo dir2; timeout 0.5s find -P foo

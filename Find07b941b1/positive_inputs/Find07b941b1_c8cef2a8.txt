@@ -1,0 +1,1 @@
+timeout 0.5s find -regex 'g|(\0{70,}Z)*gZ'

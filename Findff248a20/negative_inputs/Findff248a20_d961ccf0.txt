@@ -1,0 +1,1 @@
+mkcd dir1; al_popd; mkcd dir1; al_ln -s . link; al_popd; timeout 0.5s find -P dir2/foo ./dir2  \( -exec pwd {} + , -fprintf ../dir3/dir1/. '\\x0b\/' \) 

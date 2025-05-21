@@ -1,0 +1,1 @@
+al_touch bar; al_ln -s ././. bar; timeout 0.5s find -ignore_readdir_race

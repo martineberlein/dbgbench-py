@@ -1,0 +1,1 @@
+al_touch link; timeout 0.5s find ./foo -not -mindepth 0 -or -mindepth 0

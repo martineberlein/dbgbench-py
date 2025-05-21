@@ -1,0 +1,1 @@
+mkcd directory2; al_popd; al_ln -s bar directory2; timeout 0.5s find -uid -4 -o  \( -printf '  \,' \) 

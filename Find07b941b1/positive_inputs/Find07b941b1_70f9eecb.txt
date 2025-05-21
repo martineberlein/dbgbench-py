@@ -1,0 +1,1 @@
+al_ln -s ./dir3/../directory2 link; timeout 0.5s find -regex 'm*'

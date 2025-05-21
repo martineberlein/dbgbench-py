@@ -1,0 +1,1 @@
+TZ=Europe/Monaco timeout 0.5s find dir3/../../dir3/../../././../bar bar -print

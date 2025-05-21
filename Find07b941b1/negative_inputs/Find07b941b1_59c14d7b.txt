@@ -1,0 +1,1 @@
+al_touch foo; LC_ALL=en_CA LC_CTYPE=zh_CN.GB2312 LANG=am_ET.UTF-8 timeout 0.5s find dir2/./.

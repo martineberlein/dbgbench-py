@@ -1,0 +1,1 @@
+al_touch foo; al_ln -s dir3/dir3 bar;  LC_CTYPE=es_ES LANG=be_BY.CP1131 timeout 0.5s find foo -daystart

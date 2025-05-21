@@ -1,0 +1,1 @@
+al_touch link; al_ln -s foo bar; mkcd dir1; al_popd; mkcd dir1; al_ln -s link dir2; al_popd; timeout 0.5s find -L -type f

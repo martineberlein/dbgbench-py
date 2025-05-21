@@ -1,0 +1,1 @@
+al_touch bar; al_touch foo; mkcd dir2; al_popd; timeout 0.5s find -not -noleaf -o -noleaf -not -noleaf

@@ -1,0 +1,1 @@
+ LC_COLLATE=sk_SK.UTF-8 LANG=en_AU.UTF-8 timeout 0.5s find -P ../..

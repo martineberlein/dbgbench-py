@@ -1,0 +1,1 @@
+mkcd dir3; mkcd dir2; al_popd; al_touch link; al_popd; timeout 0.5s find -H

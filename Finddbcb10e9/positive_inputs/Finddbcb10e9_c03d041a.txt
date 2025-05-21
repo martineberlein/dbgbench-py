@@ -1,0 +1,1 @@
+mkcd dir2; al_popd; mkcd dir1; al_popd; TZ=Europe/Kiev timeout 0.5s find -mtime 2

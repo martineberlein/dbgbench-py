@@ -1,0 +1,1 @@
+TZ=Europe/Busingen timeout 0.5s find -P -noleaf

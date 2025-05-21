@@ -1,0 +1,1 @@
+TZ=Africa/Algiers timeout 0.5s find -H .. link

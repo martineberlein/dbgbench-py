@@ -1,0 +1,1 @@
+timeout 0.5s find  \(  \(  \( -d -or ! -atime 30 -o -ignore_readdir_race -regex '.*' \)  \)  \) 

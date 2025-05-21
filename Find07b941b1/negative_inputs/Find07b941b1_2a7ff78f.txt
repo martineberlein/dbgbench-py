@@ -1,0 +1,1 @@
+NLSPATH=. timeout 0.5s find -L -fls dir1/.. -and -print0 -and -fls dir1/.. -and -print0 -and -regex '.*'

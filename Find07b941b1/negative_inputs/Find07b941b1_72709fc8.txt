@@ -1,0 +1,1 @@
+mkcd directory2; al_ln -s . dir2; al_popd; al_touch bar; POSIXLY_CORRECT=1 timeout 0.5s find -H  \( -not -d \) 

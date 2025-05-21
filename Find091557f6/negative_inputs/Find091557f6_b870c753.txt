@@ -1,0 +1,1 @@
+al_ln -s dir3 link; al_ln -s link bar; mkcd directory2; mkcd dir2; al_ln -s bar foo; al_popd; al_popd; timeout 0.5s find dir3 !  \( -ignore_readdir_race \) 

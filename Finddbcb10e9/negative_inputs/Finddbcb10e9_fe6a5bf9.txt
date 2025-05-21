@@ -1,0 +1,1 @@
+timeout 0.5s find -L !  \( -follow -and -print0 ,  \( -not ! -anewer ./../dir2 \)  \) 

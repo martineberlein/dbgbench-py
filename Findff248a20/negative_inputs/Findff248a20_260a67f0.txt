@@ -1,0 +1,1 @@
+al_ln -s dir2 link; NLSPATH=.. timeout 0.5s find .././directory2 link -anewer dir2

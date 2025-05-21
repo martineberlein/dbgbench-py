@@ -1,0 +1,1 @@
+al_ln -s bar directory2; al_ln -s bar bar; timeout 0.5s find -regex '.*'

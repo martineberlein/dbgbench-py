@@ -1,0 +1,1 @@
+timeout 0.5s find -P -not  \( -ctime 600 -o -printf '\0' \) 

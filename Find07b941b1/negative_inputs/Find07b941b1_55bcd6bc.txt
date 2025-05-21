@@ -1,0 +1,1 @@
+NLSPATH=dir2/./.././. timeout 0.5s find -P -print0

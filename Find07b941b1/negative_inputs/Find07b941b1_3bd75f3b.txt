@@ -1,0 +1,1 @@
+NLSPATH=dir1 timeout 0.5s find link  \( -not  \( -not  \(  \(  \( -ignore_readdir_race -and  \( -type d -a -follow \)  \)  \)  \)  \)  \) 

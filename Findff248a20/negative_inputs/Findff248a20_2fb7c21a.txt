@@ -1,0 +1,1 @@
+al_touch foo; al_touch foo; al_ln -s ../link bar; mkcd dir1; al_popd; timeout 0.5s find dir1 -maxdepth 3000070

@@ -1,0 +1,1 @@
+TZ=Europe/Riga timeout 0.5s find -L -not -regex '.*'

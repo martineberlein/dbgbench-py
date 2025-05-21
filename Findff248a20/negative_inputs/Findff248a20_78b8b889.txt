@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s ../.././dir2/../dir1/dir3/.. foo; al_popd; NLSPATH=. timeout 0.5s find -mount !  \( ! -prune \) 

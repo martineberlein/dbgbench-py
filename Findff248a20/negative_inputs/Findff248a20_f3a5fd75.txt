@@ -1,0 +1,1 @@
+mkcd dir1; al_touch link; mkcd dir3; mkcd dir3; al_popd; al_touch link; al_touch foo; al_popd; mkcd dir3; mkcd directory2; al_popd; al_ln -s dir3/./. foo; al_popd; al_popd; timeout 0.5s find foo -follow

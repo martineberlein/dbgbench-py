@@ -1,0 +1,1 @@
+mkcd directory2; al_touch link; al_popd; al_touch foo; POSIXLY_CORRECT=1 timeout 0.5s find ../link

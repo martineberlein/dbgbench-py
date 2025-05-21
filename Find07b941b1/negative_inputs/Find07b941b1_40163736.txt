@@ -1,0 +1,1 @@
+timeout 0.5s find -maxdepth 004070 -or -amin 0 -o -ls

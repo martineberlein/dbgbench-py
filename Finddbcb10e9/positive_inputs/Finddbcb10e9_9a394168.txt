@@ -1,0 +1,1 @@
+TZ=Europe/Kaliningrad timeout 0.5s find -H ! -mtime 2 -mtime 2 -true

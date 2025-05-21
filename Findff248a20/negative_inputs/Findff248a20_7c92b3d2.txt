@@ -1,0 +1,1 @@
+mkcd dir2; al_popd; al_touch link; POSIXLY_CORRECT=1 timeout 0.5s find -P ! -iname '' -lname '(\w)'

@@ -1,0 +1,1 @@
+mkcd dir1; al_ln -s foo bar; mkcd dir1; al_ln -s bar foo; al_ln -s bar bar; al_ln -s ../foo link; al_ln -s foo directory2; al_popd; al_popd; timeout 0.5s find -L -type f

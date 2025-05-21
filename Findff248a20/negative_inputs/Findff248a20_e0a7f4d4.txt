@@ -1,0 +1,1 @@
+mkcd dir2; al_ln -s . bar; al_popd; timeout 0.5s find . -not  \( -not -cmin 0 -or -noleaf  \(  \(  \( -fprintf .././bar '  \!' \)  \)  \)  \) 

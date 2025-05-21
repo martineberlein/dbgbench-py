@@ -1,0 +1,1 @@
+timeout 0.5s find  \( -cmin 0 -o -ctime 0 -o -d -o -warn \) 

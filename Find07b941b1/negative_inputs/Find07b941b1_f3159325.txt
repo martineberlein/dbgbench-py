@@ -1,0 +1,1 @@
+ LC_COLLATE=ru_RU.UTF-8 LANG=et_EE.ISO8859-15 timeout 0.5s find

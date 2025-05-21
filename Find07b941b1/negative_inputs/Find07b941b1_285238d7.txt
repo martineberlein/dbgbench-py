@@ -1,0 +1,1 @@
+timeout 0.5s find -maxdepth 3 -o ! -quit -o  \( -maxdepth 0 -or -quit \) 
