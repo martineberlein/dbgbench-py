@@ -1,0 +1,1 @@
+printf 's' |  LC_CTYPE=en_NZ.ISO8859-1 timeout 0.5s grep -e ''

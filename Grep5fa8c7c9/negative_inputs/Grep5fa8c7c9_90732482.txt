@@ -1,0 +1,1 @@
+printf '\r\xd1\xeFb' | LC_ALL=cs_CZ.utf8 timeout 0.5s grep -E --null-data -L --only-matching -7 --line-buffered ''

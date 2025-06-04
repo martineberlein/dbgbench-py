@@ -1,0 +1,1 @@
+printf '\n2-8\n~' | timeout 0.5s grep -u --files-with-matches -w ''

@@ -1,0 +1,1 @@
+printf '""' | GREP_COLORS='' timeout 0.5s grep --line-number '^$'

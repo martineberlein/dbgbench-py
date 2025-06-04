@@ -1,0 +1,1 @@
+printf '".g' | GREP_COLORS='cx=0;79877' timeout 0.5s grep -i -n -i -n '^[?]'

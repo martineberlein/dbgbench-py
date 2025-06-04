@@ -1,0 +1,1 @@
+printf '\n11--\t' | timeout 0.5s grep -E --directories=read ''

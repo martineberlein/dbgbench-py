@@ -1,0 +1,1 @@
+printf '"\xbc\xfEe' | GREP_COLORS='ne' timeout 0.5s grep ''

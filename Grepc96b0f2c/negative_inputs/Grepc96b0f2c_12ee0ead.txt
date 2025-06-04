@@ -1,0 +1,1 @@
+printf 'a\nab\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -G -b --invert-match '--label=#@\r\\' --line-buffered ''

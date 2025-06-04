@@ -1,0 +1,1 @@
+printf 'a--G' | LC_ALL=hi_IN.ISCII-DEV timeout 0.5s grep --extended-regexp ''

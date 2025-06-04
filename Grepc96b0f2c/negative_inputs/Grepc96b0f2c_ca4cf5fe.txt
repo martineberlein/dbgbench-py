@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | GREP_COLORS='ms=01;31' timeout 0.5s grep --word-regexp --no-messages -Z --initial-tab -a -Z -d skip --no-messages -Z --initial-tab -a -Z --word-regexp --no-messages -Z --initial-tab -a -Z -d skip --no-messages -Z --initial-tab -a -Z -d skip ''

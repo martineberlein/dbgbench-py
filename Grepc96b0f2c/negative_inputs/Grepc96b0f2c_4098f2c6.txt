@@ -1,0 +1,1 @@
+printf 'a\n_c\n' | timeout 0.5s grep -A 8 -m 800 '^3'

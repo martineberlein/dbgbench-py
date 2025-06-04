@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep -G -d skip -U --devices=read --context=1 '[^\x27É]'

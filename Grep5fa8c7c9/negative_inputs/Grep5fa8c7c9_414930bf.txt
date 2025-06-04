@@ -1,0 +1,1 @@
+printf 'abbk' | timeout 0.5s grep -G ''

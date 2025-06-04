@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | POSIXLY_CORRECT=1 timeout 0.5s grep --extended-regexp --line-buffered -s --before-context=26 --before-context=3 '^$'

@@ -1,0 +1,1 @@
+printf 'a\n\n\no' | GREP_COLORS='' timeout 0.5s grep -i -n '\t$'

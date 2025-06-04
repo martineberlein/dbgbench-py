@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=sk_SK.ISO8859-2 timeout 0.5s grep -i -n '()'

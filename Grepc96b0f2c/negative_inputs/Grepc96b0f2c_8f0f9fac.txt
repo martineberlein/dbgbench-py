@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=pl_PL.ISO8859-2 timeout 0.5s grep -y -n '^()()'

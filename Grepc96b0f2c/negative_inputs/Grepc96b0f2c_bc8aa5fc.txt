@@ -1,0 +1,1 @@
+printf '\r\n\n--' | LC_ALL=en_US.utf8 timeout 0.5s grep -n '^H[^\$]{,-050000}|\B+N'

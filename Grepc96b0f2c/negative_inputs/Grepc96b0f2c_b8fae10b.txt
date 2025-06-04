@@ -1,0 +1,1 @@
+printf 'ab\nb\n' | LC_ALL=sl_SI.utf-8 LC_MESSAGES=tr_TR timeout 0.5s grep -i -n ''

@@ -1,0 +1,1 @@
+printf 'abcd' | LC_ALL=fr_CA.utf8 LANG=fr_FR.ISO8859-1 timeout 0.5s grep -F -A 20 '--label=.' --line-regexp -I ''

@@ -1,0 +1,1 @@
+printf '\t' | timeout 0.5s grep -E -U --word-regexp -q '((((^|(^|^)))))*()'

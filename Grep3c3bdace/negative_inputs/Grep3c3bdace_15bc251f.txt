@@ -1,0 +1,1 @@
+printf '\n^t' | timeout 0.5s grep -E --silent '(^| )*[^#<]{0}\W{-0,}\W{0,}\W{0,}'

@@ -1,0 +1,1 @@
+printf 'a\r\nbb' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i -v -u --color -u --color --silent -i -n '^\0'

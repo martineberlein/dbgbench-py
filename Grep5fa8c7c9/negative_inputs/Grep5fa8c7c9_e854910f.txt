@@ -1,0 +1,1 @@
+printf 'a--' |  LC_MESSAGES=he_IL LANG=he_IL timeout 0.5s grep -F ''

@@ -1,0 +1,1 @@
+printf 'aI--' | LC_ALL=en_US.utf8 timeout 0.5s grep -F -e 'I?|r\0'

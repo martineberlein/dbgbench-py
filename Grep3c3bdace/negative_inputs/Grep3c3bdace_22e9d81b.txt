@@ -1,0 +1,1 @@
+printf '\t--\xCE\xbD' | timeout 0.5s grep --extended-regexp --null-data -l --line-regexp -B 20 ''

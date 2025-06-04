@@ -1,0 +1,1 @@
+printf 'a\r\n8\n' | LC_ALL=sl_SI.ISO8859-2 LANG=zh_CN timeout 0.5s grep -E ''

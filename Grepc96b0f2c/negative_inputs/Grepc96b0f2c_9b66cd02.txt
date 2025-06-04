@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' |  LC_COLLATE=be_BY.utf8 LANG=it_CH.ISO8859-15 timeout 0.5s grep -n '^$'

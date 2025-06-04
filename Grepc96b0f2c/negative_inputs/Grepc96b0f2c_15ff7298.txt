@@ -1,0 +1,1 @@
+printf '"\n\ng\t' | GREP_COLOR='0;4;0' timeout 0.5s grep ''

@@ -1,0 +1,1 @@
+printf 'h' | timeout 0.5s grep --extended-regexp --before-context=8 -U -A 7 -H ''

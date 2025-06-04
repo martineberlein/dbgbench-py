@@ -1,0 +1,1 @@
+printf '"X"' | timeout 0.5s grep -300 -c -300 --line-buffered -v '--exclude-dir=\*\x0b\)%\' --binary ''

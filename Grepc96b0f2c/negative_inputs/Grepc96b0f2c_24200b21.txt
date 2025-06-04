@@ -1,0 +1,1 @@
+printf '\xdd\x0Fa"m-' | GREP_COLORS='bn=32:' timeout 0.5s grep --extended-regexp --line-buffered --ignore-case --files-without-match --before-context=2 --invert-match ''

@@ -1,0 +1,1 @@
+printf '\t\n\nb\x8f\xf3' | LC_ALL=be_BY.CP1131 timeout 0.5s grep --extended-regexp --line-regexp -Z --regexp=''

@@ -1,0 +1,1 @@
+printf 'U-&' | GREP_COLOR='00' timeout 0.5s grep -E -q -q '\b*[]]'

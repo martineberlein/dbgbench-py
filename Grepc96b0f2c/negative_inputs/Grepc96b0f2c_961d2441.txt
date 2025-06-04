@@ -1,0 +1,1 @@
+printf '\x0d\xAD-#~-\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -u --files-with-matches -i -x --after-context=7 ''

@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep '--label={' --ignore-case -A 3 --context=50 --line-buffered ''

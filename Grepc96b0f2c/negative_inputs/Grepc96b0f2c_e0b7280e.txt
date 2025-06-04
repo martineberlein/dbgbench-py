@@ -1,0 +1,1 @@
+printf 'a\n\n6\n' | LC_ALL=hr_HR.utf-8 timeout 0.5s grep -v -n '^$'

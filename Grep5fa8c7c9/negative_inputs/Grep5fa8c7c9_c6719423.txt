@@ -1,0 +1,1 @@
+printf '\rbbd' | timeout 0.5s grep -q ''

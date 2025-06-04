@@ -1,0 +1,1 @@
+printf '\xcc\n$b\n' |  LC_COLLATE=sk_SK timeout 0.5s grep -i -n -n '^$'

@@ -1,0 +1,1 @@
+printf '\xC4\xB0\xC4\xB0\xC4\xC0\xC4\xC0\xC4\xB0Y\xaf\x6E\r' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i '.\0|T{-66,2}....'

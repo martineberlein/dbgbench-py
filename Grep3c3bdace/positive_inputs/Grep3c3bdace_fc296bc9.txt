@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep -E --binary '--exclude=:' --line-buffered --files-with-matches -z -A 6 '(^| )*( |$)'

@@ -1,0 +1,1 @@
+printf '\t' | timeout 0.5s grep --basic-regexp --quiet -B 4 -I --invert-match -z -C 2 ''

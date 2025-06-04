@@ -1,0 +1,1 @@
+printf 'w\nbb\n' |  LC_CTYPE=zh_CN LANG=be_BY.ISO8859-5 timeout 0.5s grep --extended-regexp --null -m 9 --after-context=300 -I '^$'

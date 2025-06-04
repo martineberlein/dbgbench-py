@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=da_DK.ISO8859-15 timeout 0.5s grep -i -n '[^_-\x6E]{0,-001}$'

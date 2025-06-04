@@ -1,0 +1,1 @@
+printf 'H\n\nb\n' | GREP_COLOR='70083700' timeout 0.5s grep -i -i -i -i -i -i -i -n ''

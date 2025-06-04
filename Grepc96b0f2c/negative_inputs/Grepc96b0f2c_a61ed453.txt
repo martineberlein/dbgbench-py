@@ -1,0 +1,1 @@
+printf '"-\t' | LC_ALL=en_NZ.ISO8859-1 LC_COLLATE=no_NO.ISO8859-1 timeout 0.5s grep --line-regexp --line-number -C 5 --line-regexp ''

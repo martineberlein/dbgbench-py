@@ -1,0 +1,1 @@
+printf 'ad3d' | LC_ALL=fr_FR.ISO8859-15 timeout 0.5s grep -F '\|[6]|\Wp|()'

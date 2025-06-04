@@ -1,0 +1,1 @@
+printf 'X--X' | GREP_COLORS='bn=32:ms=01;31' timeout 0.5s grep -E -q '\>\>\<\w|\0*{-02,}([<-<])'

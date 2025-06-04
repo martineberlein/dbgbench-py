@@ -1,0 +1,1 @@
+printf 'abcd' |  LC_CTYPE=ca_ES.ISO8859-15 timeout 0.5s grep --invert-match --colour -A 99566 --binary-files=without-match --line-buffered ''

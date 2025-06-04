@@ -1,0 +1,1 @@
+printf 'a\n$\xAf\n' | LC_ALL=pl_PL timeout 0.5s grep -i -i -n --regexp=''

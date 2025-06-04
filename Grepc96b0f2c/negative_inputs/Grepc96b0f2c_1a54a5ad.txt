@@ -1,0 +1,1 @@
+printf 'g\t-"-' |  timeout 0.5s grep -i -n '^$'

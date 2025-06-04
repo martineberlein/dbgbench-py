@@ -1,0 +1,1 @@
+printf '"\n\n\r8' | timeout 0.5s grep -E --line-buffered -A 4 -m 20000 --ignore-case '[^_-)]^|b'

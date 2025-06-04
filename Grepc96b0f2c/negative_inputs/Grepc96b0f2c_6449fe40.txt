@@ -1,0 +1,1 @@
+printf 'a$Mb\n' | LC_ALL=be_BY timeout 0.5s grep --word-regexp -n 'a$'

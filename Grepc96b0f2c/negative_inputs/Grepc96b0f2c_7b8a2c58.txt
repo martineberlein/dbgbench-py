@@ -1,0 +1,1 @@
+printf 'a\n\nb\xcA' | LC_ALL=be_BY.CP1251 LC_MESSAGES=el_GR.ISO8859-7 timeout 0.5s grep --directories=read --after-context=800 --null-data -b --before-context=5 '^$'

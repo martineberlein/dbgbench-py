@@ -1,0 +1,1 @@
+printf '\xa0\x17l\n{b' | LC_ALL=ro_RO.utf8 timeout 0.5s grep ''

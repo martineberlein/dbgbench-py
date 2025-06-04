@@ -1,0 +1,1 @@
+printf '^\n\n\xb6\x6b\xb6\x6b' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n -A 6 --color=auto -z '--include=[;' '^$'

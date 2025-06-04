@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep --extended-regexp -d skip --before-context=70 --binary-files=without-match --invert-match -z -l --context=2 -C 8 -u '^$'

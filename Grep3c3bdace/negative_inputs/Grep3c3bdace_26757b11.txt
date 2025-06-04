@@ -1,0 +1,1 @@
+printf '\xcE\xD0-' | timeout 0.5s grep -E -q '([+!\x4E])*(\+| )'

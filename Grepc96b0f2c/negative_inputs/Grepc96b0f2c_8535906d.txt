@@ -1,0 +1,1 @@
+printf 'Bs\nb\n' |  timeout 0.5s grep -i -n --max-count=80 --line-buffered '^$'

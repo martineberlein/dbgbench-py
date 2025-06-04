@@ -1,0 +1,1 @@
+printf 'a5\nb{' | LC_ALL=bg_BG timeout 0.5s grep --max-count=5 -D skip --context=4 -h -u ''

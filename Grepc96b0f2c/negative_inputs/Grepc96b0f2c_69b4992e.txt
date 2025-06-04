@@ -1,0 +1,1 @@
+printf '"-\t\r-\r' | timeout 0.5s grep --fixed-strings -y ''

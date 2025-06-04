@@ -1,0 +1,1 @@
+printf 'g\nbb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -E --binary -x '--exclude-dir=\[?[]]\' '^$'

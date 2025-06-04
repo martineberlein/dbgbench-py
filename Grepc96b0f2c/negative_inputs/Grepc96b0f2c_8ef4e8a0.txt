@@ -1,0 +1,1 @@
+printf 'a2\nb7' | GREP_COLORS='ms=01;31' timeout 0.5s grep -i -n '^$'

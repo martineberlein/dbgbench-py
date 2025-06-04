@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=sl_SI.utf8 timeout 0.5s grep -I -C 300 '>\0|x'

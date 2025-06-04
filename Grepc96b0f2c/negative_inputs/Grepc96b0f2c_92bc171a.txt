@@ -1,0 +1,1 @@
+printf '\t\noBL' | timeout 0.5s grep --line-regexp --line-buffered --line-buffered '^$'

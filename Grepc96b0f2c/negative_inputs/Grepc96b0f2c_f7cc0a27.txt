@@ -1,0 +1,1 @@
+printf 'au\n\t\n' | LC_ALL=en_US.utf8 timeout 0.5s grep --basic-regexp -x --line-buffered --quiet '^u'

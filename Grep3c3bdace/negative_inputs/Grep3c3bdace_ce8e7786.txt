@@ -1,0 +1,1 @@
+printf '"--\t_\x28' | timeout 0.5s grep --null-data --silent --ignore-case --null-data '(()\3|()\>|\w{0,0})*(\0|^)'

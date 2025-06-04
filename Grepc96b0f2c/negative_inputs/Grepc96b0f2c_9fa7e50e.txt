@@ -1,0 +1,1 @@
+printf '\xF5\x76-\r\xBF\x93-' | POSIXLY_CORRECT=1 timeout 0.5s grep --fixed-strings '--exclude=;' '--include=:' --colour=always ''

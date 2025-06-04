@@ -1,0 +1,1 @@
+printf 'a\nQbQ' | LC_ALL=POSIX timeout 0.5s grep -x --unix-byte-offsets '^$'

@@ -1,0 +1,1 @@
+printf '\x1C\xAB\t5-' | timeout 0.5s grep -v --before-context=7 ''

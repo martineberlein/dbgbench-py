@@ -1,0 +1,1 @@
+printf 'a\n$$\n' |  LC_MESSAGES=en_US.ISO8859-1 LANG=en_US.utf8 timeout 0.5s grep '--include=[*?]' -C 1 --word-regexp --line-number 'a[@{]*|\9'

@@ -1,0 +1,1 @@
+printf 'X1---' | timeout 0.5s grep -E '\B{,1}*^| '

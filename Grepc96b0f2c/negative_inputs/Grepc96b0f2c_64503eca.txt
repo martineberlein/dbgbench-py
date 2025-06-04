@@ -1,0 +1,1 @@
+printf 'aaa\nU' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -T -v -B 8 --directories=read --line-buffered --line-buffered ''

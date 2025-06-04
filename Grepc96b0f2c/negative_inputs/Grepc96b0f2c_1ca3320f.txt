@@ -1,0 +1,1 @@
+printf '\xfa' | LC_ALL=en_US LANG=fi_FI.ISO8859-1 timeout 0.5s grep -z --invert-match ''

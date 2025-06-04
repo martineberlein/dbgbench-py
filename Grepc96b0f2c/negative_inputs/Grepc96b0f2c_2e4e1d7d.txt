@@ -1,0 +1,1 @@
+printf '\xD9\xcc\n-b\n' | LC_ALL=hu_HU.ISO8859-2 timeout 0.5s grep -i -n '\b|[^\x4B-5]|\6|D(3)|\b'

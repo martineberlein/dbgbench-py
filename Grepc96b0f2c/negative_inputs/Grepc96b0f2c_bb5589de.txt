@@ -1,0 +1,1 @@
+printf '\r\n-\t\n\r' | LC_ALL=en_US.utf8 timeout 0.5s grep --binary --count --line-buffered -U '^$'

@@ -1,0 +1,1 @@
+printf 'a$\nbb' | LC_ALL=hr_HR timeout 0.5s grep -i -T 'a$'

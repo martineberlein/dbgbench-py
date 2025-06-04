@@ -1,0 +1,1 @@
+printf '\x0C' | timeout 0.5s grep -E -q '(^|\w+{,-9})*( |$(^| )|$ |$)'

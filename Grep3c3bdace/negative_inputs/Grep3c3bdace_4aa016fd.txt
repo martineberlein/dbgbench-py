@@ -1,0 +1,1 @@
+printf 'X-\xEA\x3e-' | timeout 0.5s grep ''

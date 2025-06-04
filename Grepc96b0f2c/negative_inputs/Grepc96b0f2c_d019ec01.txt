@@ -1,0 +1,1 @@
+printf 'a' | LC_ALL=af_ZA.utf-8 timeout 0.5s grep -i -n '^g'

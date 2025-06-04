@@ -1,0 +1,1 @@
+printf '\xC6-\r-' | POSIXLY_CORRECT=1 timeout 0.5s grep -G -C 2 ''

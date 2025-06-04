@@ -1,0 +1,1 @@
+printf 'aM\nb\n' | LC_ALL=en_AU.US-ASCII timeout 0.5s grep -i -n -n -i -n '^$'

@@ -1,0 +1,1 @@
+printf '\r8' | timeout 0.5s grep -E ''

@@ -1,0 +1,1 @@
+printf '\n/~/-\xd1\x2A' | GREP_COLOR='0' timeout 0.5s grep ''

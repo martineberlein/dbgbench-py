@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --before-context=301 --after-context=301 --context=6 '(\n|[_])*( |$)'

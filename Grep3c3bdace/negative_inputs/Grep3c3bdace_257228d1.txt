@@ -1,0 +1,1 @@
+printf 'j' | timeout 0.5s grep -E -q '\3{,0}(^^)'

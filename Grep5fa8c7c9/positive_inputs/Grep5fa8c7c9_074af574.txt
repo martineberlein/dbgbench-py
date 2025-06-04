@@ -1,0 +1,1 @@
+printf 'abdb' | LC_ALL=en_US.UTF-8 timeout 0.5s grep --fixed-strings --byte-offset -D read -C 8 '--include=' ''

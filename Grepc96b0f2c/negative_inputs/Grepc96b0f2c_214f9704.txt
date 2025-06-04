@@ -1,0 +1,1 @@
+printf 'a$\n\n\n' | LC_ALL=pt_PT.utf-8 timeout 0.5s grep -i -n --regexp='\>{-84,-26}(\7())'

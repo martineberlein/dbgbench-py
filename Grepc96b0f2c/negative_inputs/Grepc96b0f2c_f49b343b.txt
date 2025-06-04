@@ -1,0 +1,1 @@
+printf '\x9e\x10aj' |  LC_CTYPE=fr_FR LANG=de_DE.ISO8859-15 timeout 0.5s grep --extended-regexp '--include=' --silent -I --no-messages -B 2 '^$'

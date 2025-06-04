@@ -1,0 +1,1 @@
+printf 'I \n\r' | timeout 0.5s grep -E -q '[\x32-*](^|$)'

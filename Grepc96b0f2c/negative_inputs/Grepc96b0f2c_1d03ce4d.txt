@@ -1,0 +1,1 @@
+printf 'ab\nbb' | POSIXLY_CORRECT=1 timeout 0.5s grep -i -n '(\w)\n'

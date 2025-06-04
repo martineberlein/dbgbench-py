@@ -1,0 +1,1 @@
+printf '"\x27\n":\n' | GREP_COLORS='mt=01;31' timeout 0.5s grep -i -n '^$$'

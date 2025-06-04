@@ -1,0 +1,1 @@
+printf 'aU\nb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -F -I -L --line-buffered --context=10 '^$'

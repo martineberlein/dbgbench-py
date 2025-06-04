@@ -1,0 +1,1 @@
+printf '\xC7\xB0\n\n\r\t' | LC_ALL=af_ZA.ISO8859-1 timeout 0.5s grep -i '....'

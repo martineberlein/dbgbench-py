@@ -1,0 +1,1 @@
+printf '\t-\t\r-' |  LC_COLLATE=pl_PL.utf-8 LANG=fi_FI.ISO8859-1 timeout 0.5s grep -i -n -i -n '^$'

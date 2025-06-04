@@ -1,0 +1,1 @@
+printf '\xd5\xdA\x34f]' | LC_ALL=he_IL timeout 0.5s grep -G -z '--exclude-dir=,^' --ignore-case --files-with-matches ''

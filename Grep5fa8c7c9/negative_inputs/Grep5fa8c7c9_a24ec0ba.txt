@@ -1,0 +1,1 @@
+printf 'abbd' | GREP_COLORS='' timeout 0.5s grep -G --null -A 5000 -b ''

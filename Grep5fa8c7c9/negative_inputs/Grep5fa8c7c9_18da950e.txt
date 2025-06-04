@@ -1,0 +1,1 @@
+printf 'ebbd' |  LC_CTYPE=fr_CH timeout 0.5s grep -F ''

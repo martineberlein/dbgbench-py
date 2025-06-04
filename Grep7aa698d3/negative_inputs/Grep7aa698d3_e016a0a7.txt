@@ -1,0 +1,1 @@
+printf '\xC4\xB0\xCd\xB0\xC4\xB0\xC4\xB4\xC4\xB0\xC4\xB0\xC4\xB0\n' |  LC_CTYPE=fr_FR.ISO8859-15 LANG=de_DE.utf8 timeout 0.5s grep -i -i '....'

@@ -1,0 +1,1 @@
+printf '\xfCaa-3-' | LC_ALL=en_US.utf8 timeout 0.5s grep --extended-regexp -m 4 -z --files-without-match -h --files-without-match --regexp='[^~]'

@@ -1,0 +1,1 @@
+printf '"\rq' | GREP_COLOR='00;10;180;0;0' timeout 0.5s grep -e ''

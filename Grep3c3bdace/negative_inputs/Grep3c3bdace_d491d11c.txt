@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep '--include=?\?\\x27\\' -h -A 60 '(^| )*(^|U)'

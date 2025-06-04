@@ -1,0 +1,1 @@
+printf 'e' | timeout 0.5s grep --files-with-matches --line-buffered -6 --word-regexp -T -n '([:-0]| )*( |$)'

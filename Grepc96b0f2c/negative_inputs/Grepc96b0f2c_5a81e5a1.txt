@@ -1,0 +1,1 @@
+printf 'l\t\t' | GREP_COLOR='80;3' timeout 0.5s grep '^$'

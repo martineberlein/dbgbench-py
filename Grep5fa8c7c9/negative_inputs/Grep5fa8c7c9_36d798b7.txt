@@ -1,0 +1,1 @@
+printf 'a.vd' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -d skip -x -B 7 '--include=[]' -1 ''

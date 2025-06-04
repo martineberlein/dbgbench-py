@@ -1,0 +1,1 @@
+printf 'a\n\ne$' | LC_ALL=en_US.utf8 timeout 0.5s grep -D skip '--exclude-dir=?,' --line-buffered -i -u -i -n '^$'

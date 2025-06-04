@@ -1,0 +1,1 @@
+printf '\t' | LC_ALL=hu_HU.ISO8859-2 timeout 0.5s grep -i -n 'a$'

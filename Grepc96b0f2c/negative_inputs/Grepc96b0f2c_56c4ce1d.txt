@@ -1,0 +1,1 @@
+printf 'a"\nb\n' | GREP_COLOR='0' timeout 0.5s grep -i -n '[|-,]'

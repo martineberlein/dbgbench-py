@@ -1,0 +1,1 @@
+printf 'abcb' | LC_ALL=es_ES.ISO8859-1 timeout 0.5s grep -F ''

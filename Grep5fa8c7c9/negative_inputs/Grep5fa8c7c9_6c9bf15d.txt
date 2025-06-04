@@ -1,0 +1,1 @@
+printf '\t\tE-' | LC_ALL=en_US timeout 0.5s grep -F --no-filename -D skip --no-filename --context=4 ''

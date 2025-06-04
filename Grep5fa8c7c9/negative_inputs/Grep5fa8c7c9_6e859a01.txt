@@ -1,0 +1,1 @@
+printf '\nbb' | LC_ALL=ro_RO timeout 0.5s grep -d read --regexp='()?\>'

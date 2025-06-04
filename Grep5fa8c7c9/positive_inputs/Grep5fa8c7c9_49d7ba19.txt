@@ -1,0 +1,1 @@
+printf 'abdd' | timeout 0.5s grep -F ''

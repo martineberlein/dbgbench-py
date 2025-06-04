@@ -1,0 +1,1 @@
+printf '\x3D\x00h\n' | timeout 0.5s grep --before-context=7 -6090906 --after-context=2070 --line-buffered ''

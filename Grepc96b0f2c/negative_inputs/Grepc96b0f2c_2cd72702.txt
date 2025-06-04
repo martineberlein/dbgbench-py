@@ -1,0 +1,1 @@
+printf 'ab\nb\n' | GREP_COLOR='0' timeout 0.5s grep '--include=' -U -I --null --after-context=1 '^\W{,0}'

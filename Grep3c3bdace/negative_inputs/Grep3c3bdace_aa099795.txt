@@ -1,0 +1,1 @@
+printf '\x7c\xbc' | timeout 0.5s grep '--exclude-dir=' -m 58 -x ''

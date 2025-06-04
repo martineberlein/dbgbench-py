@@ -1,0 +1,1 @@
+printf 'a\n-bQ' | LC_ALL=be_BY.CP1251 LC_CTYPE=nl_BE timeout 0.5s grep ''

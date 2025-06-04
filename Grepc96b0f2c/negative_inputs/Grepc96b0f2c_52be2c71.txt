@@ -1,0 +1,1 @@
+printf 'abbb\n' | LC_ALL=zh_CN.utf-8 LC_MESSAGES=ko_KR.CP949 LANG=ro_RO timeout 0.5s grep -i -n 'a$'

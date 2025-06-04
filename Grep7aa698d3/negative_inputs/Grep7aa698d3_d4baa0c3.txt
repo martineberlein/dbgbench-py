@@ -1,0 +1,1 @@
+printf '\r\xC4\xB0\xB4\x60\xB4\xB0\xC4\xb0\xB4\xBB\xC4\xB0C' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i '..\nC'

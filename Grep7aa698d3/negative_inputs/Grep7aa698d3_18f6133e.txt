@@ -1,0 +1,1 @@
+printf '\xC4\xBB\xC4\xB0\xC4\xB0\xC4\xB4\xC4\xB06\xC4\xBe\n' | LC_ALL=cs_CZ.ISO8859-2 LC_MESSAGES=pt_PT.ISO8859-1 LANG=nl_BE.ISO8859-1 timeout 0.5s grep -i '..\>|\3|\b{160,-550}'

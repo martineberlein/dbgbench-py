@@ -1,0 +1,1 @@
+printf '\r\n\n\n\n' | LC_ALL=ca_ES.ISO8859-15 timeout 0.5s grep -i -n '($$)$'

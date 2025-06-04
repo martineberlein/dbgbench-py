@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' |  LC_CTYPE=it_IT.ISO8859-1 timeout 0.5s grep --invert-match -n '\9$'

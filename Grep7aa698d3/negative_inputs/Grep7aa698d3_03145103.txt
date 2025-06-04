@@ -1,0 +1,1 @@
+printf '\xC4\xB0\x44\xB0\x1d\xBe\xC4\xB0\xC4\xB0\xC4\xB0\xC4\xB0\n' | LC_ALL=sl_SI LC_MESSAGES=it_CH.ISO8859-15 timeout 0.5s grep -i '...'

@@ -1,0 +1,1 @@
+printf 'abbd' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -F --null -474 -B 7 --word-regexp --after-context=7 -e ''

@@ -1,0 +1,1 @@
+printf '\rccd' | LC_ALL=ko_KR.eucKR timeout 0.5s grep -F ''

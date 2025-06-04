@@ -1,0 +1,1 @@
+printf 'a\xdB\nb\n' | LC_ALL=zh_CN.GB2312 timeout 0.5s grep -v -n '^$'

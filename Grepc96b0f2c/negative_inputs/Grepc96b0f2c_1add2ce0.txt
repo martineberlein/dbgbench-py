@@ -1,0 +1,1 @@
+printf '\n\n\nb\n' | POSIXLY_CORRECT=1 timeout 0.5s grep --basic-regexp -v -D skip ''

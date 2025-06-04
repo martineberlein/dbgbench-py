@@ -1,0 +1,1 @@
+printf 'a\nQb\n' | timeout 0.5s grep -i -n 'q()|(){-0}{,0}'

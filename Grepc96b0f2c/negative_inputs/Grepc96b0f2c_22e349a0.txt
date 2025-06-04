@@ -1,0 +1,1 @@
+printf 'a\n\n\nv' | LC_ALL=uk_UA.utf8 timeout 0.5s grep -w -n '^$'

@@ -1,0 +1,1 @@
+printf '"-' | GREP_COLORS='rv:ln=32:se=36' timeout 0.5s grep -F --binary -U '--exclude=*[[\\\\?\?{;\\\\\]]' --line-buffered --binary --devices=skip ''

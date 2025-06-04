@@ -1,0 +1,1 @@
+printf '\x08\x85:b!--' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -G --context=633002 -b -w ''

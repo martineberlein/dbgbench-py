@@ -1,0 +1,1 @@
+printf '\tA\x27' | LC_ALL=en_US.utf8 timeout 0.5s grep --extended-regexp -i -x '--exclude-dir=é' -x -v -x '--exclude-dir=é' -x ''

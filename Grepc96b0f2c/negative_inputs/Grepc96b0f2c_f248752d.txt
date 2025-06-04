@@ -1,0 +1,1 @@
+printf 'a\n\nbN' | LC_ALL=en_US.utf8 timeout 0.5s grep -G -c -c -b --line-regexp --line-buffered -C 4 ''

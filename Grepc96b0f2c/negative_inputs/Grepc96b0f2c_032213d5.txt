@@ -1,0 +1,1 @@
+printf '3-\n\n\n' | LC_ALL=sk_SK.ISO8859-2 LC_CTYPE=en_US.ISO8859-1 timeout 0.5s grep -v -i -n '[^\\]\W'

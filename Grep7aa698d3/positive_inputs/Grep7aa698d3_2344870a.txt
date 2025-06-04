@@ -1,0 +1,1 @@
+printf '\x43-P\x74\xB0' | POSIXLY_CORRECT=1 timeout 0.5s grep --extended-regexp -h --before-context=1 -L -z --files-with-matches ''

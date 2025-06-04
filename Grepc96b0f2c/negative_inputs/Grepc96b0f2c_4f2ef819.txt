@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -E --before-context=6354 -u --context=5 '^$'

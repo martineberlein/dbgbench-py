@@ -1,0 +1,1 @@
+printf '^\n2b\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -w --no-messages -i -n '^'

@@ -1,0 +1,1 @@
+printf 'a$\nb\n' | LC_ALL=de_CH timeout 0.5s grep -i -n --byte-offset -y --after-context=2 -i -n --byte-offset -y --after-context=2 '()|()$'

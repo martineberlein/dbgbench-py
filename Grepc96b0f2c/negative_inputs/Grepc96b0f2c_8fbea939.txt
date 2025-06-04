@@ -1,0 +1,1 @@
+printf 'a&"U' | LC_ALL=en_US.utf8 timeout 0.5s grep -i --colour=auto --invert-match -y --no-messages '--exclude-dir=*' -u '--exclude==' -z -I -i -q 'b$'

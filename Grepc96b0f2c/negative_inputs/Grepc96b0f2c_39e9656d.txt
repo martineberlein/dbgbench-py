@@ -1,0 +1,1 @@
+printf '\r\n' | LC_ALL=hu_HU.ISO8859-2 LANG=ca_ES.ISO8859-1 timeout 0.5s grep 'P\<'

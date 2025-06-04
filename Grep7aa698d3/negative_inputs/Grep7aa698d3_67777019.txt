@@ -1,0 +1,1 @@
+printf '\n-\r.le' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i '...\*{,1}?|()|\\|()?{400,-00}{,0}'

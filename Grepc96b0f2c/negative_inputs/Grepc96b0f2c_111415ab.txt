@@ -1,0 +1,1 @@
+printf 'a\nT\t\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -F -B 828 -U '^([\t-%]){-2000}?|(W)'

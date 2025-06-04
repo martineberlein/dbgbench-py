@@ -1,0 +1,1 @@
+printf '\n-\r-p\r' | GREP_COLOR='02;0' timeout 0.5s grep -F ''

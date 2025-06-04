@@ -1,0 +1,1 @@
+printf '\xE5\xe1-' | LC_ALL=fi_FI.ISO8859-1 timeout 0.5s grep -G --ignore-case '(^| )*( )'

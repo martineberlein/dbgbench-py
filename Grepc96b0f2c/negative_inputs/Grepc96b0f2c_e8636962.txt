@@ -1,0 +1,1 @@
+printf '\rI' | LC_ALL=hu_HU.ISO8859-2 timeout 0.5s grep --line-buffered -v --before-context=9 -I --line-buffered -e '^$'

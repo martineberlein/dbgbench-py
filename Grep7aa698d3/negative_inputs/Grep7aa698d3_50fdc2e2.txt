@@ -1,0 +1,1 @@
+printf '\xC4\xB4\xCC\n\xC4\x00\xC4\xB0\xC4\xB0\xCb\x00\n' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -E -U -B 7 '--exclude=??' -h '....'

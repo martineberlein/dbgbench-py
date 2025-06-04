@@ -1,0 +1,1 @@
+printf '\xbf\xD6\x4e\xEe\n-' | GREP_COLOR='5;15' timeout 0.5s grep -F --regexp='c|c'

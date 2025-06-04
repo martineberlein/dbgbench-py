@@ -1,0 +1,1 @@
+printf '\t' | LC_ALL=en_US.utf8 timeout 0.5s grep -C 1 '--label=\(~' --after-context=8 '--exclude=??' -B 6 -i -n '^$'

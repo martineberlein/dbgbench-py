@@ -1,0 +1,1 @@
+printf 'aE\nb\n' | LC_ALL=be_BY.utf8 timeout 0.5s grep --extended-regexp ''

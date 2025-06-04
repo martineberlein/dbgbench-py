@@ -1,0 +1,1 @@
+printf '^\n\nb\n' | GREP_COLOR='0706;40;00;0' timeout 0.5s grep -G --context=50 -w 'Q*\0[É-\x27]'

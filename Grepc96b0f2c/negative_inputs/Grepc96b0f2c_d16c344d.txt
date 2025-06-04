@@ -1,0 +1,1 @@
+printf 'a-a2"' | GREP_COLOR='14;4;0;0' timeout 0.5s grep --fixed-strings '^$'

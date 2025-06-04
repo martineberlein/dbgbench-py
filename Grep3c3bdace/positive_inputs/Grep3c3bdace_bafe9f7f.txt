@@ -1,0 +1,1 @@
+printf '\xe5\x22w-' | timeout 0.5s grep -E -q '(^| )*( |(^| (){5,10}))'

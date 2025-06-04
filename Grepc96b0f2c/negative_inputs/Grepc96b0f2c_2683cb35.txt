@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | GREP_COLOR='0;8;1' timeout 0.5s grep --extended-regexp --line-regexp '--exclude=\*:\|`\' -y ''

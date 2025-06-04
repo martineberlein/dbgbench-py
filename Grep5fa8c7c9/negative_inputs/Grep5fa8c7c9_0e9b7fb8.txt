@@ -1,0 +1,1 @@
+printf 'adcd' | timeout 0.5s grep -1 --directories=read --colour=never -z -i '\b'

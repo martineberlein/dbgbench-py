@@ -1,0 +1,1 @@
+printf 'a\n\nbB' | LC_ALL=en_CA timeout 0.5s grep -i -n '\0*?+'

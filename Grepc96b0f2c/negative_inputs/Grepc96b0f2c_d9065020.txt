@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=el_GR.ISO8859-7 LC_CTYPE=eu_ES.ISO8859-1 LANG=lt_LT.utf-8 timeout 0.5s grep -i -n '^$'

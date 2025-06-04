@@ -1,0 +1,1 @@
+printf 'adcd' | LC_ALL=en_US.utf-8 timeout 0.5s grep --basic-regexp -w -w --no-filename -e '\W|[[]\1\<|\B?+?'

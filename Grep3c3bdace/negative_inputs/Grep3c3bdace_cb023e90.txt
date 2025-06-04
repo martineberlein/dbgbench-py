@@ -1,0 +1,1 @@
+printf '"--\xDF\t-' | timeout 0.5s grep --fixed-strings -q -e '1'

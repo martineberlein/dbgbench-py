@@ -1,0 +1,1 @@
+printf 'Z-c--' | LC_ALL=en_US.utf8 LC_COLLATE=en_AU.ISO8859-1 LANG=en_AU.US-ASCII timeout 0.5s grep -i -n -n --after-context=50 '^$'

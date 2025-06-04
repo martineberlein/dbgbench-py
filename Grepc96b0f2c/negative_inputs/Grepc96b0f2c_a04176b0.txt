@@ -1,0 +1,1 @@
+printf '\r$\x97\xB1\r' | LC_ALL=en_US.utf8 timeout 0.5s grep --null-data --word-regexp --after-context=2 --binary -C 6 '\8*$'

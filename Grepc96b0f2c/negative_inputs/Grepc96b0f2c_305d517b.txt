@@ -1,0 +1,1 @@
+printf 'arrbr' | LC_ALL=en_US.utf8 timeout 0.5s grep --binary --count -u -9 -i -e ''

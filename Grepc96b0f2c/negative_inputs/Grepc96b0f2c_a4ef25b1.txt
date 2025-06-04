@@ -1,0 +1,1 @@
+printf 'aO\n-\xf8\xeE' | LC_ALL=en_US.utf-8 timeout 0.5s grep -i -n '^\2'

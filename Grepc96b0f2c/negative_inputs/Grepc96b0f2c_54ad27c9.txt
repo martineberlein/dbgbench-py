@@ -1,0 +1,1 @@
+printf 'a\nabb' | LC_ALL=be_BY.CP1251 timeout 0.5s grep --fixed-strings --null-data '--exclude-dir=\?\' --count '^'

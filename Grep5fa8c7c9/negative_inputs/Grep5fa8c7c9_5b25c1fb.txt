@@ -1,0 +1,1 @@
+printf 'abcY' | LC_ALL=kk_KZ.utf8 timeout 0.5s grep -F ''

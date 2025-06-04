@@ -1,0 +1,1 @@
+printf '\xC4\xC0p\rs-' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i -m 5 -A 76 -z -w -A 2 '....'

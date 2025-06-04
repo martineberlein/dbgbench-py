@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | GREP_COLOR='30' timeout 0.5s grep --extended-regexp '--exclude-dir=' -C 230 '--include=' '^$'

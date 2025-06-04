@@ -1,0 +1,1 @@
+printf '\x83\x6c\n\nb\n' | LC_ALL=en_US LC_COLLATE=de_CH LANG=fr_FR timeout 0.5s grep -i -n '^b\>'

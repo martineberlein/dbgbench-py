@@ -1,0 +1,1 @@
+printf 'a\n/b\n' | LC_ALL=zh_HK.Big5HKSCS LC_COLLATE=is_IS.utf8 LANG=hu_HU.ISO8859-2 timeout 0.5s grep -i -n '^$'

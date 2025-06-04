@@ -1,0 +1,1 @@
+printf '\xC4\xB0\xC4\xB0\xf4\xB0\n\xC4\xB0\xC4\xB0\xCC\xB0\n' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i -i --binary-files=without-match -L -n --after-context=330 --count '....[!]4\0[^\v+~]|\r'

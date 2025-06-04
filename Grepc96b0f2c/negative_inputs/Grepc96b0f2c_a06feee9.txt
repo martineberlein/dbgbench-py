@@ -1,0 +1,1 @@
+printf '\t\xdD' | GREP_COLOR='0;00;0' timeout 0.5s grep -i -n ''

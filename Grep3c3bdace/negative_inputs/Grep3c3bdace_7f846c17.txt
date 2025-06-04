@@ -1,0 +1,1 @@
+printf '\r-G' | timeout 0.5s grep -z ''

@@ -1,0 +1,1 @@
+printf '\xD3\r-2>-' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n 'j$'

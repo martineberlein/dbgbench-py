@@ -1,0 +1,1 @@
+printf 'a\nyb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -i '--exclude-dir={/' --no-filename -n '\W{-0,}'

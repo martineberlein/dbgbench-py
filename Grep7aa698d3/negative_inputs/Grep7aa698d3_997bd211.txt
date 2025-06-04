@@ -1,0 +1,1 @@
+printf '\r--"\r-' | GREP_COLOR='1' timeout 0.5s grep --no-messages -n -w --after-context=46 -z '...\4(\>|.o)'

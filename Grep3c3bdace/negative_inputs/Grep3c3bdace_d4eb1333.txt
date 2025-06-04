@@ -1,0 +1,1 @@
+printf '\xEA\x9C\x50--m\t' | timeout 0.5s grep --null-data -e '\4 '

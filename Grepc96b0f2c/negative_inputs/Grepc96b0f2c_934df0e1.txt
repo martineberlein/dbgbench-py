@@ -1,0 +1,1 @@
+printf 'a-' | LC_ALL=ru_RU.CP1251 timeout 0.5s grep -z -7 --null-data --no-filename --line-regexp -B 1 '^$'

@@ -1,0 +1,1 @@
+printf 'a\n\n\r\n' | LC_ALL=en_US.utf8 timeout 0.5s grep --ignore-case -l --binary-files=text -U --count --after-context=4040 -A 1 -e ''

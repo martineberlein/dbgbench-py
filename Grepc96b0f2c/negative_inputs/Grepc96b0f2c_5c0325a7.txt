@@ -1,0 +1,1 @@
+printf 'a\n\n1\n' | LC_ALL=lt_LT.ISO8859-13 timeout 0.5s grep -i --binary --binary -H -z --text '\Wy{,3506}'

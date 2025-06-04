@@ -1,0 +1,1 @@
+printf '\r}\xd8S<' | GREP_COLORS='sl=2:ne' timeout 0.5s grep ''

@@ -1,0 +1,1 @@
+printf '67\x14\xb1\n\n,' | POSIXLY_CORRECT=1 timeout 0.5s grep --after-context=585 -e ''

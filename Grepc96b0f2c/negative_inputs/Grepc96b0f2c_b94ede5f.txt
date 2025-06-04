@@ -1,0 +1,1 @@
+printf 'a-\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -T --after-context=9 --line-buffered --initial-tab --line-buffered '^\n'

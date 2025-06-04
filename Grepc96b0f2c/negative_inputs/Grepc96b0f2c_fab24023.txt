@@ -1,0 +1,1 @@
+printf 'y-y\n\ny' | GREP_COLORS='se=36:ln=32' timeout 0.5s grep ''

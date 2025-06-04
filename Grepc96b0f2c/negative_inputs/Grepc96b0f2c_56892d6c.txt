@@ -1,0 +1,1 @@
+printf 'aBg\xF6\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -B 53 -T -B 4 -h -e '2|2'

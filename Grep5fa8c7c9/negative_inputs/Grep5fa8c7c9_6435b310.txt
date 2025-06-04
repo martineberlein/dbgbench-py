@@ -1,0 +1,1 @@
+printf 'abLd' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -E --devices=read '--exclude-dir=' --devices=read '--exclude-dir=' '--exclude-dir=' --regexp=''

@@ -1,0 +1,1 @@
+printf '"_}' | LC_ALL=en_US.utf8 timeout 0.5s grep --line-regexp -a -w --silent -I -s '^$'

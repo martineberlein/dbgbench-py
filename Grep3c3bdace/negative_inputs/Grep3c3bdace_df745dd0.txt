@@ -1,0 +1,1 @@
+printf '\tM\r\r\t\r' | timeout 0.5s grep --extended-regexp -q '^*((^| ))'

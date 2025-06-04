@@ -1,0 +1,1 @@
+printf 'accb' | GREP_COLORS='ms=01;31:ln=32' timeout 0.5s grep --extended-regexp --null --byte-offset ''

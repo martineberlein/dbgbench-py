@@ -1,0 +1,1 @@
+printf 'a2\nb\n' | LC_ALL=ja_JP.eucJP timeout 0.5s grep -i -n -i -n -n -i -n '^$'

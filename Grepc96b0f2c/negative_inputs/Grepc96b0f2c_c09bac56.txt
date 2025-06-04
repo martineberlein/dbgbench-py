@@ -1,0 +1,1 @@
+printf 'a\n\nb\r' | LC_ALL=is_IS.ISO8859-1 timeout 0.5s grep -i -n '^\n'

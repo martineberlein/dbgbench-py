@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | POSIXLY_CORRECT=1 timeout 0.5s grep -i --before-context=5 -n -U -w -y --no-messages --color -m 9 --with-filename '[/-!]\b'

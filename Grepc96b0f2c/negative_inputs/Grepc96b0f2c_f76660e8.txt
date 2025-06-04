@@ -1,0 +1,1 @@
+printf 'a\n\n\n-' | LC_ALL=sv_SE timeout 0.5s grep -i -n '^$[^{0]{2880,4}*'

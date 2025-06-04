@@ -1,0 +1,1 @@
+printf 'a$5b\n' | POSIXLY_CORRECT=1 timeout 0.5s grep -i -7 --after-context=66 '^@'

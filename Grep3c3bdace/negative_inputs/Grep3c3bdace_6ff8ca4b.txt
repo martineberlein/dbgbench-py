@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --invert-match --invert-match --invert-match -n '(q)'

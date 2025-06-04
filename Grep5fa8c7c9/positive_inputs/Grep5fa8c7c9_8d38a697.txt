@@ -1,0 +1,1 @@
+printf '"$b-' | timeout 0.5s grep -F ''

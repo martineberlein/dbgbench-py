@@ -1,0 +1,1 @@
+printf '\rI\n\xaA-\n' | timeout 0.5s grep -E -q '(^| )*(^|^)'

@@ -1,0 +1,1 @@
+printf ':\n\nb\n' | LC_ALL=it_CH.ISO8859-1 timeout 0.5s grep -i 'd$'

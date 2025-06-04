@@ -1,0 +1,1 @@
+printf ':bbd' | LC_ALL=en_US.UTF-8 timeout 0.5s grep --fixed-strings --null-data -T -A 8 --with-filename -I ''

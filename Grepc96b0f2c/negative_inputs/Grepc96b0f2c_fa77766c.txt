@@ -1,0 +1,1 @@
+printf '\x43-' | LC_ALL=uk_UA.ISO8859-5 timeout 0.5s grep -i --line-number '^'

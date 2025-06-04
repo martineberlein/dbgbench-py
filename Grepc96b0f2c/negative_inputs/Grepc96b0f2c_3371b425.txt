@@ -1,0 +1,1 @@
+printf '\r-\ta-' | timeout 0.5s grep -G -A 6 -A 6 --max-count=2 -i -a -m 2 '\b'

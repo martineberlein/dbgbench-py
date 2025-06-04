@@ -1,0 +1,1 @@
+printf 'd' | timeout 0.5s grep -E -q '\0*'

@@ -1,0 +1,1 @@
+printf '"\n$I$' | LC_ALL=ro_RO timeout 0.5s grep --ignore-case -n '^'

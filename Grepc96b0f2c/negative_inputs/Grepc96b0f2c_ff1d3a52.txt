@@ -1,0 +1,1 @@
+printf '\xeB\xe8c\n866' | timeout 0.5s grep ''

@@ -1,0 +1,1 @@
+printf 'a\n-\n\n' | LC_ALL=ru_RU.CP866 timeout 0.5s grep -i -n '^$'

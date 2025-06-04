@@ -1,0 +1,1 @@
+printf 'aHbb\n' | GREP_COLORS='sl=060;7' timeout 0.5s grep -i -n '^$'

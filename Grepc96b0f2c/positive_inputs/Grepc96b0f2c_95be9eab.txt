@@ -1,0 +1,1 @@
+printf '\x98E\n\n\n/' | GREP_COLOR='900238;0;0' timeout 0.5s grep -i -i -n '^$'

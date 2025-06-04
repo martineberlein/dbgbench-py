@@ -1,0 +1,1 @@
+printf '\r-F-' |  LC_MESSAGES=de_DE.utf-8 timeout 0.5s grep --text ''

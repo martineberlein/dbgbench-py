@@ -1,0 +1,1 @@
+printf '\n_K6\xa0\xcA' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n '^$'

@@ -1,0 +1,1 @@
+printf '\tKZ\t-\xBf' |  LANG=uk_UA.KOI8-U timeout 0.5s grep ''

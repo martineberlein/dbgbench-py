@@ -1,0 +1,1 @@
+printf 'a$\nb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n -c --word-regexp --count -u -w -z -U --word-regexp --word-regexp -i -n '^$$'

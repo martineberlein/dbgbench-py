@@ -1,0 +1,1 @@
+printf '\n' |  LC_COLLATE=hr_HR.utf8 timeout 0.5s grep -E ''

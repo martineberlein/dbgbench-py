@@ -1,0 +1,1 @@
+printf 'a-' | GREP_COLOR='10;1' timeout 0.5s grep --devices=skip ''

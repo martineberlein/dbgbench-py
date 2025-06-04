@@ -1,0 +1,1 @@
+printf 'Z\n\nb\n' | LC_ALL=fr_FR timeout 0.5s grep -i -n '^$$'

@@ -1,0 +1,1 @@
+printf '\xef&\rb' | GREP_COLOR='880;80;52' timeout 0.5s grep ''

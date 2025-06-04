@@ -1,0 +1,1 @@
+printf 'a\nbb\n' | LC_ALL=fr_BE timeout 0.5s grep -v -i -n '^$'

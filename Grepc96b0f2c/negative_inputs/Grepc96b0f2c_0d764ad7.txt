@@ -1,0 +1,1 @@
+printf 'a\nLbF' | LC_ALL=be_BY.CP1131 LC_MESSAGES=pt_BR.ISO8859-1 timeout 0.5s grep -n -i -n 'a\n'

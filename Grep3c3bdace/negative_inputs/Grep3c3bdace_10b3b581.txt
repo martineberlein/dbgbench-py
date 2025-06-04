@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep -z '--exclude=\*\(\' -C 300 -B 5 '()*'

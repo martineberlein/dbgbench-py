@@ -1,0 +1,1 @@
+printf 'a\n\nbs' | LC_ALL=en_US.utf8 timeout 0.5s grep -i --devices=skip -a -T -B 5 -D skip -T -B 5 -D skip --max-count=1 '^$'

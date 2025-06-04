@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' | LC_ALL=nl_NL.ISO8859-1 timeout 0.5s grep -i -n -i -n '^$'

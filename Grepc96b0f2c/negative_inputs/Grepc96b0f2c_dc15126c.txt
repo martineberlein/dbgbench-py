@@ -1,0 +1,1 @@
+printf 'a\n\nv\n' | LC_ALL=en_US.utf-8 timeout 0.5s grep -i -B 70 'A$'

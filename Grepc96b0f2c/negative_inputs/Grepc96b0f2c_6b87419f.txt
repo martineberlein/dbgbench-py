@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=de_AT LC_CTYPE=eu_ES.UTF-8 timeout 0.5s grep -E -B 487 --word-regexp -a -T ''

@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep -x --unix-byte-offsets -x --unix-byte-offsets -T -w '--exclude-dir=[]' '(^|(^| )^|(^| ))*(^| )'

@@ -1,0 +1,1 @@
+printf '\x7B\x8cG^' | timeout 0.5s grep --fixed-strings -q '(^|$)*( | |$)'

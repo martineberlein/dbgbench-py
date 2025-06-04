@@ -1,0 +1,1 @@
+printf 'a\n\nbb' | LC_ALL=tr_TR.utf8 LC_COLLATE=pt_BR timeout 0.5s grep -700 --line-buffered '^$$'

@@ -1,0 +1,1 @@
+printf 'abcd' | GREP_COLOR='0;0;510;5106;0;0' timeout 0.5s grep -F ''

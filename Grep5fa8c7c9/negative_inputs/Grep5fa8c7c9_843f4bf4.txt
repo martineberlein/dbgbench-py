@@ -1,0 +1,1 @@
+printf 'ar-\r-' | POSIXLY_CORRECT=1 timeout 0.5s grep -A 8 -h -I --binary --regexp=''

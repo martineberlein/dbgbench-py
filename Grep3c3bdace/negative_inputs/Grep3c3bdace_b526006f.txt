@@ -1,0 +1,1 @@
+printf '9\rs-' | timeout 0.5s grep --fixed-strings --ignore-case --regexp='()'

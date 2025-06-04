@@ -1,0 +1,1 @@
+printf 'a-"b\n' | LC_ALL=sv_SE LANG=sv_SE timeout 0.5s grep -i -n '^R\n'

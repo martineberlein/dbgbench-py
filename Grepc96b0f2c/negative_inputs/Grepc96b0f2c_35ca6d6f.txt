@@ -1,0 +1,1 @@
+printf 'a\n\nb\r' | POSIXLY_CORRECT=1 timeout 0.5s grep -i -n --initial-tab --binary --files-without-match --line-buffered --binary-files=text --after-context=3 'e$\0($$\0($))'

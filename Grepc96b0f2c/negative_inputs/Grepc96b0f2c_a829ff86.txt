@@ -1,0 +1,1 @@
+printf '{N' | POSIXLY_CORRECT=1 timeout 0.5s grep --extended-regexp --line-buffered --after-context=7 -L '(/{,0}[/\x03]L|\>)'

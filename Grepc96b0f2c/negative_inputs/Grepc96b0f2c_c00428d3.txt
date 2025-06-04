@@ -1,0 +1,1 @@
+printf '\r\n\n\n\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n --null -c --no-messages --byte-offset -u '--include=' '^:'

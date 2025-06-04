@@ -1,0 +1,1 @@
+printf 'abcd' | GREP_COLOR='20;00' timeout 0.5s grep -i '--exclude-dir=\?[{$xx]\' -I ''

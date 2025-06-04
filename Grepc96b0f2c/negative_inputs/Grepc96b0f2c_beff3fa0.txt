@@ -1,0 +1,1 @@
+printf '^\n\nb\n' | LC_ALL=ja_JP.utf-8 timeout 0.5s grep -i -n -i -n -n -v -b -m 880 --binary -I '^$'

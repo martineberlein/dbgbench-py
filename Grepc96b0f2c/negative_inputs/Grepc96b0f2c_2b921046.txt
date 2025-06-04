@@ -1,0 +1,1 @@
+printf '"-4' | LC_ALL=be_BY.ISO8859-5 timeout 0.5s grep --invert-match -n '^k$\>'

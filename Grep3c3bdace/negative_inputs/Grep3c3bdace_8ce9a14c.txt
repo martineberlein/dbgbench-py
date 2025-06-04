@@ -1,0 +1,1 @@
+printf '\raT\x4d\xbe' | timeout 0.5s grep -G -q -q --regexp=''

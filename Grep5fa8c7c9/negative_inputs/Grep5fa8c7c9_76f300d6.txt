@@ -1,0 +1,1 @@
+printf '"\x58\x0A' | GREP_COLORS='' timeout 0.5s grep --ignore-case -B 6 -T -Z ''

@@ -1,0 +1,1 @@
+printf 'abcd' |  LC_COLLATE=zh_HK LANG=bg_BG timeout 0.5s grep -F ''

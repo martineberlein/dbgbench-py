@@ -1,0 +1,1 @@
+printf '\xf0\xCb\xf0u7' | LC_ALL=en_US.utf8 timeout 0.5s grep --line-regexp '^(J|\B[^*][]-\$](\W|())|[^&-)]{-0})'

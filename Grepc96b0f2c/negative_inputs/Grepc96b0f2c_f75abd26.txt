@@ -1,0 +1,1 @@
+printf 'a$\n$D' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -U -A 6 -z --invert-match '^[^?-(]'

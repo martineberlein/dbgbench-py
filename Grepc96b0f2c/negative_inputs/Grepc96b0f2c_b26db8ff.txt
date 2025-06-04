@@ -1,0 +1,1 @@
+printf 'a' | LC_ALL=en_US.utf-8 timeout 0.5s grep --color=always --invert-match -z -H --quiet -C 9 '^$'

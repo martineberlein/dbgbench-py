@@ -1,0 +1,1 @@
+printf '\xC2\xFFd\+B' | timeout 0.5s grep -b '--label= ~' -x --line-buffered --with-filename ''

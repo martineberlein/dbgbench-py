@@ -1,0 +1,1 @@
+printf '\r\x12\xc3-' | timeout 0.5s grep -I -B 9 ''

@@ -1,0 +1,1 @@
+printf 'ab\nb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -i --initial-tab '^\w{40000}+{506,}[^=]{-00}\x27'

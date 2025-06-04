@@ -1,0 +1,1 @@
+printf '\r-\t\x79v\t' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -F --regexp=''

@@ -1,0 +1,1 @@
+printf 'a\n-bP' | LC_ALL=en_US.utf8 timeout 0.5s grep -E --after-context=750 --binary -H 'a(){6,}$'

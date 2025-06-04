@@ -1,0 +1,1 @@
+printf 'a\n\nV\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -i '--label=\r!' --text -I -m 6 -v 'a\b'

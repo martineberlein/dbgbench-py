@@ -1,0 +1,1 @@
+printf '\xd2k>G' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -F -e '[]-\x92\xFE]\7'

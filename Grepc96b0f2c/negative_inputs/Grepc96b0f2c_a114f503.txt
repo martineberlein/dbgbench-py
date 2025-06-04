@@ -1,0 +1,1 @@
+printf '\x62-k' | timeout 0.5s grep -G --before-context=9 ''

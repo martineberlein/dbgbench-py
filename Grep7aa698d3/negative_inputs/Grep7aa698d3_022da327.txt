@@ -1,0 +1,1 @@
+printf '\x48-\x10' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i -B 56 --max-count=40 --binary-files=binary --null ''

@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' | LC_ALL=be_BY timeout 0.5s grep -s --line-number --word-regexp --after-context=8 '^[^].#]$$'

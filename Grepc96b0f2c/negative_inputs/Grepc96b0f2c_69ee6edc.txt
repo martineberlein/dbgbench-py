@@ -1,0 +1,1 @@
+printf 'a-\+\t-' | LC_ALL=de_DE timeout 0.5s grep --extended-regexp --context=9 -L '^'

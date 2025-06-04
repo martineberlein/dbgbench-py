@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=ja_JP timeout 0.5s grep --extended-regexp --binary-files=binary --binary-files=binary '^$$'

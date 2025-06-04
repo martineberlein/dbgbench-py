@@ -1,0 +1,1 @@
+printf '\tz\xA3y\n' | POSIXLY_CORRECT=1 timeout 0.5s grep ','

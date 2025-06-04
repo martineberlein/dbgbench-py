@@ -1,0 +1,1 @@
+printf 'X\x27B-\n7' | LC_ALL=lt_LT.ISO8859-4 timeout 0.5s grep -E -q '(^|^| )*( |$)'

@@ -1,0 +1,1 @@
+printf '8\n8--' | timeout 0.5s grep '--label=^}' ''

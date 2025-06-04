@@ -1,0 +1,1 @@
+printf '\x5a\x96\n\n\n\n' | GREP_COLORS='mc=01;31:ne' timeout 0.5s grep --extended-regexp -I ' {-0}$'

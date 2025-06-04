@@ -1,0 +1,1 @@
+printf 'a' |  LANG=lt_LT.UTF-8 timeout 0.5s grep -i -n ',$'

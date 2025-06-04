@@ -1,0 +1,1 @@
+printf '\xB5.-p-' |  timeout 0.5s grep -a -o ''

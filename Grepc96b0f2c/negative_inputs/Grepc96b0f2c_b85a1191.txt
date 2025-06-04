@@ -1,0 +1,1 @@
+printf 'a\n\xDF\xCAb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep --fixed-strings --quiet -d read -i --max-count=60 '^\n$'

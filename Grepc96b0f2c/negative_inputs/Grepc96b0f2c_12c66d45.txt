@@ -1,0 +1,1 @@
+printf '\t\n-' | timeout 0.5s grep --fixed-strings --regexp='4'

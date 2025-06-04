@@ -1,0 +1,1 @@
+printf '^\n b\n' | timeout 0.5s grep -i --line-number -I -I -A 2 --colour=auto --max-count=1 '^ $'

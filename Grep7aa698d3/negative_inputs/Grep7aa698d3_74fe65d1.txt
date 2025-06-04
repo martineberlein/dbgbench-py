@@ -1,0 +1,1 @@
+printf '\x8B\xB5;\xfb;' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -B 1 -y -B 1 -y ''

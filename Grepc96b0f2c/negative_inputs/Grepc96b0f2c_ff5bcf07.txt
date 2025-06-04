@@ -1,0 +1,1 @@
+printf '\x13\x5E-2]"' | LC_ALL=zh_HK.Big5HKSCS LC_COLLATE=fr_CH.ISO8859-1 timeout 0.5s grep -i -n '^$'

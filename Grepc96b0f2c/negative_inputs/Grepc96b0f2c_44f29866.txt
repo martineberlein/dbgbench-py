@@ -1,0 +1,1 @@
+printf 'a\n\n22' | GREP_COLORS='se=36:cx=0565;83' timeout 0.5s grep -i -Z '4${-77,800}|\B|25'

@@ -1,0 +1,1 @@
+printf '\r\r-' | GREP_COLOR='0' timeout 0.5s grep --extended-regexp -i ''

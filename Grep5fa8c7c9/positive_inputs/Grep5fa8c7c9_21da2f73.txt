@@ -1,0 +1,1 @@
+printf '\x55\xBC-\x12\xF8-2' |  timeout 0.5s grep --fixed-strings ''

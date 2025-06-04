@@ -1,0 +1,1 @@
+printf '\xE4H' | timeout 0.5s grep -E -q '(\B{-8,-00}\B{-000,}*E)*( |$( |$))'

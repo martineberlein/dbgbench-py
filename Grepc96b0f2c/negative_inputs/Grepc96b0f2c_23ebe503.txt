@@ -1,0 +1,1 @@
+printf 'a\n\nb\xA4' | POSIXLY_CORRECT=1 timeout 0.5s grep -h '--exclude-dir=?[\x0c\(]' -y -B 3 '^$'

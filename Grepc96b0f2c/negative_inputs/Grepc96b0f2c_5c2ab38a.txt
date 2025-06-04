@@ -1,0 +1,1 @@
+printf '\x26;--' | GREP_COLOR='0;0;7' timeout 0.5s grep --initial-tab -v -s --null --line-buffered --devices=skip ''

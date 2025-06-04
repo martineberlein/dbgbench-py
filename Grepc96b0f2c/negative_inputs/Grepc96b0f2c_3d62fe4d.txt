@@ -1,0 +1,1 @@
+printf '\t\n-\n4' | timeout 0.5s grep -F --line-buffered ''

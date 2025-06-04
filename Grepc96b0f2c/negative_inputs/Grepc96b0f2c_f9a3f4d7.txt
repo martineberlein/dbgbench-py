@@ -1,0 +1,1 @@
+printf 'a\nq\n-' | LC_ALL=en_US.utf8 timeout 0.5s grep --extended-regexp --max-count=36 -i --after-context=75 -B 6 ''

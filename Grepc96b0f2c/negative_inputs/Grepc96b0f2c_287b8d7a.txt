@@ -1,0 +1,1 @@
+printf 'abbb\n' | LC_ALL=de_CH timeout 0.5s grep --basic-regexp -u --before-context=421 -z --before-context=1 ''

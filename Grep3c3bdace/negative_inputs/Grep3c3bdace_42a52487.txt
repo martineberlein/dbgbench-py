@@ -1,0 +1,1 @@
+printf '\t-&\t\t' | timeout 0.5s grep --basic-regexp -Z -b -o '--exclude=??[]' --null --regexp=''

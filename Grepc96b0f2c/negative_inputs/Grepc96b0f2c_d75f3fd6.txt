@@ -1,0 +1,1 @@
+printf 'a\n-b\n' | GREP_COLOR='0884' timeout 0.5s grep '^\<[^]\w'

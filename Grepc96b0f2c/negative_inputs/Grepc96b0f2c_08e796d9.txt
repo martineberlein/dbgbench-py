@@ -1,0 +1,1 @@
+printf 'a--/\n' | LC_ALL=zh_CN.GB2312 timeout 0.5s grep -U '--exclude=' -U -C 3 --count '^$'

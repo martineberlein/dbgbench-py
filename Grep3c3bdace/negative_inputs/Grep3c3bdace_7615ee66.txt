@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --invert-match --files-with-matches --text -d read -d read -u -z --files-with-matches --text -d read -d read -u -z --files-without-match --max-count=8 -h -q ''

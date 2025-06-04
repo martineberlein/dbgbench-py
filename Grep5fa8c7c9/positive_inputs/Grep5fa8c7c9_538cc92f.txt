@@ -1,0 +1,1 @@
+printf 'abcd' | GREP_COLORS='' timeout 0.5s grep --fixed-strings -I --binary-files=without-match --binary-files=text ''

@@ -1,0 +1,1 @@
+printf '\x51\xD5\t-O-' | timeout 0.5s grep ''

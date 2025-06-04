@@ -1,0 +1,1 @@
+printf '\xCC\xB0\xC4\xB0\xC4\xB0\xC4\xB0\xC4\xB0\x6c\xDF\x6c\xDF\n' | LC_ALL=en_US.utf8 timeout 0.5s grep --line-regexp ''

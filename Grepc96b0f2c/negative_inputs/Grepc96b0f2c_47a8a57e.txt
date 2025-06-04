@@ -1,0 +1,1 @@
+printf '"\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n --files-with-matches --line-number --null -s --with-filename -c '^$'

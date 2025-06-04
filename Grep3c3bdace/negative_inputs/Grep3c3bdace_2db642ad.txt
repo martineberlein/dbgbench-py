@@ -1,0 +1,1 @@
+printf '\x71\xEc@-' | timeout 0.5s grep --ignore-case -o --colour=auto -w -U --ignore-case -C 6 ''

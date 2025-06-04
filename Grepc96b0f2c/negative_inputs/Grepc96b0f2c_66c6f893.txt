@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' |  LC_MESSAGES=bg_BG timeout 0.5s grep -i -e '^(\>\0)\0'

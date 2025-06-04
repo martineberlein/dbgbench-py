@@ -1,0 +1,1 @@
+printf '\tyK' |  LANG=zh_HK.Big5HKSCS timeout 0.5s grep --null-data --files-with-matches -z -i -n '^\n'

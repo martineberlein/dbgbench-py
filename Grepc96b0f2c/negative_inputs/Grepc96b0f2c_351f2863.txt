@@ -1,0 +1,1 @@
+printf '"\n\nb\xA3' | LC_ALL=en_US.utf8 timeout 0.5s grep --line-buffered '\w\0()\0()n$'

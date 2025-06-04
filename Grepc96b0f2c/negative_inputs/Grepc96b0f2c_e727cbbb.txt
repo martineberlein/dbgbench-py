@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' |  LANG=bg_BG timeout 0.5s grep -i -n '^$'

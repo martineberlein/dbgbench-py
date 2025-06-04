@@ -1,0 +1,1 @@
+printf 'abcd' | LC_ALL=en_US.utf8 timeout 0.5s grep --unix-byte-offsets -A 5800 -x -A 5900 -x -B 3 ''

@@ -1,0 +1,1 @@
+printf 'a\n\nH,' | timeout 0.5s grep -i -n '^;\n'

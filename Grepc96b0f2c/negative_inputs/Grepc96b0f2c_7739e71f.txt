@@ -1,0 +1,1 @@
+printf '\r\n\nb{' | LC_ALL=es_ES.utf-8 timeout 0.5s grep --ignore-case -n '[+-*]|$'

@@ -1,0 +1,1 @@
+printf '\t\xC4\xB0\xC4\xB0\xC4\xB0\xC4\xB0\xC4\xB0\xC4\xB0\n' |  timeout 0.5s grep --fixed-strings --count -c 'Z...'

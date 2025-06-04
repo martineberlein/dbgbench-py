@@ -1,0 +1,1 @@
+printf '\x27' | timeout 0.5s grep -E -q '(\B{-0,}|\<|())*'

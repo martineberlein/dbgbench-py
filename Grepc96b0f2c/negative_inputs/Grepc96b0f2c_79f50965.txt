@@ -1,0 +1,1 @@
+printf '\xe4\xce\xe4\xce' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n -w -n '^$'

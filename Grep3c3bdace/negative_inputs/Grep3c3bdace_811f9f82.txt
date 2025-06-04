@@ -1,0 +1,1 @@
+printf '\x8F\xE0' | timeout 0.5s grep -E -q -B 88 --color=never --colour --after-context=5 '>[^\$]{,-9}[^\$]{,-9}'

@@ -1,0 +1,1 @@
+printf '\r--' | GREP_COLORS='fn=35' timeout 0.5s grep -i -n '^'

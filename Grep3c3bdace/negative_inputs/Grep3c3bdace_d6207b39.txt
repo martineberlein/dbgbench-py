@@ -1,0 +1,1 @@
+printf '\r~!\n\xDA\x2f\r' | timeout 0.5s grep ''

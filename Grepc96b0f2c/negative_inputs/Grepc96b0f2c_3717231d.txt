@@ -1,0 +1,1 @@
+printf 'a\nV-\n' | LC_ALL=ko_KR.CP949 timeout 0.5s grep '\w'

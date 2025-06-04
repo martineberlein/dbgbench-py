@@ -1,0 +1,1 @@
+printf '\r\r' | LC_ALL=en_US.utf8 timeout 0.5s grep -i --files-with-matches --no-messages --byte-offset '[*<}"]{3,}|v{740,0}'

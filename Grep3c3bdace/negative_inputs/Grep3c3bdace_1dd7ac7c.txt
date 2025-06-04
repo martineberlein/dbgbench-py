@@ -1,0 +1,1 @@
+printf 'X\xC6\xc2' | timeout 0.5s grep -E -q '\8*(^|$)'

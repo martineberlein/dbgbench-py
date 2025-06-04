@@ -1,0 +1,1 @@
+printf '\xdc\xe9--' | LC_ALL=da_DK.ISO8859-1 LC_CTYPE=nl_BE.ISO8859-15 timeout 0.5s grep -i -n '^\W|(\B{-80000}$)\b'

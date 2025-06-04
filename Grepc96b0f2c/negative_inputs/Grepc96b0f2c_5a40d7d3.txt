@@ -1,0 +1,1 @@
+printf 'a-`l\x95\x7a-' | GREP_COLOR='0' timeout 0.5s grep -i -v -n --regexp=''

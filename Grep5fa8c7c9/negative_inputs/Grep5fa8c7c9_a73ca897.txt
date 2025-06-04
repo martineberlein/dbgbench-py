@@ -1,0 +1,1 @@
+printf '\xDD\xeD-bb' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -F -e '\B{10,8}|\9'

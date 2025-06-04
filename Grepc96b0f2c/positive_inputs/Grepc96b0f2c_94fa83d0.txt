@@ -1,0 +1,1 @@
+printf 'f\n\n\n\n' |  timeout 0.5s grep -i -n '^$'

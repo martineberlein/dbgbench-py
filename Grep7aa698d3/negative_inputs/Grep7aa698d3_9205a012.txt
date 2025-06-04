@@ -1,0 +1,1 @@
+printf '\xCC\xB0\xCB\xB09\xC4\xB0\xCC\xB0\r\xCC\xB0\n' | timeout 0.5s grep -i '\(?'

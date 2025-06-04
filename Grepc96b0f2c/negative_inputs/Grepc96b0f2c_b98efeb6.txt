@@ -1,0 +1,1 @@
+printf '\x65\x0e\xfe\x6E\xBf\n\t-' | timeout 0.5s grep -E --silent --after-context=50 '--label=%' --context=6 -I ''

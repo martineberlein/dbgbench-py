@@ -1,0 +1,1 @@
+printf '"--' | LC_ALL=en_US.utf8 timeout 0.5s grep --basic-regexp --binary --devices=read -n -o --line-buffered ''

@@ -1,0 +1,1 @@
+printf 'V' | timeout 0.5s grep --extended-regexp -A 3 --line-buffered '(^| )*(\3|\0|\3)'

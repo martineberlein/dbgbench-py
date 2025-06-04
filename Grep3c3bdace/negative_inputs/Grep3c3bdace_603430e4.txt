@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep -w --only-matching --context=6 -m 80 -c -q '((\x27|\x27)| )*(\0)'

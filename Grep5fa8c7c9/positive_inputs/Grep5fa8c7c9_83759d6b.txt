@@ -1,0 +1,1 @@
+printf 'abbb' | timeout 0.5s grep -F -a -w -U -C 8100 --after-context=3 -8100 ''

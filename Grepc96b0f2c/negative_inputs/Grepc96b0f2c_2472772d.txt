@@ -1,0 +1,1 @@
+printf '\xD2\xcFq\xD2\xcF' | LC_ALL=da_DK.utf-8 timeout 0.5s grep --ignore-case --null --ignore-case --null '^$'

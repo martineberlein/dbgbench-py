@@ -1,0 +1,1 @@
+printf 'O\n\n\nb' | LC_ALL=hu_HU.ISO8859-2 timeout 0.5s grep -i -Z -v '--exclude=\\x27#\t\' --color=always --binary-files=binary '%'

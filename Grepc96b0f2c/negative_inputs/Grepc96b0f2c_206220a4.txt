@@ -1,0 +1,1 @@
+printf '^\x27--' | LC_ALL=es_ES timeout 0.5s grep -i -n '^$'

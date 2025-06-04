@@ -1,0 +1,1 @@
+printf 'a\n$b\n' |  LC_MESSAGES=de_CH.ISO8859-1 timeout 0.5s grep -n '^$'

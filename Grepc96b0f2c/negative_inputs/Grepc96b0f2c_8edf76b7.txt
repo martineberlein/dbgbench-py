@@ -1,0 +1,1 @@
+printf '\r\(\t\t' | LC_ALL=zh_CN timeout 0.5s grep -i -n '^$'

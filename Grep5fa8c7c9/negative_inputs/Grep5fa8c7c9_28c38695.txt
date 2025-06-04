@@ -1,0 +1,1 @@
+printf '\xa8&' | timeout 0.5s grep --basic-regexp -U --color -U --color --unix-byte-offsets ''

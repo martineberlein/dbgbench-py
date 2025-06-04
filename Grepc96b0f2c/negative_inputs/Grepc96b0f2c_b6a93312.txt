@@ -1,0 +1,1 @@
+printf 'y\n\nb\n' | GREP_COLOR='00020600;0' timeout 0.5s grep --only-matching -z -m 76 --null-data -n '^'

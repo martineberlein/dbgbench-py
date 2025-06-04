@@ -1,0 +1,1 @@
+printf 'FQ"-\t' | LC_ALL=fr_FR LC_MESSAGES=fi_FI.ISO8859-1 LANG=pl_PL.UTF-8 timeout 0.5s grep -F ''

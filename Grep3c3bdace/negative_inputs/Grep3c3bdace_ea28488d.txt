@@ -1,0 +1,1 @@
+printf '\rP\x5A\xfd' | GREP_COLOR='09' timeout 0.5s grep ''

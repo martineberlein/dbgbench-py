@@ -1,0 +1,1 @@
+printf '\xca\x6B,"_\n\+' | timeout 0.5s grep -F -n -i --max-count=91 --binary '(( |^|^))*( |^)'

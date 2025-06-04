@@ -1,0 +1,1 @@
+printf '\r' | timeout 0.5s grep --fixed-strings -o --colour=never -x '--exclude-dir=*' '(^| )*( |$)'

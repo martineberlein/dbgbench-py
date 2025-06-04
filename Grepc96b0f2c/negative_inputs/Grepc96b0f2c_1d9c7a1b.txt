@@ -1,0 +1,1 @@
+printf '\xDd\n---' |  LC_CTYPE=fr_BE LANG=en_CA.ISO8859-1 timeout 0.5s grep -y -n '^$'

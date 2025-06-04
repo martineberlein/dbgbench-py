@@ -1,0 +1,1 @@
+printf 'a\n$b\x6C\x44' | LC_ALL=ko_KR timeout 0.5s grep -i -n '^$((()))()'

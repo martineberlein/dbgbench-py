@@ -1,0 +1,1 @@
+printf 'a-\n\nu' | LC_ALL=en_US.utf8 timeout 0.5s grep -x --binary-files=without-match -o -b --no-messages '^\n'

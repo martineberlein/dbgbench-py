@@ -1,0 +1,1 @@
+printf 'c"a' | LC_ALL=pt_PT timeout 0.5s grep --line-regexp -q -I -z -q --after-context=302 -v -I '^$&(\0)'

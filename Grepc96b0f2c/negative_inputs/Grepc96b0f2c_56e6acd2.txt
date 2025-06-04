@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' | GREP_COLORS='rv:' timeout 0.5s grep --extended-regexp --binary-files=binary ''

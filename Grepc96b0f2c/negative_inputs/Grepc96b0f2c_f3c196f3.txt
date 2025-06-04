@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' |  LANG=zh_CN timeout 0.5s grep ''

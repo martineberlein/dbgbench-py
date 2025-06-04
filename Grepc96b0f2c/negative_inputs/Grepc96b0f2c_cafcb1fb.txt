@@ -1,0 +1,1 @@
+printf '"\xeF\x21' | timeout 0.5s grep 'k'

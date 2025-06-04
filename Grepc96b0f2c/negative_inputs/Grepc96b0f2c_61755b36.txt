@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=it_CH timeout 0.5s grep -E -A 10405 -w --line-buffered ''

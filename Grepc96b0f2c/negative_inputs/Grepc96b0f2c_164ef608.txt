@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=hr_HR LC_MESSAGES=pt_PT timeout 0.5s grep -i --initial-tab '^$'

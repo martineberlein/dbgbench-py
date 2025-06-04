@@ -1,0 +1,1 @@
+printf '\xC4\x90\xC4\xB0"\xC4\xB0\xC4\xB0\xC4\xB0\xC4\xB0\n' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i '.^((\1()|(){,0}))|,[^"\n<]{80,-0}{,8}'

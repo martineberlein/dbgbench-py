@@ -1,0 +1,1 @@
+printf 'ab\nb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep --unix-byte-offsets --line-regexp --unix-byte-offsets --line-regexp 'a$'

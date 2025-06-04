@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep --basic-regexp --no-messages --line-number '--label=\n' --only-matching --line-buffered '\W|[@}\x76]É]]{90599,-30}[\\]W'

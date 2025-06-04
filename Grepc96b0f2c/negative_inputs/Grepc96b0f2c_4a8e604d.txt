@@ -1,0 +1,1 @@
+printf '\r\r--\x7B\xE1' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -o '--exclude=\*\[:]\\' --word-regexp --ignore-case '--exclude=\\' --line-regexp --line-buffered -z --after-context=8 -e ''

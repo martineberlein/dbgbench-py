@@ -1,0 +1,1 @@
+printf '"bb' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -A 2 -x -x -U -U '--exclude=' 'H*[^;-.]\2H\>'

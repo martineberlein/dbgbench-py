@@ -1,0 +1,1 @@
+printf 'abcd' |  LC_COLLATE=fr_BE.UTF-8 timeout 0.5s grep -i -n -B 52 --binary-files=text -o ''

@@ -1,0 +1,1 @@
+printf '\r\xCB\xB0\xCC\xBC\xC4\xB0\xC4\x70\xC4\xB0\xC4\xB0\n' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i -B 5 -i --before-context=10 --quiet '....'

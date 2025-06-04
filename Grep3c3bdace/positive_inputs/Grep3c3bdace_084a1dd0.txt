@@ -1,0 +1,1 @@
+printf 'm' | timeout 0.5s grep -E -s -q '((^^| )| P|()|\w| )*( |$|$)'

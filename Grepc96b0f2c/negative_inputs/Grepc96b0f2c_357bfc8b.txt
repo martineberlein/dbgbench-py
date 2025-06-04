@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' | LC_ALL=ru_RU.ISO8859-5 LC_MESSAGES=en_US.utf8 timeout 0.5s grep -i '^$'

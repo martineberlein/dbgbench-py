@@ -1,0 +1,1 @@
+printf 'a\n$\n$' | LC_ALL=af_ZA.utf8 timeout 0.5s grep -i -n --regexp=''

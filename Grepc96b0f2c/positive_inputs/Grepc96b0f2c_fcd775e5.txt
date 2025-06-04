@@ -1,0 +1,1 @@
+printf 'a\n\nb-' | GREP_COLOR='00;0;90900' timeout 0.5s grep -i -n '^$'

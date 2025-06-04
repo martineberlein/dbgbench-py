@@ -1,0 +1,1 @@
+printf '"\n-b\n' | LC_ALL=en_US.utf8 timeout 0.5s grep --extended-regexp --byte-offset --only-matching -q --with-filename -Z ''

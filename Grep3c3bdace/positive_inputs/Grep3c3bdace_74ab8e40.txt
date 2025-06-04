@@ -1,0 +1,1 @@
+printf 'X' |  LANG=lt_LT.ISO8859-13 timeout 0.5s grep -E -q '(^| )*( |$)()*'

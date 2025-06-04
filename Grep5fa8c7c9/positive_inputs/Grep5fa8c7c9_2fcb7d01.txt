@@ -1,0 +1,1 @@
+printf '\x29\x4f\r-' | POSIXLY_CORRECT=1 timeout 0.5s grep -F ''

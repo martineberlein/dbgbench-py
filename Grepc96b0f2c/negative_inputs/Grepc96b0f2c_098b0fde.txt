@@ -1,0 +1,1 @@
+printf 'a\n\nb-' | LC_ALL=ru_RU.CP866 timeout 0.5s grep -i -n 'X\6{,0}()'

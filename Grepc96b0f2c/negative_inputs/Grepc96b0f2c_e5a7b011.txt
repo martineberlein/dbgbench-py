@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -i --after-context=80 '--exclude-dir=*' -d read '--exclude-dir=*' -d read -I -Z '^$'

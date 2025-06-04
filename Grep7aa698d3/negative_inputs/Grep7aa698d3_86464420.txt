@@ -1,0 +1,1 @@
+printf '\xC4\x40\xC4\xB0\r\xC4\xB0\xC4\x40\x04\xB0\xC4\xB0\n' | LC_ALL=cs_CZ.ISO8859-2 timeout 0.5s grep -i -e ''

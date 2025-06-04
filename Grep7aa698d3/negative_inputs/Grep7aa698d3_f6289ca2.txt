@@ -1,0 +1,1 @@
+printf '\x16\xbb\xC4\xB0\xC4\x60\xC4\xB0\xC4\xB0\xCB\xB0\xC4\xB0\n' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -z --with-filename --quiet --invert-match -B 2 ''

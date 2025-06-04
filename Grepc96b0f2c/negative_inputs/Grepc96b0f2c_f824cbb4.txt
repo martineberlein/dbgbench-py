@@ -1,0 +1,1 @@
+printf '\x2c\xc6-\n\t-a' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n --before-context=2 -i -i --binary --unix-byte-offsets --line-buffered --line-buffered ',$'

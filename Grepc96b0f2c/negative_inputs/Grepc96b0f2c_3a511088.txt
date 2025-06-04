@@ -1,0 +1,1 @@
+printf 'a\xa8\x99\r-' | LC_ALL=en_US.utf8 timeout 0.5s grep --word-regexp -n '^[\x47]\B'

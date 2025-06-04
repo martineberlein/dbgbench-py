@@ -1,0 +1,1 @@
+printf '\+\xC4\xB0\xC4\xB0\xC4\xB0\xC4\xB0\xC4\xB0\xC4\xB0.' | LC_ALL=de_CH.UTF-8 LC_COLLATE=lt_LT.ISO8859-4 LANG=de_CH.UTF-8 timeout 0.5s grep -i '\3()[^`-|](\W)'

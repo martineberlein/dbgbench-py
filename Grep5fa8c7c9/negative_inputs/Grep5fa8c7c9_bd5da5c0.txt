@@ -1,0 +1,1 @@
+printf 'acca' |  LC_CTYPE=be_BY.CP1251 LANG=sv_SE.ISO8859-15 timeout 0.5s grep -F ''

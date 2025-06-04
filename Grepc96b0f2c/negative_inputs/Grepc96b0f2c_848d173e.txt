@@ -1,0 +1,1 @@
+printf '\t\n-' | LC_ALL=no_NO.ISO8859-1 timeout 0.5s grep -i -n '^$'

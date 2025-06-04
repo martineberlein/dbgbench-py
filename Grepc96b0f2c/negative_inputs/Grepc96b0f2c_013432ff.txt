@@ -1,0 +1,1 @@
+printf 'a\n\nSS' | LC_ALL=pt_PT.ISO8859-1 timeout 0.5s grep -i -n ''

@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep -E --binary --word-regexp -l --line-buffered '--exclude=' --line-buffered '()*((RQ)| )'

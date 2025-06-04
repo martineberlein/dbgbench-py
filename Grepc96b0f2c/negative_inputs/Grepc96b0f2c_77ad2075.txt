@@ -1,0 +1,1 @@
+printf 'a\n\nD\n' | LC_ALL=be_BY LANG=nl_NL timeout 0.5s grep -i -n ''

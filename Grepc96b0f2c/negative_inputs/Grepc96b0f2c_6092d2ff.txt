@@ -1,0 +1,1 @@
+printf 'app-\x17' |  LC_MESSAGES=pl_PL LANG=en_US.UTF-8 timeout 0.5s grep -n '^$'

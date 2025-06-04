@@ -1,0 +1,1 @@
+printf 'a\n\n$\n' | LC_ALL=lt_LT.ISO8859-4 timeout 0.5s grep -i -n '^$\>|\5{109,}{-0}'

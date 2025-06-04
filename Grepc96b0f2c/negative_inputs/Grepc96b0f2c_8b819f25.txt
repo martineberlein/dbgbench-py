@@ -1,0 +1,1 @@
+printf '\n\x2A\xBd\|/' | LC_ALL=sl_SI.UTF-8 LC_COLLATE=ko_KR timeout 0.5s grep -i -n '^$'

@@ -1,0 +1,1 @@
+printf '\t\t-\ra' | timeout 0.5s grep -E --unix-byte-offsets --regexp=''

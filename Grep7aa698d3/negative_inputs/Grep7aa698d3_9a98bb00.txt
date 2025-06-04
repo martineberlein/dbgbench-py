@@ -1,0 +1,1 @@
+printf '\xC0\xB0\xC0\xB0\xC4\xB0\n\xC4\xB0\xC4\xC0\xC0\xB0\n' | LC_ALL=en_US.UTF-8 timeout 0.5s grep --extended-regexp --files-without-match '--exclude-dir=\}\' -T -H '....'

@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | GREP_COLOR='0;2;30' timeout 0.5s grep -w -i -n '\w?'

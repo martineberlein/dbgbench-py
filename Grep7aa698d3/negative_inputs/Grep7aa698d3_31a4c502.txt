@@ -1,0 +1,1 @@
+printf '\xC4\xC0\xC4\xB0\xC4\xE0\xC4\xF0\xC4\xBC\xC4\xB0-\n' | GREP_COLORS='mt=01;31:' timeout 0.5s grep -i '.q[^`-*]\t'

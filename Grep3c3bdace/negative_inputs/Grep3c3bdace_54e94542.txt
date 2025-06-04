@@ -1,0 +1,1 @@
+printf '\xc4' | timeout 0.5s grep -G -q '(^|())*( |$)'

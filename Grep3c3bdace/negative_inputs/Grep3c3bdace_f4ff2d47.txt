@@ -1,0 +1,1 @@
+printf 'Xh"' | timeout 0.5s grep -E --after-context=7005 --regexp=''

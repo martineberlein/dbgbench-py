@@ -1,0 +1,1 @@
+printf 'abcb' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -G --context=9 '--exclude-dir=\[**?\**?\\\\\]\' --context=9 --line-buffered --colour=never '--label=\t\)' ''

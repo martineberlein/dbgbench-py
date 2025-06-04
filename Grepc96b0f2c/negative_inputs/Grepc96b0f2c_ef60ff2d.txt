@@ -1,0 +1,1 @@
+printf 'a\nWb$' | LC_ALL=en_US.utf8 timeout 0.5s grep -m 1 '((\4:+?|\<)|8)|\>\0{-2,807}D\>()'

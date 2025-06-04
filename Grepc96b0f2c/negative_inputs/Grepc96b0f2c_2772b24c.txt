@@ -1,0 +1,1 @@
+printf '\t-\t' | LC_ALL=eu_ES timeout 0.5s grep -i -w -50 -L -y --after-context=3 'Ny'

@@ -1,0 +1,1 @@
+printf 'abTj\n' | LC_ALL=af_ZA.ISO8859-15 timeout 0.5s grep -i -n '^$'

@@ -1,0 +1,1 @@
+printf 'a\n\nN\n' | LC_ALL=zh_CN.eucCN timeout 0.5s grep -i -n '^$'

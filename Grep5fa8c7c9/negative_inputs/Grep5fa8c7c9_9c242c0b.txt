@@ -1,0 +1,1 @@
+printf '\|bbb' | LC_ALL=ca_ES.ISO8859-1 timeout 0.5s grep -F ''

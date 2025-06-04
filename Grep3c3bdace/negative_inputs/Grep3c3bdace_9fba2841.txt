@@ -1,0 +1,1 @@
+printf 'XT-`j-' | timeout 0.5s grep -E '(\w(^| )|.)*( |(^|(^| )\<))'

@@ -1,0 +1,1 @@
+printf '\xC5\xA3\*\*pj' | GREP_COLOR='080;0' timeout 0.5s grep ''

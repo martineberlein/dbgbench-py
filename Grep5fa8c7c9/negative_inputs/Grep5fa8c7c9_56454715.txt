@@ -1,0 +1,1 @@
+printf 'abcd' | LC_ALL=fr_BE timeout 0.5s grep -c -U '\>\B'

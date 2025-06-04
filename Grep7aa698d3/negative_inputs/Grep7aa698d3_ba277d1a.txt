@@ -1,0 +1,1 @@
+printf '\xC4\xB0\xC4\xB0\xC4\xBb\xCF\xB0\xC4\xB0\xC4\xB0\xC4\xB0\n' | LC_ALL=eu_ES LANG=en_AU.ISO8859-1 timeout 0.5s grep -E '--exclude-dir=[\[[\[>\t]\]]\]' -B 3 '....'

@@ -1,0 +1,1 @@
+printf '\x2B"' | LC_ALL=en_US.utf8 timeout 0.5s grep -i --line-number ''

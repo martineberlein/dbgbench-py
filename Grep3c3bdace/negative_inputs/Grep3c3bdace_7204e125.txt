@@ -1,0 +1,1 @@
+printf '\x3A\x98\x7a"/F' | timeout 0.5s grep -E -q -a --ignore-case --ignore-case -U -q -T '(^| ){,-00}( |$)'

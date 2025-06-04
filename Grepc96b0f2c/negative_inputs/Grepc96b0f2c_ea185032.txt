@@ -1,0 +1,1 @@
+printf 'a-\nbi' | GREP_COLORS='fn=35' timeout 0.5s grep -i --line-buffered -a -i -e '([\$-\\]\6)'

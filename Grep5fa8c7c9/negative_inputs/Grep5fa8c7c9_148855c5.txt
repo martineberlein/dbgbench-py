@@ -1,0 +1,1 @@
+printf 'aHbb' | LC_ALL=hy_AM.UTF-8 LC_CTYPE=it_CH LANG=cs_CZ timeout 0.5s grep -F ''

@@ -1,0 +1,1 @@
+printf '\r\r---' | timeout 0.5s grep --basic-regexp -H -Z ''

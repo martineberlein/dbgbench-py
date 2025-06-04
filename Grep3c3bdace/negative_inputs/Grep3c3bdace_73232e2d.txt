@@ -1,0 +1,1 @@
+printf 'M' | timeout 0.5s grep --extended-regexp --word-regexp --with-filename '--label=\x0b' -Z --line-buffered '(^| ^| )*()'

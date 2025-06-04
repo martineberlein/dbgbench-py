@@ -1,0 +1,1 @@
+printf 'a-' | GREP_COLORS='mc=01;31:se=36' timeout 0.5s grep --line-number --no-filename -q '(^| )*( |^)'

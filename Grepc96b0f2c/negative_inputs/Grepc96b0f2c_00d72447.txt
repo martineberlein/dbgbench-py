@@ -1,0 +1,1 @@
+printf 'appb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep '\0hG|\4{-0,}\w'

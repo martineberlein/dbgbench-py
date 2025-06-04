@@ -1,0 +1,1 @@
+printf '\xC4\x40\xC4\xBC\xBC\x3A\xC4\xB0\xdf\x5B\xC4\xBC"$' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i '....'

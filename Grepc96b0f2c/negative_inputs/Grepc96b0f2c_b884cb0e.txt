@@ -1,0 +1,1 @@
+printf 'a-D\n\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n --no-filename 'a$f{40700,680}E'

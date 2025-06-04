@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --extended-regexp -A 6 '--exclude-dir=' --before-context=9 -L --line-buffered '(^| )*( |$)'

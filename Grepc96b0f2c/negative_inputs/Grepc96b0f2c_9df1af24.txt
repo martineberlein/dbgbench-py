@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | GREP_COLORS='' timeout 0.5s grep -i --text -A 800 'a1'

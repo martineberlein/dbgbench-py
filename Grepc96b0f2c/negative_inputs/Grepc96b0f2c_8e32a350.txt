@@ -1,0 +1,1 @@
+printf 'a\n0b\n' |  LC_CTYPE=be_BY.ISO8859-5 LANG=cs_CZ timeout 0.5s grep -i -b '^\B??\B??'

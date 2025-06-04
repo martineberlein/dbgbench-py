@@ -1,0 +1,1 @@
+printf '\r-\r"V' | timeout 0.5s grep --line-buffered -e ''

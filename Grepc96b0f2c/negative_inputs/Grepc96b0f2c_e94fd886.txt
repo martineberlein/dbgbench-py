@@ -1,0 +1,1 @@
+printf '\r0' | POSIXLY_CORRECT=1 timeout 0.5s grep --basic-regexp --binary --files-without-match ''

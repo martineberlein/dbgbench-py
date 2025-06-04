@@ -1,0 +1,1 @@
+printf '"--R-g' | timeout 0.5s grep --extended-regexp --silent -b -i -m 4 -b --max-count=4 -o '(^| )*((^| ))'

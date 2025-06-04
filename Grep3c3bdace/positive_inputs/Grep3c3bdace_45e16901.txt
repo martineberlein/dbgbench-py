@@ -1,0 +1,1 @@
+printf 'q{-p\xfC\xD8' | timeout 0.5s grep -E -q '(^| )*( |$)'

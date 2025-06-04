@@ -1,0 +1,1 @@
+printf 'X' |  LC_CTYPE=no_NO.ISO8859-1 LANG=ru_RU.utf8 timeout 0.5s grep -E --line-regexp -v --colour -i --only-matching '(^| )*( |$)'

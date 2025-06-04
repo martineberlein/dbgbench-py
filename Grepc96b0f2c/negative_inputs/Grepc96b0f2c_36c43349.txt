@@ -1,0 +1,1 @@
+printf 'a-\t-' | LC_ALL=ko_KR.eucKR timeout 0.5s grep --files-with-matches -s -x --invert-match -A 3 -I --regexp=''

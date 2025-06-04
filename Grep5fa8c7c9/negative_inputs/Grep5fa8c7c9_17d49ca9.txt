@@ -1,0 +1,1 @@
+printf '\r' | LC_ALL=pt_BR LANG=pt_BR timeout 0.5s grep -C 2 -v -v ''

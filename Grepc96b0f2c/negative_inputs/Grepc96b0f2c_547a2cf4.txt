@@ -1,0 +1,1 @@
+printf 'aRR\r\rv' | LC_ALL=nl_BE.ISO8859-15 timeout 0.5s grep -i -n --regexp=' {2,-9}{0,1}'

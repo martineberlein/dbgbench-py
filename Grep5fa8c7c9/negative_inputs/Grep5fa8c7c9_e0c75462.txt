@@ -1,0 +1,1 @@
+printf 'abbz' | LC_ALL=en_US.UTF-8 timeout 0.5s grep --extended-regexp -H -i --unix-byte-offsets --line-regexp --unix-byte-offsets --unix-byte-offsets -i ''

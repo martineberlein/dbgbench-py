@@ -1,0 +1,1 @@
+printf 'at\nM' | timeout 0.5s grep --extended-regexp --null-data -I --null-data -H --line-buffered ''

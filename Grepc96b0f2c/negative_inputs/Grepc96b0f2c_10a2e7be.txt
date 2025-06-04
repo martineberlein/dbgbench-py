@@ -1,0 +1,1 @@
+printf 'aC\nb\n' | timeout 0.5s grep -i -y --line-number -i -n ''

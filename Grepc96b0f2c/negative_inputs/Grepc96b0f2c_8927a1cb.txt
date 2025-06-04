@@ -1,0 +1,1 @@
+printf 'aB-\x1BH' | LC_ALL=en_US.utf8 timeout 0.5s grep -l -U -B 2 --word-regexp -L -L '^$'

@@ -1,0 +1,1 @@
+printf '\x73\xde\n\nb\n' | LC_ALL=he_IL timeout 0.5s grep -n '^$\3'

@@ -1,0 +1,1 @@
+printf '\t\t"\x07' | timeout 0.5s grep ''

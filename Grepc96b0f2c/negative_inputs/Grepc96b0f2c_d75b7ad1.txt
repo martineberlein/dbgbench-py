@@ -1,0 +1,1 @@
+printf 'd-' | timeout 0.5s grep -m 3 --context=1 -w ''

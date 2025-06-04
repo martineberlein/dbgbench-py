@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --fixed-strings --ignore-case -i --after-context=6 --ignore-case -i --after-context=6 '(^| )*( |$)'

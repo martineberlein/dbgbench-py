@@ -1,0 +1,1 @@
+printf '\n\x27\(A' | GREP_COLORS='bn=32' timeout 0.5s grep ''

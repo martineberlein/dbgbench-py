@@ -1,0 +1,1 @@
+printf '\xC0\nVb\n' | timeout 0.5s grep -U --context=5280 '--exclude=' --line-number ''

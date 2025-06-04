@@ -1,0 +1,1 @@
+printf 'f"' |  LANG=et_EE timeout 0.5s grep --fixed-strings --color=never --ignore-case --initial-tab --line-buffered ''

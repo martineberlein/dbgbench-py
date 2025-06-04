@@ -1,0 +1,1 @@
+printf '\tbcd' | LC_ALL=nl_NL timeout 0.5s grep -F '^{-6}[^\n-;]??[^&]'

@@ -1,0 +1,1 @@
+printf 'abbb' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -F -w --word-regexp --before-context=10 -T -U -w ''

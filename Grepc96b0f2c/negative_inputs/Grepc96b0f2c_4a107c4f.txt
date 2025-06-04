@@ -1,0 +1,1 @@
+printf 'a\nbb\xEd\xFf' | POSIXLY_CORRECT=1 timeout 0.5s grep -i -B 120 --null '--include=' -d skip '^$$$'

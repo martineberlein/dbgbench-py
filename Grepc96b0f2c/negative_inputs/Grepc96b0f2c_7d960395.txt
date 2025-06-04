@@ -1,0 +1,1 @@
+printf 'a\n$b\n' | LC_ALL=fr_CH.ISO8859-1 LC_CTYPE=en_US.utf8 LANG=uk_UA timeout 0.5s grep -i -n '^$$'

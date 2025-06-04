@@ -1,0 +1,1 @@
+printf '^\r\r' | timeout 0.5s grep -i -i --line-number '^$'

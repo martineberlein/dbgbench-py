@@ -1,0 +1,1 @@
+printf '"' | LC_ALL=ko_KR LC_COLLATE=fr_CA.ISO8859-1 timeout 0.5s grep -i -n '^$'

@@ -1,0 +1,1 @@
+printf '\x4e\n3I\t\n' | LC_ALL=en_AU timeout 0.5s grep --after-context=4 --line-buffered --line-buffered --word-regexp '^$'

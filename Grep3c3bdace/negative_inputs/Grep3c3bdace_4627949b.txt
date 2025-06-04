@@ -1,0 +1,1 @@
+printf '"' | GREP_COLORS='ms=01;31' timeout 0.5s grep -F '--exclude-dir=*\\' '--exclude-dir=*\\' ''

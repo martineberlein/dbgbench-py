@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --line-buffered '--include=' --with-filename '--exclude=**' '(^| )*( |$)'

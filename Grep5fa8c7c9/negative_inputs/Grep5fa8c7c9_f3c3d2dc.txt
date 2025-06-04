@@ -1,0 +1,1 @@
+printf 'w-m-wa' | timeout 0.5s grep '--exclude=\ \' -A 2 -d skip --devices=read ''

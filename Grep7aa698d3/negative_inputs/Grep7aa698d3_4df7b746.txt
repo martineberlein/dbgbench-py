@@ -1,0 +1,1 @@
+printf '\xCf\xB0\xC4\xC0\xC4\xBf\xC4\xB0\xC4\xBf\xC4\xB0\x4e\xd9\n' | LC_ALL=en_US.UTF-8 timeout 0.5s grep --basic-regexp -A 6 -x --after-context=8 --line-buffered '...'

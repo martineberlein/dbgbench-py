@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | GREP_COLORS='se=36:se=36' timeout 0.5s grep --before-context=2 --line-buffered -I -C 90 --regexp='[^_(][+-0]\5'

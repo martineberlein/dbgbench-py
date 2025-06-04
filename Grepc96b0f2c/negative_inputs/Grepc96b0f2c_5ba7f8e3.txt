@@ -1,0 +1,1 @@
+printf 'a\n\nb$' | LC_ALL=en_CA.US-ASCII timeout 0.5s grep -i -n '^$'

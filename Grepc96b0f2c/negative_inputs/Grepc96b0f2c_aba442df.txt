@@ -1,0 +1,1 @@
+printf 'a]\nb\n' | LC_ALL=ko_KR LANG=no_NO timeout 0.5s grep -i -n '{$'

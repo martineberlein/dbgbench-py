@@ -1,0 +1,1 @@
+printf 'abcd' | GREP_COLORS='cx=5:rv:fn=35' timeout 0.5s grep -F '\0(3{,-5})'

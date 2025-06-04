@@ -1,0 +1,1 @@
+printf '"' | GREP_COLOR='04' timeout 0.5s grep -G '--exclude-dir=*\**%\' ''

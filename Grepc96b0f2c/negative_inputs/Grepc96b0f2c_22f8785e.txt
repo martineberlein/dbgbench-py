@@ -1,0 +1,1 @@
+printf '\r!\t-' | LC_ALL=it_IT.ISO8859-1 timeout 0.5s grep --color -a -d read -i -n -e ''

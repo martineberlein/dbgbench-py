@@ -1,0 +1,1 @@
+printf '\tX\t--I' | timeout 0.5s grep -E -q '(^| )* |$'

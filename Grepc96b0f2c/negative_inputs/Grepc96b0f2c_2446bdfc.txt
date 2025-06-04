@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -G --null '--label=^' -A 2 --only-matching --initial-tab -i -n '^$(()?{,60500}U)?(()?{,60500}()?)'

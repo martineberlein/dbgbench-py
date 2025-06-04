@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | GREP_COLORS='mt=01;31' timeout 0.5s grep -i -n --files-with-matches -L --after-context=30 --before-context=39 -B 9 '$|@$'

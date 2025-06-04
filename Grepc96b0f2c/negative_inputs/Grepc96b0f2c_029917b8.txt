@@ -1,0 +1,1 @@
+printf '\x79\x9f-\x79\x9f-H%' | LC_ALL=nl_NL timeout 0.5s grep '^'

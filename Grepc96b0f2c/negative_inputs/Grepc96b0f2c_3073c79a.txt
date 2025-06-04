@@ -1,0 +1,1 @@
+printf '\r-\rH' | GREP_COLOR='9' timeout 0.5s grep ''

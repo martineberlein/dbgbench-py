@@ -1,0 +1,1 @@
+printf 'a<bc' | LC_ALL=no_NO LANG=hu_HU timeout 0.5s grep -F ''

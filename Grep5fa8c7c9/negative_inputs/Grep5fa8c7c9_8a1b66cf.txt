@@ -1,0 +1,1 @@
+printf '^bbc' | LC_ALL=is_IS.ISO8859-15 LANG=nl_BE.ISO8859-15 timeout 0.5s grep --fixed-strings ''

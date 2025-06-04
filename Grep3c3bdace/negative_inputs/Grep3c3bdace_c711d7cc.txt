@@ -1,0 +1,1 @@
+printf '\x5F\x62' | timeout 0.5s grep -E -m 55 --binary -y --quiet '--exclude=' '(^|^)*()'

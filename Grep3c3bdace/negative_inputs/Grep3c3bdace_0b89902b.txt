@@ -1,0 +1,1 @@
+printf 'X' | LC_ALL=en_IE.UTF-8 LC_CTYPE=fi_FI timeout 0.5s grep --devices=read -x ''

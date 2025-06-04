@@ -1,0 +1,1 @@
+printf 'aX\nX\n' | LC_ALL=de_CH timeout 0.5s grep -v --files-with-matches -v '^$'

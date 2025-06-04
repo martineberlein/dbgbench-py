@@ -1,0 +1,1 @@
+printf 'a\x2C\xC1\xd2\t' | LC_ALL=en_US.utf8 timeout 0.5s grep -H -n -i -n 'R<'

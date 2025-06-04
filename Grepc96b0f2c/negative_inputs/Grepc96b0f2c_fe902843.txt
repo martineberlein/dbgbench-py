@@ -1,0 +1,1 @@
+printf 'a\n\nbb' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i '--exclude-dir=?[\\]' --null --after-context=4 -B 6 '()[^@]|[^?-)]++|\B?{0}|\>|\b\0'

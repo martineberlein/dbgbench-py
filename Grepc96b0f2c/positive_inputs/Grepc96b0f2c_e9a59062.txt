@@ -1,0 +1,1 @@
+printf '0-\x6a\xaa' | timeout 0.5s grep -i -U -o --null-data --initial-tab -o --line-buffered '\W'

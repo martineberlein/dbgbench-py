@@ -1,0 +1,1 @@
+printf '\t-"' | GREP_COLOR='0502;0' timeout 0.5s grep '--include=' -I -B 70 '...\n'

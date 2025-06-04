@@ -1,0 +1,1 @@
+printf '\x36\r\n' | LC_ALL=en_US.utf8 timeout 0.5s grep --basic-regexp --text --unix-byte-offsets --line-buffered -C 5 ''

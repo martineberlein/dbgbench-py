@@ -1,0 +1,1 @@
+printf 'Q' | timeout 0.5s grep --extended-regexp --with-filename --line-buffered --after-context=2 '--exclude=*' --byte-offset -e ''

@@ -1,0 +1,1 @@
+printf '\x40' | timeout 0.5s grep --extended-regexp -y --binary-files=binary -c --binary-files=binary -c -n --context=1 -c ''

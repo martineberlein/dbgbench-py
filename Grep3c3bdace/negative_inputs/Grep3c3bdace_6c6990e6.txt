@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --line-number --devices=skip -q -q '(^|[(-\x7B])*([(-\x7B]|w|^)'

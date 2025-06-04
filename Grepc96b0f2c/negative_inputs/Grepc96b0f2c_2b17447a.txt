@@ -1,0 +1,1 @@
+printf '^--\x9e' | LC_ALL=da_DK.ISO8859-15 timeout 0.5s grep -i -n '^$'

@@ -1,0 +1,1 @@
+printf 'a\x5b\nZ,' | LC_ALL=en_US.utf8 timeout 0.5s grep -i '^$'

@@ -1,0 +1,1 @@
+printf '\xB4\t0' | timeout 0.5s grep -E -q '( )*(\w|( ))'

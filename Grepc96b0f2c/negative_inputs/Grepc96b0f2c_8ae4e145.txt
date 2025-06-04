@@ -1,0 +1,1 @@
+printf '\x28\xCe\n\t\n' | timeout 0.5s grep -i -n ''

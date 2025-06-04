@@ -1,0 +1,1 @@
+printf '\x11-\t' | timeout 0.5s grep --directories=read --after-context=8000 --directories=read --after-context=6 ''

@@ -1,0 +1,1 @@
+printf 'a\n-b\n' | GREP_COLORS='ms=01;31' timeout 0.5s grep -i -n --binary-files=text -80 '^$'

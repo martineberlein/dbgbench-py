@@ -1,0 +1,1 @@
+printf '\x70--\rX' | timeout 0.5s grep ''

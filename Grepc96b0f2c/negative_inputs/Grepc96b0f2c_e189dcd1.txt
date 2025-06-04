@@ -1,0 +1,1 @@
+printf 'aa\r-Q' | LC_ALL=en_US.utf8 timeout 0.5s grep -i -n -A 1 -I --byte-offset -y -U -i -n 'a$'

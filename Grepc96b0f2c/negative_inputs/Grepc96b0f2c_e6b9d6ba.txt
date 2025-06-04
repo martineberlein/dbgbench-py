@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' |  LC_MESSAGES=sr_YU LANG=pt_PT.ISO8859-1 timeout 0.5s grep -i -n -z --line-buffered '--label=}' -i -n '^$'

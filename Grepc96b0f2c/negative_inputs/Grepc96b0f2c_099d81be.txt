@@ -1,0 +1,1 @@
+printf '"\n\n\n\n' | LC_ALL=ro_RO.UTF-8 timeout 0.5s grep --files-without-match '\([^,]]'

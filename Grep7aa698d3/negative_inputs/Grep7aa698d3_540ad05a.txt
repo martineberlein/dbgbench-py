@@ -1,0 +1,1 @@
+printf '\xC4\xB0\xC4\xB0\n\x54\xBD\x54\xBD\xC4\x70\xA4\xB0\n' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -i -i '\<.'

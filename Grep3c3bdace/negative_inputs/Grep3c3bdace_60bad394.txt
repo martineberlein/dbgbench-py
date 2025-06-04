@@ -1,0 +1,1 @@
+printf '\n]' | timeout 0.5s grep -D read --initial-tab '--exclude=' --after-context=3 --max-count=40 --line-buffered ''

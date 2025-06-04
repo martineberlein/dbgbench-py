@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' | GREP_COLORS='bn=32:' timeout 0.5s grep -i -B 70 --after-context=9 --byte-offset -q --ignore-case '--include=?' -L '^$\n'

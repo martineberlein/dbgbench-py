@@ -1,0 +1,1 @@
+printf '\t^\xd6"' | POSIXLY_CORRECT=1 timeout 0.5s grep -E -v ''

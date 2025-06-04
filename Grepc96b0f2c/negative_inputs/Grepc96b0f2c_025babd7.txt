@@ -1,0 +1,1 @@
+printf 'aEg' | LC_ALL=de_CH.ISO8859-1 LC_COLLATE=en_IE.utf-8 timeout 0.5s grep -i -n -i -n '--label=\\' '^()'

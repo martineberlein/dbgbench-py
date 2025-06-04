@@ -1,0 +1,1 @@
+printf 'a\n\nbb' | LC_ALL=en_NZ timeout 0.5s grep -i -n -n '^()'

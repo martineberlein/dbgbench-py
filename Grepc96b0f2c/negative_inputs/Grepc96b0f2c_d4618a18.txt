@@ -1,0 +1,1 @@
+printf 'a\t\nb\t' | LC_ALL=en_US.utf-8 timeout 0.5s grep -i -n '[^@(@(á(\x27{0@]'

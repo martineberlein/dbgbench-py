@@ -1,0 +1,1 @@
+printf '\x5d.' | timeout 0.5s grep -E --quiet '(^|^)*( |$)_'

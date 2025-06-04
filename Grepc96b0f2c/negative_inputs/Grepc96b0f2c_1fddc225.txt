@@ -1,0 +1,1 @@
+printf 'aH\nb\n' | timeout 0.5s grep -i -n --files-with-matches --no-filename --only-matching --before-context=5 --devices=skip -i 'a$'

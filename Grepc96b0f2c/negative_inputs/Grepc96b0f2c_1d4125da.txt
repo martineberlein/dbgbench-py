@@ -1,0 +1,1 @@
+printf ' \n\n\n3' | LC_ALL=cs_CZ.ISO8859-2 timeout 0.5s grep '^$'

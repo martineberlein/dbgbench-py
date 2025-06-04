@@ -1,0 +1,1 @@
+printf 'a\n\nbN' | GREP_COLORS='ms=01;31' timeout 0.5s grep -i -s -A 4 --directories=read -D read --line-regexp --binary -z '^[(!]'

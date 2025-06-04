@@ -1,0 +1,1 @@
+printf '\n-e-\t"' | timeout 0.5s grep --after-context=6 ''

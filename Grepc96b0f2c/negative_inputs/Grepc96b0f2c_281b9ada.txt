@@ -1,0 +1,1 @@
+printf '\t"m\n-' |  LANG=be_BY.ISO8859-5 timeout 0.5s grep -i -n '^$'

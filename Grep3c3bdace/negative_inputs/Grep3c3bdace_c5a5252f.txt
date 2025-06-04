@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep -F --word-regexp -b --max-count=4 --word-regexp -b --max-count=4 -c -C 4 ''

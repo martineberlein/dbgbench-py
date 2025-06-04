@@ -1,0 +1,1 @@
+printf 'a\n\nbb' | GREP_COLOR='3;60' timeout 0.5s grep '^$'

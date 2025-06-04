@@ -1,0 +1,1 @@
+printf '\r\r-OY' | GREP_COLOR='04043;0' timeout 0.5s grep -G -d read '--exclude-dir=\%\' -i -n ''

@@ -1,0 +1,1 @@
+printf 'aaa\xED\x64%L' | GREP_COLORS='bn=32:' timeout 0.5s grep ''

@@ -1,0 +1,1 @@
+printf '\n\n\n\nh' | LC_ALL=en_US.utf8 timeout 0.5s grep '--label==' -e '(\|\n){0,0}'

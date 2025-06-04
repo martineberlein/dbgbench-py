@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' | LC_ALL=hy_AM timeout 0.5s grep -i -T -i -n '^$A'

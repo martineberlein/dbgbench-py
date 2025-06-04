@@ -1,0 +1,1 @@
+printf 'X' | LC_ALL=ca_ES.ISO8859-1 LC_MESSAGES=fr_FR.utf8 LANG=el_GR.utf8 timeout 0.5s grep -E -q '((^| )| )*("| )'

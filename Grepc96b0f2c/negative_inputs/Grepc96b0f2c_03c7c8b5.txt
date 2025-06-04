@@ -1,0 +1,1 @@
+printf 'a."' | LC_ALL=ca_ES timeout 0.5s grep -x -n '()\7\7\0'

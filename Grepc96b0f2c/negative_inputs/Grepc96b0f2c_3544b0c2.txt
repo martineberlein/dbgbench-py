@@ -1,0 +1,1 @@
+printf 'a\n\na\n' | POSIXLY_CORRECT=1 timeout 0.5s grep -i -n --invert-match 'a\n'

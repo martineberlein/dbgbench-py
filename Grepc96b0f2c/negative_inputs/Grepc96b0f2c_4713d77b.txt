@@ -1,0 +1,1 @@
+printf '\r0' | GREP_COLOR='0;7' timeout 0.5s grep '^$'

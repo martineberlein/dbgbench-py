@@ -1,0 +1,1 @@
+printf 'P\n\nb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -G -i -Z --text -i -n -Z -i -n '\W'

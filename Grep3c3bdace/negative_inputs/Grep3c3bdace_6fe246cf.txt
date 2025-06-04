@@ -1,0 +1,1 @@
+printf '<\xDA-d%' | timeout 0.5s grep -E -q -q ' *(#^| )'

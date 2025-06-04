@@ -1,0 +1,1 @@
+printf 'a-\n-\n' | LC_ALL=ru_RU.CP1251 timeout 0.5s grep --extended-regexp --word-regexp -z -v '--exclude-dir=\x0b\)' '^$'

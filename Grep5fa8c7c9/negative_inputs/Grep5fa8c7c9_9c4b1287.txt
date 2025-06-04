@@ -1,0 +1,1 @@
+printf 'a\xC7\x0bhlH' | LC_ALL=en_US.UTF-8 timeout 0.5s grep -E ''

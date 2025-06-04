@@ -1,0 +1,1 @@
+printf 'abbb' | LC_ALL=eu_ES.ISO8859-15 timeout 0.5s grep -G -x -9 -C 10 -e ''

@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --byte-offset --after-context=5 --initial-tab -q -H --after-context=7 '(^| )*( |$)'

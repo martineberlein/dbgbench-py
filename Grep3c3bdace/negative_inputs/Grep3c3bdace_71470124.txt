@@ -1,0 +1,1 @@
+printf '\xdb\xc5' | timeout 0.5s grep -E -q '([(3\x0B\x27.]*| )*[(3\x0B\x27.]{6}| '

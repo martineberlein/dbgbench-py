@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --binary-files=without-match -I --devices=skip -s -Z '(^| )*( |$)'

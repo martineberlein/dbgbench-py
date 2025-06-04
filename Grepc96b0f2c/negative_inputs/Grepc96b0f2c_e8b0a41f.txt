@@ -1,0 +1,1 @@
+printf '\x6D\x00\n\nb\n' | timeout 0.5s grep --devices=skip --binary-files=text -D skip --binary-files=text ''

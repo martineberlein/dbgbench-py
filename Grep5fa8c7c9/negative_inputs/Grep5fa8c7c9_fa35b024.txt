@@ -1,0 +1,1 @@
+printf '\n-;' | LC_ALL=fr_BE.ISO8859-15 timeout 0.5s grep -G --colour=auto --binary '[?-^]|\>\0\b[^<-&]'

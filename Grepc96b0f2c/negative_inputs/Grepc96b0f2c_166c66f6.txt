@@ -1,0 +1,1 @@
+printf 'a\n\nb$' | LC_ALL=sl_SI.ISO8859-2 timeout 0.5s grep -i -n '^$'

@@ -1,0 +1,1 @@
+printf 'm' | LC_ALL=en_NZ.ISO8859-1 LANG=hy_AM timeout 0.5s grep -i -i -n '^'

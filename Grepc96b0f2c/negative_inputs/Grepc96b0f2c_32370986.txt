@@ -1,0 +1,1 @@
+printf 'a\n-b\n' | LC_ALL=cs_CZ.utf-8 timeout 0.5s grep -i -n '(\4)|l*\b|j|\B?'

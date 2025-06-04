@@ -1,0 +1,1 @@
+printf 'a\n\nbb' | GREP_COLORS='ne:bn=32' timeout 0.5s grep ''

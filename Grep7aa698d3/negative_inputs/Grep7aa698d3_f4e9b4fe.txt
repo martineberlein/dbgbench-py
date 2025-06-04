@@ -1,0 +1,1 @@
+printf '"\n' | LC_ALL=da_DK.ISO8859-15 LC_COLLATE=sl_SI LANG=de_DE timeout 0.5s grep ''

@@ -1,0 +1,1 @@
+printf '\r\r' | LC_ALL=en_US.UTF-8 timeout 0.5s grep --fixed-strings -v --word-regexp --before-context=62 --count -e ''

@@ -1,0 +1,1 @@
+printf 'ah\n\n\n' | LC_ALL=en_AU timeout 0.5s grep --ignore-case -5 -b --before-context=81 '^'

@@ -1,0 +1,1 @@
+printf 'a-\r"' |  LANG=en_GB.US-ASCII timeout 0.5s grep -i -n ''

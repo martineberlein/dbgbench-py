@@ -1,0 +1,1 @@
+printf 'abc-' | LC_ALL=en_US.UTF-8 timeout 0.5s grep --directories=read --files-without-match '--include=[?[\\]]' -x --null-data --max-count=8 -I --text --quiet --quiet ''

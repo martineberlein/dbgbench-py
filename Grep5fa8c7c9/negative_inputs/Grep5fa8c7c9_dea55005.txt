@@ -1,0 +1,1 @@
+printf 'a\r\n' |  timeout 0.5s grep --fixed-strings -m 6 --null-data -U -B 7 -s -C 4 --line-buffered --regexp='\W{-0,}'

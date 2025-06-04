@@ -1,0 +1,1 @@
+printf 'aB\nbB' | LC_ALL=en_US.utf8 timeout 0.5s grep --word-regexp --with-filename -i -n '^$'

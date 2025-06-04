@@ -1,0 +1,1 @@
+printf 'a-bb\n' | LC_ALL=en_US.utf8 timeout 0.5s grep -E --after-context=25 --context=1 -U -94 --before-context=3 --line-regexp '^[^}-+]$'

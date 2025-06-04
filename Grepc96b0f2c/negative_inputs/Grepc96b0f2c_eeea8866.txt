@@ -1,0 +1,1 @@
+printf 'a\n\n\n\n' | timeout 0.5s grep --directories=read -c --context=40 --devices=read --unix-byte-offsets ''

@@ -1,0 +1,1 @@
+printf '^\n$\nG' | LC_ALL=hy_AM timeout 0.5s grep -i -i -n '^'

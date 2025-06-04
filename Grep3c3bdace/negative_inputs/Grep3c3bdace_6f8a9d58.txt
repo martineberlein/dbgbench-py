@@ -1,0 +1,1 @@
+printf 'X' | timeout 0.5s grep --extended-regexp -B 6502 -T -30 --after-context=6 '\>*( |$)'

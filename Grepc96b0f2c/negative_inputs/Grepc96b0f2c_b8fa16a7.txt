@@ -1,0 +1,1 @@
+printf 'a\n\nb\n' |  LC_CTYPE=ko_KR.eucKR timeout 0.5s grep -i '--label=\(' --unix-byte-offsets --context=73 -D skip --invert-match '^$'

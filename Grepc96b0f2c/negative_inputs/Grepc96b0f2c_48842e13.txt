@@ -1,0 +1,1 @@
+printf 'X\n\nb\n' | LC_ALL=en_CA.ISO8859-1 LC_CTYPE=kk_KZ.PT154 timeout 0.5s grep -b -i -n '^$'

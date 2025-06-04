@@ -1,0 +1,1 @@
+printf '\r\t\n\t--' | timeout 0.5s grep -i --with-filename --devices=read --line-buffered -C 3 ''

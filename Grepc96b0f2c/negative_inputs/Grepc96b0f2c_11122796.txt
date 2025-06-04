@@ -1,0 +1,1 @@
+printf 'a\nFb\n' | POSIXLY_CORRECT=1 timeout 0.5s grep -i -c -i -n -h -i -n '^$'

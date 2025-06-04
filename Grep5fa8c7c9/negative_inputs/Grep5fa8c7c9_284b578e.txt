@@ -1,0 +1,1 @@
+printf 'abcd' | POSIXLY_CORRECT=1 timeout 0.5s grep '\8{,-03}()\>'

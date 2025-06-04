@@ -1,0 +1,1 @@
+printf 'a\n$H\n' | LC_ALL=sl_SI.ISO8859-2 LANG=be_BY.utf-8 timeout 0.5s grep -i -n '\0$'

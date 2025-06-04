@@ -1,0 +1,1 @@
+printf 'Lbc\n' | LC_ALL=da_DK.UTF-8 timeout 0.5s grep -F ''

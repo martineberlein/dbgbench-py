@@ -1,0 +1,1 @@
+printf '\r\r' |  LANG=it_IT timeout 0.5s grep -h --before-context=200203706 ''

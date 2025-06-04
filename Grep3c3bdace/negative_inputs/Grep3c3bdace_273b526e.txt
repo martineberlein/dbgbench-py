@@ -1,0 +1,1 @@
+printf 'U' | timeout 0.5s grep -G -T '--include=?' -q -I '--exclude-dir=??*' --silent --line-number ''

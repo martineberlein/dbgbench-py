@@ -1,0 +1,1 @@
+printf 'a\n"\n"' | timeout 0.5s grep --ignore-case -n --directories=read -B 22 --binary --after-context=7 '0$'
