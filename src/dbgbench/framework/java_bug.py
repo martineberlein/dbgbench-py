@@ -92,6 +92,17 @@ class JavaBug(Bug, ABC):
             return self._execute_samples_in_container()
         return self._empty_result_df()
     
+    def execute_sample(self, test_input: str) -> OracleResult:
+        #The Problem is we log the exceptions in a .log and then copy, if the input does not throw a exception we dont have anything to copy ..
+        #So we assume if execute samples throws a error that it is because no exception happend in the container and there is no exception log ..
+        #So we have a passing Input
+        try:
+            _, oracle = self.execute_samples([str(test_input)])[0]
+        except Exception as ep:
+            return OracleResult.PASSING
+
+        return oracle
+    
     def execute_samples(self, test_inputs: list[str]) -> list[tuple[str, OracleResult]]:
         self._ensure_container_started()
         logging.info("Executing JavaBug samples with oracle")

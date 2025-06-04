@@ -4,9 +4,9 @@ import os
 from typing import Collection
 
 from dbgbench.framework.oraclesresult import OracleResult
-from dbgbench.resources import get_grep_grammar_path
+from dbgbench.resources import get_find_grammar_path
 from dbgbench.framework.util import escape_non_ascii_utf8
-from dbgbench.framework.grep import GrepBug
+from dbgbench.framework.find import FindBug
 
 from fdlearn.interface.fandango import parse
 from fdlearn.data.input import FandangoInput
@@ -23,7 +23,7 @@ def generate_more_failing(bug_type_, grammar_, samples_: Collection[FandangoInpu
 
     def bug_oracle(inp: FandangoInput):
         with bug_type_() as bug:
-            bug: GrepBug
+            bug: FindBug
             res = bug.execute_sample(str(inp.tree))
             print(inp, res)
         return res
@@ -70,17 +70,15 @@ def write_to_file(inputs: list[FandangoInput], subject_name: str):
 if __name__ == "__main__":
     random.seed(2)
 
-    from dbgbench.subjects import Grep3220317a, Grep3c3bdace, Grep5fa8c7c9, Grep7aa698d3, Grepc96b0f2c
-    #TODO: Grep3220317a parsing of first failing sample does not work??
-    # Works: Grep3c3bdace, Grep5fa8c7c9, Grep7aa698d3, Grepc96b0f2c
-    bugs = [Grep3c3bdace, Grep5fa8c7c9, Grep7aa698d3, Grepc96b0f2c]
+    from dbgbench.subjects import Find07b941b1, Find091557f6, Finddbcb10e9, Findff248a20
+    bugs = [Find07b941b1, Find091557f6, Finddbcb10e9, Findff248a20]
 
     for bug_type in bugs:
-        grep_grammar = get_grep_grammar_path()
-        grammar, _ = parse(grep_grammar)
+        find_grammar = get_find_grammar_path()
+        grammar, _ = parse(find_grammar)
   
         with bug_type() as bug:
-            bug: GrepBug
+            bug: FindBug
             samples_paths = bug.sample_files()
             samples = [file.read_text() for file in samples_paths]
             result = bug.execute_samples(samples)

@@ -4,9 +4,10 @@ import os
 from typing import Collection
 
 from dbgbench.framework.oraclesresult import OracleResult
-from dbgbench.resources import get_grep_grammar_path
+from dbgbench.resources import get_genson_grammar_path
 from dbgbench.framework.util import escape_non_ascii_utf8
-from dbgbench.framework.grep import GrepBug
+from dbgbench.framework.genson import GensonBug
+from dbgbench.framework.java_bug import JavaBug
 
 from fdlearn.interface.fandango import parse
 from fdlearn.data.input import FandangoInput
@@ -23,7 +24,7 @@ def generate_more_failing(bug_type_, grammar_, samples_: Collection[FandangoInpu
 
     def bug_oracle(inp: FandangoInput):
         with bug_type_() as bug:
-            bug: GrepBug
+            bug: GensonBug
             res = bug.execute_sample(str(inp.tree))
             print(inp, res)
         return res
@@ -66,21 +67,16 @@ def write_to_file(inputs: list[FandangoInput], subject_name: str):
         except Exception as e:
             print(f"Error writing input: {inp}\nException: {e}")
 
-
-if __name__ == "__main__":
-    random.seed(2)
-
-    from dbgbench.subjects import Grep3220317a, Grep3c3bdace, Grep5fa8c7c9, Grep7aa698d3, Grepc96b0f2c
-    #TODO: Grep3220317a parsing of first failing sample does not work??
-    # Works: Grep3c3bdace, Grep5fa8c7c9, Grep7aa698d3, Grepc96b0f2c
-    bugs = [Grep3c3bdace, Grep5fa8c7c9, Grep7aa698d3, Grepc96b0f2c]
+def main():
+    from dbgbench.subjects import Genson120
+    bugs = [Genson120]
 
     for bug_type in bugs:
-        grep_grammar = get_grep_grammar_path()
-        grammar, _ = parse(grep_grammar)
+        genson_grammar = get_genson_grammar_path()
+        grammar, _ = parse(genson_grammar)
   
         with bug_type() as bug:
-            bug: GrepBug
+            bug: GensonBug
             samples_paths = bug.sample_files()
             samples = [file.read_text() for file in samples_paths]
             result = bug.execute_samples(samples)
@@ -106,3 +102,8 @@ if __name__ == "__main__":
 
         print(f"Positive inputs: {len(pos_inputs)}")
         print(f"Negative inputs: {len(neg_inputs)}")
+
+if __name__ == "__main__":
+    random.seed(2)
+    
+    main()
