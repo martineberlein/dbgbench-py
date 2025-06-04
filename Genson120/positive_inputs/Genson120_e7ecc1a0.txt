@@ -1,0 +1,2 @@
+[[{"":	true},false,false],[[{"":	 true},false,
+false],false,6000.7E+9611],6000.7E+9611]
